@@ -69,9 +69,11 @@ scale-later promise.
 
 ### Layer 3 — Configuration (the studs that connect bricks to a business)
 The **flexibility layer** — where a specific shop assembles the bricks for *its* trade: JobTypes,
-Forms, Pricebook, Roles, Workflows. An HVAC shop and a landscaper use the **same bricks**, arranged
-differently *by configuration, not by code*. This is the multi-industry thesis made real, and the
-reason one platform serves many segments.
+Forms, Pricebook, Roles, Workflows, **and the AI guardrails** that say what AI may do here. An HVAC
+shop and a landscaper use the **same bricks**, arranged differently *by configuration, not by code*.
+This is the multi-industry thesis made real, and the reason one platform serves many segments. Note
+the AI's rules live *here*, in configuration the company owns — the AI reads them but can't rewrite
+them, which is what keeps the system stable ([AI Operating Model](13-ai-operating-model.md)).
 
 ### Layer 4 — Experience (the surfaces)
 The role-tailored UIs people actually touch, composed from the [Design System](design-system/README.md)

@@ -41,6 +41,8 @@ the human in control builds the one thing this market is starved of — trust.
    trapped by an AI mistake.
 7. **Disclosure is governed.** Admins control what information AI may share, and with whom
    (internal / customer / partner). AI never over-shares.
+8. **Bounded & stable.** AI acts only inside guardrails the company has set, **never changes its own
+   rules**, and **never makes a random or unexpected change**. Predictability is part of the product.
 
 ---
 
@@ -162,6 +164,84 @@ Disclosure is a configured policy, not an AI judgment call.
   internal unless a human chooses to share it.
 - Disclosure rules compose with the [role/permission model](02-personas-and-roles.md) — same engine.
 - Every share is **logged**: who/what/when, for accountability.
+
+---
+
+## Guardrails — configured per company (because every shop runs differently)
+
+AI never has a fixed, universal set of powers. It operates inside a **guardrail configuration that
+each company owns** — part of the [Configuration layer](12-system-layers.md) (Layer 3), the same
+place JobTypes, Forms, and Roles live. Two shops with the same software can give AI very different
+leashes, and both are correct for them.
+
+A company's AI guardrails define:
+
+- **Which capabilities are on at all** (write-it-fills? receptionist? supplier tracking?).
+- **What autonomy level each capability gets** — pinned to the [ladder](#the-autonomy-ladder--what-ai-is-allowed-to-do).
+  A cautious shop can force *everything* to L1 (review-before-commit). A confident one can let L3
+  routine filing run with undo. Money/customer actions stay gated no matter what — that floor is not
+  configurable.
+- **What AI may touch** — which objects and fields are in or out of bounds.
+- **Who can approve at the gate** (which roles).
+- **Disclosure rules** (the matrix above).
+
+> The guardrails are themselves **just configuration** — they live in the flexible layer, not in the
+> AI. The AI reads them; it cannot rewrite them. This is what makes "every company runs differently"
+> and "the system stays stable" true at the same time.
+
+## AI helps the admin set the rules (confirm & clarify — never assume)
+
+Defining guardrails shouldn't be a wall of switches the admin faces alone. **AI helps set its own
+boundaries — by asking, not assuming:**
+
+- On setup, AI proposes a **conservative default** (everything low-autonomy, money/customer gated)
+  and walks the admin through it in plain language: *"I can draft estimates from your techs' notes,
+  but I'll always show them to the tech before saving. Want that on?"*
+- Where a company's way of working is unclear, **AI asks the admin to clarify** rather than guessing:
+  *"Should new bookings I take from calls go straight to the board, or wait for dispatch to confirm?"*
+- The admin's answers become the configured guardrails. AI **confirms back** what it will and won't
+  do, in writing, so there's no ambiguity.
+- Changing the rules later is always a **deliberate admin action** — AI can *suggest* a change ("you
+  approve every estimate unchanged; want me to lower the gate?") but **never applies it itself.**
+
+This makes the guardrails fit *this* team, while keeping a human firmly in control of where the
+lines are drawn.
+
+## The AI Capability Charter — everyone knows what AI can and can't do
+
+Out of the setup above, the system generates a plain-language **Capability Charter** for the
+company: a single, visible page that states *exactly* what AI is allowed to do here, what it will
+always ask before doing, and what it will never do.
+
+- **Visible to everyone** (per their role) — the tech, dispatcher, and owner can all see the rules
+  the AI plays by. No surprises, no hidden powers.
+- **Written in plain language**, not settings jargon: *"AI drafts your job notes — you always
+  confirm. AI never takes payment or messages a customer without you."*
+- **Always current** — it's generated from the live guardrail config, so it can't drift from reality.
+
+The Charter is how you deliver on "**they know clearly about what AI can and cannot do**." Clarity
+about the boundary is itself a trust feature.
+
+## Stability — no random changes, ever
+
+The hard guarantee behind "we want the system stable":
+
+- **Bounded action space.** AI can only ever do what the guardrails permit — there is no path for it
+  to act outside them. Out-of-bounds is impossible, not just discouraged.
+- **No self-modification.** AI never changes its own rules, permissions, or another company's data.
+  Rules change only by deliberate human admin action, which is logged.
+- **No random changes.** AI does not quietly alter records, settings, prices, or schedules on its
+  own. Every change is either gated (a human approved) or a logged, reversible L3 action the human
+  can see and undo. If AI is uncertain, it **asks — it does not act.**
+- **Predictable behavior.** The same input and config produce the same kind of result; the human
+  always knows what to expect. Updates to AI behavior ship through the same change control as any
+  other release — never as a silent surprise to a running shop.
+- **Stable when AI is absent.** Because AI only augments, the system behaves identically with AI
+  quiet — so it can never *destabilize* the daily loop ([Layer 5 rule](12-system-layers.md)).
+
+> The mental model: **AI is a capable assistant working inside a fenced yard the company built. It
+> can do a lot inside the fence, it asks before stepping near the gate, and it can never move the
+> fence.** That is how you get help *and* stability at once.
 
 ---
 
