@@ -197,16 +197,31 @@ signed agreement). It **generates Visits/Jobs** on a schedule.
 | Field | Who | Notes |
 |---|---|---|
 | Member (customer) | 🔧🏢 | |
+| **Account manager** | 🏢🙋 | the person who owns the relationship (e.g. "Amy Smith") |
 | Agreement sub-type | 🏢 | e.g. "HVAC Semi Annual" — a label/category on the plan |
+| **Covered locations** | 🔧🏢 | one agreement can cover **multiple properties** (e.g. "4 covered locations") |
 | **Covered property + equipment** | 🔧🏢 | which units (make/model/serial) are covered |
 | **Term length + billing cadence** | 🏢👑 | e.g. "36 months – Quarterly" (confirmed by a real ServiceTitan agreement screen) |
+| Coverage period (start → end) | 🏢🙋 | e.g. May 24 2024 → Sep 23 2025 |
 | Start / end / activation date | 🏢 | e.g. 7/13/2020 → 7/30/2023 |
 | Auto-renew | 🏢 | + card-on-file renewal protection |
-| Status | 🔧🏢 | active / expired / canceled / pending |
+| Status | 🔧🏢🙋 | active / expired / canceled / pending |
+| **Billing model** | 🏢👑 | upfront · recurring · **Time of Service** (billed as each visit happens) |
 | Billing amount & frequency | 🏢👑 | inherited, overridable |
-| Included / remaining visits | 🔧🏢 | |
+| **Amount billed / remaining balance** | 🏢👑🙋 | e.g. $3,400 billed / $3,877.23 remaining |
+| Included / **remaining visits** + next visit | 🔧🏢🙋 | e.g. "1 remaining · next Jul 1–Sep 30" |
+| **Visit list** (named/numbered, e.g. Q1–Q4) | 🔧🏢🙋 | each links back to the agreement, with status (upcoming/completed), type, window, location |
 | Priority/scheduling benefit | 🏢🙋 | |
 | **Profitability / job costing** | 👑🏢 | budget vs actual across the agreement's life → see [§15](#15-job-costing--profitability-budget-vs-actual) |
+| **Customer-visible in a portal** | 🙋 | status, upcoming visits, balance — "100% transparent" (see note below) |
+
+> **The 🙋 marks matter here:** a service agreement is one of the few things the *customer* sees
+> directly. ServiceTitan markets a customer portal where the customer checks their contract status,
+> upcoming visits, and balance — *"give customers full visibility into their contracts"*
+> ([reference screenshot](research/assets/servicetitan-service-agreements-customer-portal.jpeg)).
+> That's your [transparency thesis](15-transparency-and-control.md) on the **customer** side, and it
+> drives renewals. Our customer-facing surface ([no-download link](04-core-workflows.md)) should show
+> the same: their agreement, what's covered, what's coming, what's owed.
 
 ### 9. Estimate / Quote
 | Field | Who | Notes |
