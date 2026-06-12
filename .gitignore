@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+.next/
+.expo/
+.turbo/
+
+# Generated design tokens (compiled from docs/design-system/tokens.json)
+packages/tokens/dist/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+*.log
+.idea/
+.vscode/
