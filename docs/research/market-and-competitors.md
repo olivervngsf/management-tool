@@ -223,7 +223,8 @@ differentiator.
 
 ## 6. White space — where an experience-led entrant wins
 
-Each opportunity is tied to evidence from user sentiment (see Sources):
+Each opportunity is tied to evidence from user sentiment (see Sources). The pains behind these are
+catalogued, scored, and tracked in the [User Pain Points Registry](user-pain-points.md).
 
 1. **Truly offline-first, not "offline-ish."** ~20% of jobs hit dead zones; incumbents (incl. ST)
    silently lose photos/notes/signatures and can erase unsynced data. A locally-authoritative model
