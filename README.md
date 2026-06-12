@@ -37,6 +37,7 @@ Read in order. Each document assumes the previous ones.
 | 08 | [Roadmap](docs/08-roadmap.md) | Phased plan from prototype to GA |
 | 09 | [Product Requirements (PRD)](docs/09-prd.md) | Scoped features, requirements, acceptance criteria, and success metrics |
 | 10 | [User Edge Cases](docs/10-edge-cases.md) | The hard real-world cases each flow must handle |
+| 11 | [UX/UI Review & Gap Analysis](docs/ux-ui-review.md) | Coherence check, missing-artifact backlog, and the reusable design-review checklist |
 
 ## The one-paragraph pitch
 
