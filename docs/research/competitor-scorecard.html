@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fieldwork — Competitive Scorecard</title>
+<style>
+  :root{
+    --brand:#0A84FF; --ink:#16181C; --muted:#5A606B; --line:#E2E5EA;
+    --bg:#F7F8FA; --card:#FFFFFF; --good:#34C759; --warn:#FF9F0A; --weak:#FF3B30;
+    --fw-bg:#0A84FF0D; --fw-line:#0A84FF;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    font-family:-apple-system,"SF Pro","Segoe UI",Roboto,system-ui,sans-serif;
+    color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased;
+    padding:40px 24px; line-height:1.45;
+  }
+  .sheet{max-width:1040px; margin:0 auto; background:var(--card); border:1px solid var(--line);
+    border-radius:16px; padding:40px 44px; box-shadow:0 1px 3px rgba(11,12,14,.08);}
+  .kicker{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--brand);
+    font-weight:600; margin:0 0 6px;}
+  h1{font-size:30px; line-height:1.1; margin:0 0 8px; letter-spacing:-.02em;}
+  .sub{color:var(--muted); font-size:15px; margin:0 0 28px; max-width:70ch;}
+  table{width:100%; border-collapse:collapse; font-size:14px;}
+  thead th{font-size:13px; font-weight:600; color:var(--muted); text-align:center;
+    padding:10px 8px; border-bottom:2px solid var(--line); vertical-align:bottom;}
+  thead th.cap{text-align:left; width:30%;}
+  thead th.fw{color:var(--brand); background:var(--fw-bg); border-bottom:2px solid var(--fw-line);
+    border-top-left-radius:8px; border-top-right-radius:8px;}
+  tbody td{padding:11px 8px; border-bottom:1px solid var(--line); text-align:center;}
+  tbody td.cap{text-align:left; font-weight:600; font-size:13.5px;}
+  td.fw{background:var(--fw-bg);}
+  tbody tr:last-child td{border-bottom:none;}
+  .dots{font-size:13px; letter-spacing:1px; white-space:nowrap;}
+  .d5{color:var(--good)} .d4{color:#7CC34A} .d3{color:var(--warn)}
+  .d2{color:#FF7A33} .d1{color:var(--weak)}
+  .fw .dots{font-weight:700}
+  .legend{display:flex; gap:18px; flex-wrap:wrap; margin:20px 0 4px; font-size:12.5px; color:var(--muted);}
+  .legend b{color:var(--ink); font-weight:600;}
+  .note{margin-top:26px; padding:18px 20px; background:var(--bg); border-radius:12px;
+    border:1px solid var(--line); font-size:13.5px; color:var(--ink);}
+  .note b{color:var(--brand);}
+  .foot{margin-top:22px; font-size:12px; color:var(--muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+  .tag{display:inline-block; font-size:11px; font-weight:600; color:var(--brand);
+    background:var(--fw-bg); padding:2px 8px; border-radius:999px; margin-left:6px; vertical-align:middle;}
+  @media print{ body{background:#fff; padding:0;} .sheet{border:none; box-shadow:none; border-radius:0;} }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <p class="kicker">Fieldwork · Field Service Platform</p>
+  <h1>Competitive Scorecard</h1>
+  <p class="sub">Where the field is weak, and where we aim to win. Scores are research-derived;
+  the <b style="color:var(--brand)">Fieldwork</b> column is our target bar, not a shipped product.
+  The cluster of weakness in the top six rows is the opportunity — it maps directly to the four goals.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th class="cap">Capability</th>
+        <th>ServiceTitan</th>
+        <th>Jobber</th>
+        <th>Housecall&nbsp;Pro</th>
+        <th>Swivl</th>
+        <th class="fw">Fieldwork<span class="tag">target</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- helper: ●=●  ○=○ -->
+      <tr>
+        <td class="cap">Technician mobile experience</td>
+        <td><span class="dots d2">●●○○○</span></td>
+        <td><span class="dots d4">●●●●○</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td class="fw"><span class="dots d5">●●●●●</span></td>
+      </tr>
+      <tr>
+        <td class="cap">Offline reliability (no signal)</td>
+        <td><span class="dots d2">●●○○○</span></td>
+        <td><span class="dots d2">●●○○○</span></td>
+        <td><span class="dots d2">●●○○○</span></td>
+        <td><span class="dots d2">●●○○○</span></td>
+        <td class="fw"><span class="dots d5">●●●●●</span></td>
+      </tr>
+      <tr>
+        <td class="cap">Ease of use / low learning curve</td>
+        <td><span class="dots d1">●○○○○</span></td>
+        <td><span class="dots d5">●●●●●</span></td>
+        <td><span class="dots d4">●●●●○</span></td>
+        <td><span class="dots d4">●●●●○</span></td>
+        <td class="fw"><span class="dots d5">●●●●●</span></td>
+      </tr>
+      <tr>
+        <td class="cap">Onboarding speed (time to live)</td>
+        <td><span class="dots d1">●○○○○</span></td>
+        <td><span class="dots d4">●●●●○</span></td>
+        <td><span class="dots d5">●●●●●</span></td>
+        <td><span class="dots d5">●●●●●</span></td>
+        <td class="fw"><span class="dots d5">●●●●●</span></td>
+      </tr>
+      <tr>
+        <td class="cap">Pricing transparency &amp; value</td>
+        <td><span class="dots d1">●○○○○</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d2">●●○○○</span></td>
+        <td><span class="dots d4">●●●●○</span></td>
+        <td class="fw"><span class="dots d5">●●●●●</span></td>
+      </tr>
+      <tr>
+        <td class="cap">No lock-in / easy to leave</td>
+        <td><span class="dots d1">●○○○○</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d2">●●○○○</span></td>
+        <td><span class="dots d5">●●●●●</span></td>
+        <td class="fw"><span class="dots d5">●●●●●</span></td>
+      </tr>
+      <tr>
+        <td class="cap">Dispatch / scheduling (office)</td>
+        <td><span class="dots d5">●●●●●</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d2">●●○○○</span></td>
+        <td class="fw"><span class="dots d4">●●●●○</span></td>
+      </tr>
+      <tr>
+        <td class="cap">Communication (customer + field↔office)</td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d4">●●●●○</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td class="fw"><span class="dots d5">●●●●●</span></td>
+      </tr>
+      <tr>
+        <td class="cap">Depth / scales with growth</td>
+        <td><span class="dots d5">●●●●●</span></td>
+        <td><span class="dots d2">●●○○○</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d2">●●○○○</span></td>
+        <td class="fw"><span class="dots d4">●●●●○</span></td>
+      </tr>
+      <tr>
+        <td class="cap">AI (booking, estimating, assist)</td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d4">●●●●○</span></td>
+        <td class="fw"><span class="dots d4">●●●●○</span></td>
+      </tr>
+      <tr>
+        <td class="cap">Multi-industry flexibility</td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td><span class="dots d2">●●○○○</span></td>
+        <td><span class="dots d3">●●●○○</span></td>
+        <td class="fw"><span class="dots d5">●●●●●</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="legend">
+    <span><b class="d5">●●●●●</b> strong</span>
+    <span><b class="d3">●●●○○</b> mixed</span>
+    <span><b class="d1">●○○○○</b> weak</span>
+    <span style="margin-left:auto">Top six rows = the four product goals → under-served by everyone.</span>
+  </div>
+
+  <div class="note">
+    <b>The takeaway:</b> No competitor is strong across the top six rows at once. ServiceTitan owns
+    <i>depth</i> but is painful to live with; Jobber &amp; Housecall are <i>easy</i> but thin out at
+    scale; Swivl is cheap but light on the office side. Fieldwork's play: be strong everywhere
+    they're weak (mobile, offline, ease, onboarding, price, communication, flexibility) and
+    <i>good-enough — not maximal</i> on office depth &amp; AI. Win the technician's daily loop first;
+    don't try to out-depth ServiceTitan on day one.
+  </div>
+
+  <div class="foot">
+    <span>Source: market &amp; competitive research, June 2026. Fieldwork column = target bar.</span>
+    <span>Fieldwork — Product &amp; Design Foundation</span>
+  </div>
+</div>
+</body>
+</html>

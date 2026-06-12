@@ -26,6 +26,7 @@ Read in order. Each document assumes the previous ones.
 | 00 | [Market & Competitive Research](docs/research/market-and-competitors.md) | Cited evidence base: market size, competitor profiles, pricing, white space, risks |
 | 00b | [User Pain Points Registry](docs/research/user-pain-points.md) | Living catalog of user pains by persona, with severity, evidence, and our response |
 | 00c | [Competitor Lessons → Our Plays](docs/research/competitor-lessons.md) | Plain-language list: what each competitor does, where it breaks, how we win, mapped to your goals |
+| 00d | [Competitor Scorecard](docs/research/competitor-scorecard.md) ([visual](docs/research/competitor-scorecard.html)) | One-page at-a-glance scorecard: us vs. ServiceTitan / Jobber / Housecall / Swivl |
 | 01 | [Product Strategy](docs/01-product-strategy.md) | Who we serve, the wedge, how we win, pricing model, what we will *not* build first |
 | 02 | [Personas & Roles](docs/02-personas-and-roles.md) | The five people in the system and what each one needs |
 | 03 | [Information Architecture](docs/03-information-architecture.md) | The object model, navigation, and how mobile vs. desktop differ |
