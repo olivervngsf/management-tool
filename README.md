@@ -23,7 +23,8 @@ Read in order. Each document assumes the previous ones.
 
 | # | Document | What it answers |
 |---|----------|-----------------|
-| 01 | [Product Strategy](docs/01-product-strategy.md) | Who we serve, the wedge, how we win, what we will *not* build first |
+| 00 | [Market & Competitive Research](docs/research/market-and-competitors.md) | Cited evidence base: market size, competitor profiles, pricing, white space, risks |
+| 01 | [Product Strategy](docs/01-product-strategy.md) | Who we serve, the wedge, how we win, pricing model, what we will *not* build first |
 | 02 | [Personas & Roles](docs/02-personas-and-roles.md) | The five people in the system and what each one needs |
 | 03 | [Information Architecture](docs/03-information-architecture.md) | The object model, navigation, and how mobile vs. desktop differ |
 | 04 | [Core Workflows](docs/04-core-workflows.md) | The job lifecycle and the critical end-to-end flows |
@@ -31,6 +32,8 @@ Read in order. Each document assumes the previous ones.
 | 06 | [Design System](docs/design-system/README.md) | Tokens, type, color, motion, and the component library |
 | 07 | [Technical Architecture](docs/07-technical-architecture.md) | Monorepo, shared design tokens, data model, offline, backend |
 | 08 | [Roadmap](docs/08-roadmap.md) | Phased plan from prototype to GA |
+| 09 | [Product Requirements (PRD)](docs/09-prd.md) | Scoped features, requirements, acceptance criteria, and success metrics |
+| 10 | [User Edge Cases](docs/10-edge-cases.md) | The hard real-world cases each flow must handle |
 
 ## The one-paragraph pitch
 

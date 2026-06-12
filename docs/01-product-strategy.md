@@ -1,5 +1,8 @@
 # 01 · Product Strategy
 
+> Grounded in [Market & Competitive Research](research/market-and-competitors.md) (June 2026).
+> Specific competitor numbers below are sourced and cross-checked there.
+
 ## The market in one breath
 
 Service businesses — HVAC, plumbing, electrical, and the dozens of trades adjacent to them —
@@ -15,6 +18,35 @@ Service Management (FSM). It is a large, proven, and surprisingly under-loved ma
 
 The pattern: power and polish are inversely correlated in this category. We intend to break that
 trade-off.
+
+### The numbers that justify the bet
+
+The [research](research/market-and-competitors.md) makes the opportunity concrete:
+
+- **Market:** FSM software is **~$5–6.5B (2025–26)** growing to **~$9.5–13.8B by 2030–34** (~10–13%
+  CAGR), atop a **~$1.5T** annual trades-services TAM.
+- **The wide-open door:** **~45%** of trades businesses still run on **pen-and-paper or
+  spreadsheets**, and **~56%** use no purpose-built FSM software — QuickBooks is the default
+  "system." Most of the market is not a competitor's customer; it's un-digitized.
+- **The "missing middle":** ~80% of field-service businesses are too big for consumer tools and too
+  small for ServiceTitan — under-served by design.
+- **Tailwinds:** an acute skilled-trades labor shortage (~$1T economic risk) pushes shops to do more
+  with fewer people via software; PE roll-ups and ServiceTitan's 2024 IPO have validated the
+  category and the spend.
+
+### The competitive map, and the seam each leaves
+
+| Player | Owns | The seam they leave |
+|---|---|---|
+| **ServiceTitan** | Enterprise (20+ techs); "operating system for the trades" | 12–16 wk / **$5K–$50K** onboarding, $245–500/tech/mo, lock-in with steep ETFs, and a **mobile app that regressed to ~3.3★** with weak offline — its most consistent complaint |
+| **Jobber** | SMB ops, loved for ease of use (100k+ customers) | Per-seat cost creep; **too shallow past ~15–20 techs** |
+| **Housecall Pro** | SMB growth tools, fast setup | **Add-on cost creep is its #1 complaint** (~9× advertised price at 5 techs); **3.2★ Android** app |
+| **Swivl + AI wave** (Avoca $1B val, Netic, Quantra) | The AI-native angle — mostly **AI voice/agents on inbound calls** | Thin on the *field experience + data spine*; AI bolted to the call, not woven into the daily loop |
+
+The seams line up: **mobile/offline failure and data-entry friction** are the biggest, best-
+evidenced gaps — and they are exactly the technician's daily loop, which is our wedge. Meanwhile AI
+voice/booking is becoming **table stakes** (Avoca/Netic), so it's a *must-have*, not our
+differentiator; our edge is the experience and data spine the AI runs on.
 
 ## Our wedge: experience as the product
 
@@ -78,11 +110,33 @@ A vague aspiration becomes a bar only when it has numbers. Our quality bar:
   screen, readable at a glance.
 - **Trust:** the owner's "today" number reconciles to the penny with the invoices behind it.
 
-## Business model (orienting, not committed)
+## Business & pricing model (research-backed)
 
-Per-seat SaaS with role-based pricing (technician seats priced lower than office/admin seats),
-plus payment processing margin on in-app card/ACH capture. Payments are both a revenue line and a
-retention moat — once the money flows through the product, the product is load-bearing.
+Pricing is a **strategic weapon**, not an afterthought — the two loudest complaints across the
+category are **add-on cost creep** (Housecall Pro's #1 gripe; ServiceTitan too) and **lock-in /
+termination fees** (ServiceTitan ETFs of $15K–$46K are documented). We position as the clean inverse.
+
+**Principles:**
+- **Per-seat, role-weighted.** Technician seats priced low (drive adoption — the wedge); office/
+  admin/owner seats priced higher (where the willingness-to-pay sits). Undercuts ServiceTitan's
+  $245–500/tech/mo while monetizing the office.
+- **All-inclusive, no add-on creep.** Core platform features are *in the plan*. We do not nickel-
+  and-dime dispatch, marketing basics, or the customer experience as "Pro" modules. This directly
+  attacks the most-cited pricing complaint in the market.
+- **No lock-in, no implementation fee.** Month-to-month, self-serve, day-not-quarter onboarding —
+  the inverse of ServiceTitan's $5K–$50K / 12–16-week setup, which is its single biggest adoption
+  barrier. Easy migration in *and* out builds the trust a conservative buyer base demands.
+- **Transparent, published pricing.** ServiceTitan hides pricing behind a sales demo; we publish it.
+  Transparency is itself a differentiator with a skeptical, word-of-mouth-driven buyer.
+- **Payments as the second revenue line and retention moat.** Margin on in-app card/ACH capture
+  (benchmark ~2.9% + 30¢ cards / ~1% ACH, matching the SMB market). Once the money flows through
+  the product, the product is load-bearing — and payments are where incumbent stickiness actually
+  lives, not the core app.
+
+**Why this is defensible against the AI wave:** competitors like Swivl go free + usage and the
+VC-backed AI players (Avoca, Netic) may subsidize aggressively. We don't win the race to $0 — we win
+on the experience and the embedded-payments economics, priced honestly in between Swivl's free tier
+and ServiceTitan's enterprise toll.
 
 ## The single most important bet
 
