@@ -5,6 +5,10 @@ architecture for the foundation phase — concrete enough to start, loose enough
 follows from the stack decision: **Next.js (web) + React Native / Expo (mobile), one TypeScript
 language, shared design tokens.**
 
+> This is the *technical* expression of the [System Layers model](12-system-layers.md): the
+> monorepo packages below map to the layers (foundation → bricks → configuration → experience →
+> intelligence), and the "depend downward, never sideways" rule is what keeps it flexible at scale.
+
 ---
 
 ## Guiding constraints (from the strategy)

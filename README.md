@@ -38,6 +38,7 @@ Read in order. Each document assumes the previous ones.
 | 09 | [Product Requirements (PRD)](docs/09-prd.md) | Scoped features, requirements, acceptance criteria, and success metrics |
 | 10 | [User Edge Cases](docs/10-edge-cases.md) | The hard real-world cases each flow must handle |
 | 11 | [UX/UI Review & Gap Analysis](docs/ux-ui-review.md) | Coherence check, missing-artifact backlog, and the reusable design-review checklist |
+| 12 | [System Layers & the Improvement Flywheel](docs/12-system-layers.md) | The operating philosophy: LEGO-like layers, how they compose, the self-improvement loop, value per segment, and the quick-start slice |
 
 ## The one-paragraph pitch
 
