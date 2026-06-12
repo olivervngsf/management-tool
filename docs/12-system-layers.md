@@ -83,7 +83,9 @@ underneath — different altitude per [persona](02-personas-and-roles.md).
 The layer that makes the product **get better by being used**: telemetry that reveals friction, AI
 assists (voice→structured notes, estimating help, the receptionist/booking), and recommendations.
 It *observes* the lower layers and *augments* them — it never becomes a dependency they can't run
-without. The app works fully with this layer "quiet"; intelligence makes it sharper over time.
+without. The app works fully with this layer "quiet"; intelligence makes it sharper over time. How
+this layer behaves — write-it-fills, the human-accountable gate, transparency, and governed
+disclosure — is specified in the [AI Operating Model](13-ai-operating-model.md).
 
 ### Cross-cutting — the things that must be true everywhere
 Three concerns run vertically through all five layers and are non-negotiable at every one:

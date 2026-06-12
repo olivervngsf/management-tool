@@ -208,9 +208,10 @@ proximity). Each sits behind an interface in `packages/core` for swappability.
 
 ## 10. Open questions
 
-- **AI scope for R1–R3:** how much AI (estimating assist, voice notes→structured data, receptionist)
-  ships in the wedge vs. follows? *Recommendation: voice-to-structured-capture in R1 (directly
-  serves the under-30-second job); AI receptionist in R2 alongside booking.*
+- ~~**AI scope for R1–R3**~~ — **Resolved** in the [AI Operating Model](13-ai-operating-model.md):
+  write-it-fills (voice/text→structured) ships in R1; AI receptionist/booking in R2; AI invoice
+  draft + out-of-scope detection in R3 — all gated by the autonomy ladder (nothing touching money or
+  the customer is ever autonomous; a human approves at the last gate).
 - **Pricing specifics:** exact per-seat tiers and payment margin — to be set against the
   [strategy's pricing principles](01-product-strategy.md) with live cost data.
 - **Inventory depth in R1** vs. deferring full truck-stock to R4.

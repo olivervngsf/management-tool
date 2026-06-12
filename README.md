@@ -39,6 +39,7 @@ Read in order. Each document assumes the previous ones.
 | 10 | [User Edge Cases](docs/10-edge-cases.md) | The hard real-world cases each flow must handle |
 | 11 | [UX/UI Review & Gap Analysis](docs/ux-ui-review.md) | Coherence check, missing-artifact backlog, and the reusable design-review checklist |
 | 12 | [System Layers & the Improvement Flywheel](docs/12-system-layers.md) | The operating philosophy: LEGO-like layers, how they compose, the self-improvement loop, value per segment, and the quick-start slice |
+| 13 | [AI Operating Model](docs/13-ai-operating-model.md) | How AI behaves: write-it-fills, the autonomy ladder, the human gate, AI self-reporting, operational awareness, and admin-governed disclosure |
 
 ## The one-paragraph pitch
 
