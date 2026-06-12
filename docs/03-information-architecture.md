@@ -46,6 +46,13 @@ Organization
 - **JobType + Form = the configuration layer.** An HVAC "Maintenance" job type ships with a coil
   inspection form and standard tune-up line items. A landscaper later defines a "Spring Cleanup"
   job type with its own form. Same engine, different config. No core code changes.
+- **Two first-class concepts above the Job** (confirmed by [data-model research](14-data-model.md)):
+  a **Service Agreement / Membership** (the *contract* — a recurring plan that generates Jobs on a
+  schedule), and a **Project** (a container above Job for multi-visit installs with phases, deposits,
+  and progress billing). Simple jobs need neither; big jobs and recurring revenue need both.
+
+> For the complete field-by-field breakdown of every entity — and **who needs each field** (field
+> technician vs. office/admin vs. owner) — see the [Data Model & Field Dictionary](14-data-model.md).
 
 ---
 

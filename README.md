@@ -40,6 +40,8 @@ Read in order. Each document assumes the previous ones.
 | 11 | [UX/UI Review & Gap Analysis](docs/ux-ui-review.md) | Coherence check, missing-artifact backlog, and the reusable design-review checklist |
 | 12 | [System Layers & the Improvement Flywheel](docs/12-system-layers.md) | The operating philosophy: LEGO-like layers, how they compose, the self-improvement loop, value per segment, and the quick-start slice |
 | 13 | [AI Operating Model](docs/13-ai-operating-model.md) | How AI behaves: write-it-fills, the autonomy ladder, the human gate, AI self-reporting, operational awareness, and admin-governed disclosure |
+| 14 | [Data Model & Field Dictionary](docs/14-data-model.md) | Every entity and its concrete fields, marked by who needs each (field tech vs office/admin vs owner); contracts, projects, the date/status model |
+| 15 | [Transparency, Status & Staying in Control](docs/15-transparency-and-control.md) | Shared status, the One-Line Report, early concern-raising before things go out of scope, financial transparency, and keeping the human in control |
 
 ## The one-paragraph pitch
 
