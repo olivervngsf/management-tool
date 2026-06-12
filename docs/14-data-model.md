@@ -197,13 +197,16 @@ signed agreement). It **generates Visits/Jobs** on a schedule.
 | Field | Who | Notes |
 |---|---|---|
 | Member (customer) | 🔧🏢 | |
+| Agreement sub-type | 🏢 | e.g. "HVAC Semi Annual" — a label/category on the plan |
 | **Covered property + equipment** | 🔧🏢 | which units (make/model/serial) are covered |
-| Start / end / activation date | 🏢 | |
+| **Term length + billing cadence** | 🏢👑 | e.g. "36 months – Quarterly" (confirmed by a real ServiceTitan agreement screen) |
+| Start / end / activation date | 🏢 | e.g. 7/13/2020 → 7/30/2023 |
 | Auto-renew | 🏢 | + card-on-file renewal protection |
 | Status | 🔧🏢 | active / expired / canceled / pending |
 | Billing amount & frequency | 🏢👑 | inherited, overridable |
 | Included / remaining visits | 🔧🏢 | |
 | Priority/scheduling benefit | 🏢🙋 | |
+| **Profitability / job costing** | 👑🏢 | budget vs actual across the agreement's life → see [§15](#15-job-costing--profitability-budget-vs-actual) |
 
 ### 9. Estimate / Quote
 | Field | Who | Notes |
@@ -280,6 +283,33 @@ columns on the Job.
 | Unit cost, markup %, unit price, margin | Default forms |
 | Tax category | Default line items |
 | Supplier / vendor | Default priority |
+
+### 15. Job Costing / Profitability (budget vs actual)
+Real-time profitability on a **Job, Project, or Service Agreement** — modeled from a live ServiceTitan
+"Commercial Maintenance" agreement screen ([reference screenshot](research/assets/servicetitan-job-costing.jpeg)).
+The market leader sells this as **"billing transparency"** and **"budget variance tracking"**, which
+is a direct expression of your [transparency thesis](15-transparency-and-control.md), aimed at the owner.
+
+**Shape:** for each category, four values — **Budget · Actuals · Variance · % of budget used.**
+
+| Group | Categories (rows) | Unit |
+|---|---|---|
+| **Billed (revenue)** | Contract · Maintenance Revenue · Install Revenue · Service Revenue · **Total** | $ |
+| **Expenses** | Labor Hours · Materials | **hours** (labor) and $ (materials) |
+
+| Field | Who | Notes |
+|---|---|---|
+| Category | 👑🏢 | a revenue or expense line |
+| Budget | 👑🏢 | the plan |
+| Actuals | 👑🏢 | what really happened — **derived**, not typed |
+| Variance | 👑🏢 | computed: Actuals − Budget (can be negative) |
+| % of budget used | 👑🏢 | Actuals ÷ Budget; **can exceed 100%** (e.g. Materials 126% = over budget — flag it) |
+
+> **For our model:** labor is tracked in **hours *and* dollars**; "Actuals" roll up from the real
+> [Payments](#11-payment), [labor time](#5-job-work-order--the-center-of-gravity), and material costs
+> already captured — so this view **reconciles to the penny** with the work behind it, rather than
+> being a parallel spreadsheet. Over-budget categories are exactly what gets
+> [surfaced early](15-transparency-and-control.md), not discovered at month-end.
 
 ---
 
