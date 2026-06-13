@@ -6,10 +6,10 @@
 <title>Fieldwork — Clickable Wireframes</title>
 <style>
   :root{
-    --brand:#0A84FF; --brand-hover:#0060DF; --on-brand:#fff;
+    --brand:#0A84FF; --brand-hover:#0060DF;
     --n0:#fff; --n50:#F7F8FA; --n100:#EEF0F3; --n200:#E2E5EA; --n300:#C9CDD6;
     --n400:#A4AAB6; --n500:#7C828E; --n600:#5A606B; --n700:#3E434C; --n800:#272A30; --n900:#16181C;
-    --success:#34C759; --warning:#FF9F0A; --danger:#FF3B30; --info:#5E5CE6;
+    --success:#34C759; --warning:#FF9F0A; --danger:#FF3B30;
     --r-sm:8px; --r-md:12px; --r-lg:16px; --r-full:999px;
     --font:-apple-system,"SF Pro","Segoe UI",Roboto,system-ui,sans-serif;
     --shadow:0 1px 2px rgba(11,12,14,.06),0 1px 3px rgba(11,12,14,.10);
@@ -17,288 +17,252 @@
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   body{margin:0;font-family:var(--font);background:var(--n100);color:var(--n900);-webkit-font-smoothing:antialiased}
+  a{text-decoration:none;color:inherit}
   /* ---- chrome / launcher ---- */
-  .top{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--n200);padding:10px 16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .top{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--n200);padding:10px 16px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
   .top h1{font-size:16px;margin:0;letter-spacing:-.01em}
   .top .tag{font-size:11px;color:var(--n500)}
   .nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
-  .nav button{font:inherit;font-size:12.5px;border:1px solid var(--n200);background:#fff;color:var(--n700);padding:6px 11px;border-radius:var(--r-full);cursor:pointer}
-  .nav button.active{background:var(--brand);color:#fff;border-color:var(--brand)}
-  .stage{display:flex;flex-wrap:wrap;gap:28px;justify-content:center;padding:28px 16px 60px}
-  .hint{width:100%;text-align:center;color:var(--n500);font-size:12.5px;margin:-8px 0 4px}
+  .nav a{font-size:12.5px;border:1px solid var(--n200);background:#fff;color:var(--n700);padding:6px 11px;border-radius:var(--r-full)}
+  .stage{display:flex;justify-content:center;padding:24px 14px 60px}
+  .hint{width:100%;text-align:center;color:var(--n500);font-size:12.5px;margin:0 auto 16px;max-width:520px}
   /* ---- phone frame ---- */
-  .phone{width:390px;max-width:94vw;height:780px;background:#000;border-radius:46px;padding:10px;box-shadow:var(--shadow-lg);flex:0 0 auto}
+  .phone{width:380px;max-width:94vw;height:760px;background:#000;border-radius:46px;padding:10px;box-shadow:var(--shadow-lg)}
   .screen{width:100%;height:100%;background:var(--n50);border-radius:38px;overflow:hidden;position:relative;display:flex;flex-direction:column}
-  .statusbar{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:600;flex:0 0 auto}
-  .statusbar .dot{display:flex;gap:5px;align-items:center}
+  .statusbar{height:42px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:13px;font-weight:600;flex:0 0 auto}
+  /* ---- CSS-only navigation via :target ---- */
   .scr{display:none;flex:1;min-height:0;flex-direction:column}
-  .scr.show{display:flex}
+  .scr:target{display:flex}
+  .app:not(:has(.scr:target)) #today{display:flex} /* default screen */
+  .app:has(#board:target) .phone{display:none}      /* board replaces phone */
+  .board-wrap{display:none}
+  #board:target{display:flex}
+  .board-wrap:has(#board:target){display:flex}
   .body{flex:1;overflow-y:auto;padding:4px 16px 16px}
-  .hdr{padding:6px 16px 8px}
-  .hdr .big{font-size:28px;font-weight:700;letter-spacing:-.02em;margin:0}
-  .hdr .sub{color:var(--n500);font-size:14px;margin-top:2px}
-  .offline{display:inline-flex;gap:6px;align-items:center;font-size:12px;color:var(--n600);background:var(--n100);padding:4px 10px;border-radius:var(--r-full);margin-top:8px}
+  .hdr{padding:6px 16px 6px}
+  .hdr .big{font-size:26px;font-weight:700;letter-spacing:-.02em;margin:0}
+  .hdr .sub{color:var(--n500);font-size:13.5px;margin-top:2px}
+  .offline{display:inline-flex;gap:6px;align-items:center;font-size:12px;color:var(--n600);background:var(--n100);padding:3px 10px;border-radius:var(--r-full);margin-top:7px}
   .offline::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--warning)}
-  /* cards / rows */
-  .card{background:#fff;border:1px solid var(--n200);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:14px;margin:10px 0}
-  .card.tap{cursor:pointer;transition:transform .08s}
+  .card{background:#fff;border:1px solid var(--n200);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:13px;margin:9px 0;display:block}
   .card.tap:active{transform:scale(.985)}
   .pill{display:inline-block;font-size:11px;font-weight:600;padding:3px 9px;border-radius:var(--r-full)}
-  .pill.go{background:#E7F8EC;color:#1B873F}
-  .pill.now{background:#E5F1FF;color:#0060DF}
-  .pill.warn{background:#FFF3E0;color:#A85B00}
-  .pill.gray{background:var(--n100);color:var(--n600)}
-  .row{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--n100)}
+  .pill.now{background:#E5F1FF;color:#0060DF}.pill.warn{background:#FFF3E0;color:#A85B00}.pill.gray{background:var(--n100);color:var(--n600)}
+  .row{display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--n100)}
   .row:last-child{border-bottom:none}
-  .row .t{font-size:13px;color:var(--n500);width:56px;flex:0 0 auto}
-  .row .m{flex:1;min-width:0}
-  .row .m .name{font-weight:600;font-size:15px}
-  .row .m .meta{color:var(--n500);font-size:13px;margin-top:1px}
-  .label{font-size:12px;font-weight:600;color:var(--n500);text-transform:uppercase;letter-spacing:.04em;margin:14px 2px 4px}
-  .kv{font-size:14px;margin:6px 0;color:var(--n800)}
-  .kv b{font-weight:600}
+  .row .t{font-size:13px;color:var(--n500);width:52px;flex:0 0 auto}
+  .row .m{flex:1;min-width:0}.row .m .name{font-weight:600;font-size:15px}.row .m .meta{color:var(--n500);font-size:13px;margin-top:1px}
+  .label{font-size:11.5px;font-weight:600;color:var(--n500);text-transform:uppercase;letter-spacing:.04em;margin:13px 2px 3px}
+  .kv{font-size:14px;margin:5px 0;color:var(--n800)}.kv b{font-weight:600}
   .muted{color:var(--n500)}
-  /* buttons */
-  .btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:var(--r-md);font:inherit;font-size:16px;font-weight:600;border:none;cursor:pointer;width:100%}
-  .btn.pri{background:var(--brand);color:#fff}
-  .btn.pri:active{background:var(--brand-hover)}
-  .btn.sec{background:var(--n100);color:var(--n800)}
-  .btn.ghost{background:transparent;color:var(--brand)}
-  .actionbar{flex:0 0 auto;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--n200)}
-  .tabbar{flex:0 0 auto;display:flex;background:#fff;border-top:1px solid var(--n200);padding:8px 0 14px}
-  .tabbar a{flex:1;text-align:center;font-size:11px;color:var(--n500);text-decoration:none;display:flex;flex-direction:column;gap:3px;align-items:center}
-  .tabbar a.on{color:var(--brand)}
-  .tabbar .ic{width:22px;height:22px;border-radius:6px;background:currentColor;opacity:.85;-webkit-mask-size:contain}
-  .back{display:flex;align-items:center;gap:6px;color:var(--brand);font-size:15px;font-weight:500;cursor:pointer;padding:8px 0}
-  /* provenance chips */
-  .field{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--n100)}
-  .field .l{font-size:13px;color:var(--n500)}
-  .field .v{font-size:15px;font-weight:600}
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border-radius:var(--r-md);font-size:16px;font-weight:600;border:none;width:100%}
+  .btn.pri{background:var(--brand);color:#fff}.btn.pri:active{background:var(--brand-hover)}
+  .actionbar{flex:0 0 auto;padding:12px 16px;background:#fff;border-top:1px solid var(--n200)}
+  .tabbar{flex:0 0 auto;display:flex;background:#fff;border-top:1px solid var(--n200);padding:8px 0 12px}
+  .tabbar a{flex:1;text-align:center;font-size:11px;color:var(--n500);display:flex;flex-direction:column;gap:3px;align-items:center}
+  .tabbar a.on{color:var(--brand)}.tabbar .ic{width:20px;height:20px;border-radius:6px;background:currentColor;opacity:.85}
+  .back{display:inline-flex;align-items:center;gap:4px;color:var(--brand);font-size:15px;font-weight:500;padding:6px 0}
+  .field{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--n100)}
+  .field .l{font-size:12.5px;color:var(--n500)}.field .v{font-size:15px;font-weight:600}
   .prov{font-size:11px;font-weight:600;padding:2px 8px;border-radius:var(--r-full);margin-left:8px;white-space:nowrap}
-  .prov.ok{background:#E7F8EC;color:#1B873F}
-  .prov.q{background:#FFF3E0;color:#A85B00}
-  .mic{width:88px;height:88px;border-radius:50%;background:var(--brand);margin:14px auto;display:flex;align-items:center;justify-content:center;color:#fff;font-size:34px;box-shadow:0 6px 18px rgba(10,132,255,.4)}
-  .quote{background:var(--n100);border-radius:var(--r-md);padding:12px;font-size:15px;font-style:italic;color:var(--n700)}
-  .opt{border:2px solid var(--n200);border-radius:var(--r-md);padding:14px;margin:10px 0;cursor:pointer}
-  .opt.sel{border-color:var(--brand);background:#F5FAFF}
+  .prov.ok{background:#E7F8EC;color:#1B873F}.prov.q{background:#FFF3E0;color:#A85B00}
+  .mic{width:84px;height:84px;border-radius:50%;background:var(--brand);margin:12px auto;display:flex;align-items:center;justify-content:center;color:#fff;font-size:32px;box-shadow:0 6px 18px rgba(10,132,255,.4)}
+  .quote{background:var(--n100);border-radius:var(--r-md);padding:11px;font-size:14.5px;font-style:italic;color:var(--n700)}
+  /* radio-based option select (no JS) */
+  .opt{display:block;border:2px solid var(--n200);border-radius:var(--r-md);padding:13px;margin:9px 0;position:relative}
+  .opt input{position:absolute;opacity:0;pointer-events:none}
+  .opt:has(input:checked){border-color:var(--brand);background:#F5FAFF}
   .opt .ti{display:flex;justify-content:space-between;align-items:center}
-  .opt .nm{font-weight:700;font-size:16px}
-  .opt .pr{font-weight:700;font-size:16px;color:var(--brand)}
-  .opt .ds{font-size:13px;color:var(--n500);margin-top:4px}
-  .pay-method{display:flex;align-items:center;gap:12px;border:1px solid var(--n200);border-radius:var(--r-md);padding:14px;margin:8px 0;cursor:pointer;font-weight:600}
+  .opt .nm{font-weight:700;font-size:15.5px}.opt .pr{font-weight:700;font-size:15.5px;color:var(--brand)}
+  .opt .ds{font-size:13px;color:var(--n500);margin-top:3px}
+  .pay-method{display:flex;align-items:center;gap:12px;border:1px solid var(--n200);border-radius:var(--r-md);padding:14px;margin:8px 0;font-weight:600}
   .pay-method:active{background:var(--n50)}
-  .big-amt{font-size:40px;font-weight:700;text-align:center;letter-spacing:-.02em;margin:14px 0 4px}
-  .paid{text-align:center;padding:30px 0}
-  .check{width:80px;height:80px;border-radius:50%;background:var(--success);color:#fff;font-size:44px;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
-  /* desktop board */
-  .board{width:980px;max-width:96vw;height:660px;background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden;display:flex;flex-direction:column}
-  .board .bar{height:52px;border-bottom:1px solid var(--n200);display:flex;align-items:center;padding:0 18px;gap:14px}
-  .board .bar .k{font-weight:700;font-size:15px}
-  .board .bar .cmd{margin-left:auto;font-size:12px;color:var(--n500);border:1px solid var(--n200);border-radius:8px;padding:5px 10px}
-  .board .grid{flex:1;display:flex;min-height:0}
-  .lanes{flex:1;overflow:auto}
-  .timehdr{display:grid;grid-template-columns:120px repeat(5,1fr);border-bottom:1px solid var(--n200);position:sticky;top:0;background:#fff;z-index:2}
+  .big-amt{font-size:38px;font-weight:700;text-align:center;letter-spacing:-.02em;margin:12px 0 2px}
+  /* CSS-timed processing -> paid */
+  .payresult{position:relative;height:300px}
+  .payresult .proc,.payresult .done{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .payresult .proc{animation:hideAt 0s 1.4s forwards}
+  .payresult .done{opacity:0;animation:showAt 0s 1.4s forwards}
+  @keyframes hideAt{to{opacity:0;visibility:hidden}}
+  @keyframes showAt{to{opacity:1}}
+  .spinner{width:48px;height:48px;border:4px solid var(--n200);border-top-color:var(--brand);border-radius:50%;animation:spin .8s linear infinite;margin-bottom:14px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .check{width:74px;height:74px;border-radius:50%;background:var(--success);color:#fff;font-size:40px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+  /* ---- board ---- */
+  .board-wrap{justify-content:center;width:100%}
+  .board{width:980px;max-width:96vw;height:640px;background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden;display:flex;flex-direction:column}
+  .board .bar{height:50px;border-bottom:1px solid var(--n200);display:flex;align-items:center;padding:0 18px;gap:14px}
+  .board .bar .k{font-weight:700;font-size:15px}.board .bar .cmd{margin-left:auto;font-size:12px;color:var(--n500);border:1px solid var(--n200);border-radius:8px;padding:5px 10px}
+  .board .grid{flex:1;display:flex;min-height:0}.lanes{flex:1;overflow:auto}
+  .timehdr,.lane{display:grid;grid-template-columns:110px repeat(5,1fr)}
+  .timehdr{border-bottom:1px solid var(--n200);position:sticky;top:0;background:#fff}
   .timehdr div{padding:8px;font-size:11px;color:var(--n500);text-align:center;border-left:1px solid var(--n100)}
-  .lane{display:grid;grid-template-columns:120px repeat(5,1fr);border-bottom:1px solid var(--n100);min-height:84px}
-  .lane .who{padding:10px;font-size:13px;border-right:1px solid var(--n100)}
-  .lane .who .nm{font-weight:600}
-  .lane .who .st{font-size:11px;color:var(--n500)}
-  .cell{border-left:1px solid var(--n100);padding:6px;position:relative}
-  .jobc{background:#E5F1FF;border:1px solid #BBD9FF;border-radius:8px;padding:7px 8px;font-size:12px;cursor:pointer;height:100%}
-  .jobc .jt{font-weight:600;color:#0a3a6b}
-  .jobc .jm{color:#3a6ea5;font-size:11px;margin-top:2px}
+  .lane{border-bottom:1px solid var(--n100);min-height:80px}
+  .lane .who{padding:9px;font-size:13px;border-right:1px solid var(--n100)}.lane .who .nm{font-weight:600}.lane .who .st{font-size:11px;color:var(--n500)}
+  .cell{border-left:1px solid var(--n100);padding:6px}
+  .jobc{background:#E5F1FF;border:1px solid #BBD9FF;border-radius:8px;padding:7px;font-size:12px;height:100%}
+  .jobc .jt{font-weight:600;color:#0a3a6b}.jobc .jm{color:#3a6ea5;font-size:11px;margin-top:2px}
   .jobc.go{background:#E7F8EC;border-color:#B6E5C4}.jobc.go .jt{color:#185c2e}.jobc.go .jm{color:#2f7d49}
   .jobc.warn{background:#FFF3E0;border-color:#FFD89A}.jobc.warn .jt{color:#8a4b00}
-  .side{width:280px;border-left:1px solid var(--n200);display:flex;flex-direction:column}
-  .side .sh{padding:12px 14px;font-weight:700;font-size:13px;border-bottom:1px solid var(--n200)}
+  .side{width:270px;border-left:1px solid var(--n200);display:flex;flex-direction:column}
+  .side .sh{padding:11px 14px;font-weight:700;font-size:13px;border-bottom:1px solid var(--n200)}
   .feed{flex:1;overflow:auto;padding:6px 10px}
-  .fitem{padding:9px 6px;border-bottom:1px solid var(--n100);font-size:12.5px}
-  .fitem .tm{color:var(--n400);font-size:11px}
+  .fitem{padding:8px 6px;border-bottom:1px solid var(--n100);font-size:12.5px}.fitem .tm{color:var(--n400);font-size:11px}
   .fitem.warn{background:#FFF8EE;border-left:3px solid var(--warning);border-radius:4px;padding-left:9px}
   .queue{padding:8px 10px;border-top:1px solid var(--n200)}
   .qcard{background:#fff;border:1px dashed var(--n300);border-radius:8px;padding:8px;font-size:12px;margin:6px 0}
-  @media(max-width:430px){.phone{height:88vh}}
+  @media(max-width:420px){.phone{height:86vh}}
 </style>
 </head>
 <body>
 <div class="top">
-  <h1>Fieldwork</h1><span class="tag">clickable wireframes · tap through them</span>
-  <div class="nav" id="nav"></div>
+  <h1>Fieldwork</h1><span class="tag">clickable wireframes</span>
+  <div class="nav">
+    <a href="#today">1 Today</a><a href="#job">2 Job</a><a href="#capture">3 Capture</a>
+    <a href="#estimate">4 Estimate</a><a href="#payment">5 Pay</a><a href="#board">🖥 Board</a>
+  </div>
 </div>
 
-<div class="stage">
-  <p class="hint">📱 Technician flow — tap the pinned job to walk the loop. 🖥️ Switch to “Dispatch board” above for the office view.</p>
+<div class="stage app">
+  <p class="hint">Tap the chips above, or tap the pinned job on <b>Today</b> to walk the loop. No app needed — works right here.</p>
 
-  <!-- ========================= PHONE ========================= -->
+  <!-- PHONE -->
   <div class="phone">
     <div class="screen">
-      <div class="statusbar"><span>9:41</span><span class="dot">●●● &nbsp; Wi-Fi &nbsp; 100</span></div>
+      <div class="statusbar"><span>9:41</span><span>●●● Wi-Fi 100</span></div>
 
-      <!-- 1. TODAY -->
-      <section class="scr show" id="today">
-        <div class="hdr">
-          <p class="big">Today</p>
-          <div class="sub">Friday, June 13 · 4 visits</div>
-          <span class="offline">Offline · synced 8:02am</span>
-        </div>
+      <!-- 1 TODAY -->
+      <section class="scr" id="today">
+        <div class="hdr"><p class="big">Today</p><div class="sub">Friday, June 13 · 4 visits</div>
+          <span class="offline">Offline · synced 8:02am</span></div>
         <div class="body">
           <div class="label">In progress</div>
-          <div class="card tap" onclick="go('job')">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <span class="pill now">On site</span><span class="muted" style="font-size:13px">9:00–11:00</span>
-            </div>
-            <div style="font-weight:700;font-size:17px;margin-top:8px">Maria Reyes</div>
+          <a class="card tap" href="#job">
+            <div style="display:flex;justify-content:space-between;align-items:center"><span class="pill now">On site</span><span class="muted" style="font-size:13px">9:00–11:00</span></div>
+            <div style="font-weight:700;font-size:17px;margin-top:7px">Maria Reyes</div>
             <div class="muted" style="font-size:14px">AC not cooling · 18130 Oxnard St</div>
-            <div style="margin-top:10px;color:var(--brand);font-weight:600;font-size:14px">Open job ›</div>
-          </div>
+            <div style="margin-top:9px;color:var(--brand);font-weight:600;font-size:14px">Open job ›</div>
+          </a>
           <div class="label">Up next</div>
-          <div class="card" style="padding:4px 14px">
+          <div class="card" style="padding:2px 13px">
             <div class="row"><div class="t">11:30</div><div class="m"><div class="name">Tom Becker</div><div class="meta">Maintenance · tune-up</div></div><span class="pill gray">Scheduled</span></div>
             <div class="row"><div class="t">1:00</div><div class="m"><div class="name">Sunset Plaza</div><div class="meta">Quarterly HVAC · 4 units</div></div><span class="pill gray">Scheduled</span></div>
             <div class="row"><div class="t">3:00</div><div class="m"><div class="name">Lena Ortiz</div><div class="meta">No heat · diagnostic</div></div><span class="pill warn">Emergency</span></div>
           </div>
         </div>
-        <div class="tabbar">
-          <a class="on"><span class="ic"></span>Today</a><a><span class="ic"></span>Schedule</a>
-          <a><span class="ic"></span>Customers</a><a><span class="ic"></span>More</a>
-        </div>
+        <div class="tabbar"><a class="on"><span class="ic"></span>Today</a><a><span class="ic"></span>Schedule</a><a><span class="ic"></span>Customers</a><a><span class="ic"></span>More</a></div>
       </section>
 
-      <!-- 2. JOB -->
+      <!-- 2 JOB -->
       <section class="scr" id="job">
-        <div class="hdr"><div class="back" onclick="go('today')">‹ Today</div>
-          <div style="display:flex;justify-content:space-between;align-items:center">
-            <p class="big" style="font-size:24px">Maria Reyes</p><span class="pill now">On site</span>
-          </div>
-          <div class="sub">AC not cooling · Job #1432</div>
-        </div>
+        <div class="hdr"><a class="back" href="#today">‹ Today</a>
+          <div style="display:flex;justify-content:space-between;align-items:center"><p class="big" style="font-size:23px">Maria Reyes</p><span class="pill now">On site</span></div>
+          <div class="sub">AC not cooling · Job #1432</div></div>
         <div class="body">
           <div class="card" style="background:#F5FAFF;border-color:#BBD9FF">
             <div class="label" style="margin-top:0">Heads-up</div>
             <div class="kv"><b>Problem:</b> “AC stopped blowing cold last night.”</div>
             <div class="kv"><b>History:</b> capacitor replaced 14 months ago</div>
             <div class="kv"><b>Equipment:</b> Carrier 24ACC6 · SN 3208F19</div>
-            <div class="kv"><b>Access:</b> gate 4827 · friendly dog in yard 🐕</div>
+            <div class="kv"><b>Access:</b> gate 4827 · friendly dog 🐕</div>
           </div>
           <div class="label">Do the job</div>
-          <div class="card tap" onclick="go('capture')">📷 &nbsp;Capture — photo, voice note, readings <span style="float:right;color:var(--brand)">›</span></div>
-          <div class="card tap" onclick="go('estimate')">🧾 &nbsp;Build estimate <span style="float:right;color:var(--brand)">›</span></div>
-          <div class="card tap" onclick="go('payment')">💳 &nbsp;Collect payment <span style="float:right;color:var(--brand)">›</span></div>
+          <a class="card tap" href="#capture">📷 Capture — photo, voice, readings <span style="float:right;color:var(--brand)">›</span></a>
+          <a class="card tap" href="#estimate">🧾 Build estimate <span style="float:right;color:var(--brand)">›</span></a>
+          <a class="card tap" href="#payment">💳 Collect payment <span style="float:right;color:var(--brand)">›</span></a>
         </div>
-        <div class="actionbar"><button class="btn pri" onclick="go('capture')">Start work ›</button></div>
+        <div class="actionbar"><a class="btn pri" href="#capture">Start work ›</a></div>
       </section>
 
-      <!-- 3. CAPTURE / AI write-it-fills -->
+      <!-- 3 CAPTURE -->
       <section class="scr" id="capture">
-        <div class="hdr"><div class="back" onclick="go('job')">‹ Job</div><p class="big" style="font-size:24px">Capture</p>
-          <div class="sub">Speak it — I’ll fill the details</div></div>
+        <div class="hdr"><a class="back" href="#job">‹ Job</a><p class="big" style="font-size:23px">Capture</p><div class="sub">Speak it — I’ll fill the details</div></div>
         <div class="body">
           <div class="mic">🎤</div>
           <div class="quote">“Found a bad run capacitor, swapped it. Recommend a full tune-up next visit.”</div>
-          <div class="label">I filled this from your note <span class="prov ok" style="margin-left:4px">5 ✓</span> <span class="prov q">1 ⚠</span></div>
-          <div class="card" style="padding:2px 14px">
+          <div class="label">I filled this from your note <span class="prov ok">5 ✓</span> <span class="prov q">1 ⚠</span></div>
+          <div class="card" style="padding:2px 13px">
             <div class="field"><div><div class="l">Problem</div><div class="v">AC not cooling</div></div><span class="prov ok">✓ note</span></div>
             <div class="field"><div><div class="l">Diagnosis</div><div class="v">Failed run capacitor</div></div><span class="prov ok">✓ note</span></div>
             <div class="field"><div><div class="l">Work done</div><div class="v">Replaced run capacitor</div></div><span class="prov ok">✓ note</span></div>
             <div class="field"><div><div class="l">Material</div><div class="v">Run cap 45/5 µF — $24</div></div><span class="prov q">⚠ confirm</span></div>
             <div class="field" style="border:none"><div><div class="l">Follow-up</div><div class="v">Tune-up next visit</div></div><span class="prov ok">✓ note</span></div>
           </div>
-          <p class="muted" style="font-size:12.5px;text-align:center">You filled a full job from one sentence. Review the ⚠, then confirm.</p>
+          <p class="muted" style="font-size:12.5px;text-align:center">A full job from one sentence. Review the ⚠, then confirm.</p>
         </div>
-        <div class="actionbar"><button class="btn pri" onclick="go('estimate')">Confirm &amp; continue ›</button></div>
+        <div class="actionbar"><a class="btn pri" href="#estimate">Confirm &amp; continue ›</a></div>
       </section>
 
-      <!-- 4. ESTIMATE -->
+      <!-- 4 ESTIMATE -->
       <section class="scr" id="estimate">
-        <div class="hdr"><div class="back" onclick="go('capture')">‹ Capture</div><p class="big" style="font-size:24px">Estimate</p>
-          <div class="sub">Present options to Maria</div></div>
+        <div class="hdr"><a class="back" href="#capture">‹ Capture</a><p class="big" style="font-size:23px">Estimate</p><div class="sub">Present options to Maria</div></div>
         <div class="body">
-          <div class="opt" onclick="selOpt(this)"><div class="ti"><span class="nm">Good — Repair</span><span class="pr">$240</span></div><div class="ds">Replace capacitor, verify cooling</div></div>
-          <div class="opt sel" onclick="selOpt(this)"><div class="ti"><span class="nm">Better — Repair + Tune-up</span><span class="pr">$385</span></div><div class="ds">Repair + full system tune-up &amp; cleaning</div></div>
-          <div class="opt" onclick="selOpt(this)"><div class="ti"><span class="nm">Best — Replace unit</span><span class="pr">$6,400</span></div><div class="ds">New high-efficiency system · financing avail.</div></div>
+          <label class="opt"><input type="radio" name="opt"><div class="ti"><span class="nm">Good — Repair</span><span class="pr">$240</span></div><div class="ds">Replace capacitor, verify cooling</div></label>
+          <label class="opt"><input type="radio" name="opt" checked><div class="ti"><span class="nm">Better — Repair + Tune-up</span><span class="pr">$385</span></div><div class="ds">Repair + full system tune-up &amp; cleaning</div></label>
+          <label class="opt"><input type="radio" name="opt"><div class="ti"><span class="nm">Best — Replace unit</span><span class="pr">$6,400</span></div><div class="ds">New high-efficiency system · financing avail.</div></label>
           <div class="label">Signature</div>
-          <div class="card" style="height:90px;display:flex;align-items:center;justify-content:center;color:var(--n400);font-style:italic">✍︎ tap to sign</div>
+          <div class="card" style="height:84px;display:flex;align-items:center;justify-content:center;color:var(--n400);font-style:italic">✍︎ tap to sign</div>
         </div>
-        <div class="actionbar"><button class="btn pri" onclick="go('payment')">Approve &amp; collect ›</button></div>
+        <div class="actionbar"><a class="btn pri" href="#payment">Approve &amp; collect ›</a></div>
       </section>
 
-      <!-- 5. PAYMENT -->
+      <!-- 5 PAYMENT -->
       <section class="scr" id="payment">
-        <div class="hdr"><div class="back" onclick="go('estimate')">‹ Estimate</div><p class="big" style="font-size:24px">Payment</p></div>
-        <div class="body" id="paybody">
+        <div class="hdr"><a class="back" href="#estimate">‹ Estimate</a><p class="big" style="font-size:23px">Payment</p></div>
+        <div class="body">
           <div class="big-amt">$385.00</div>
           <p class="muted" style="text-align:center;margin-top:0">Better — Repair + Tune-up</p>
           <div class="label">How would you like to pay?</div>
-          <div class="pay-method" onclick="pay()">📲 &nbsp;Tap to Pay (card)</div>
-          <div class="pay-method" onclick="pay()">🏦 &nbsp;Bank transfer (ACH)</div>
-          <div class="pay-method" onclick="pay()">💵 &nbsp;Cash</div>
-          <div class="pay-method" onclick="pay()">🧾 &nbsp;Check</div>
-          <p class="muted" style="font-size:12px;text-align:center;margin-top:14px">“Paid” shows only after the charge is confirmed — never before.</p>
+          <a class="pay-method" href="#paid">📲 Tap to Pay (card)</a>
+          <a class="pay-method" href="#paid">🏦 Bank transfer (ACH)</a>
+          <a class="pay-method" href="#paid">💵 Cash</a>
+          <a class="pay-method" href="#paid">🧾 Check</a>
+          <p class="muted" style="font-size:12px;text-align:center;margin-top:12px">“Paid” shows only after the charge confirms — never before.</p>
         </div>
       </section>
 
-      <!-- success injected into payment -->
+      <!-- 5b PAID (CSS-timed) -->
+      <section class="scr" id="paid">
+        <div class="hdr"><a class="back" href="#payment">‹ Payment</a><p class="big" style="font-size:23px">Payment</p></div>
+        <div class="body">
+          <div class="payresult">
+            <div class="proc"><div class="spinner"></div><p class="muted">Processing… confirming the charge</p></div>
+            <div class="done"><div class="check">✓</div><div style="font-size:22px;font-weight:700">Paid · $385.00</div>
+              <p class="muted">Receipt texted to Maria. Job ready to close.</p>
+              <a class="btn pri" href="#today" style="margin-top:8px;max-width:240px">Close job &amp; back to Today ›</a></div>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 
-  <!-- ========================= BOARD ========================= -->
-  <section class="scr" id="board" style="display:none">
-    <div class="board">
-      <div class="bar"><span class="k">Dispatch</span><span class="muted" style="font-size:13px">Friday, June 13 · 6 techs</span><span class="cmd">⌘K  Jump to anything</span></div>
-      <div class="grid">
-        <div class="lanes">
-          <div class="timehdr"><div>Tech</div><div>8a</div><div>10a</div><div>12p</div><div>2p</div><div>4p</div></div>
-          <div class="lane"><div class="who"><div class="nm">Maria T.</div><div class="st">● on site</div></div>
-            <div class="cell"></div><div class="cell"><div class="jobc go" onclick="alert('Job #1432 — Reyes — On site')"><div class="jt">Reyes</div><div class="jm">AC repair</div></div></div><div class="cell"><div class="jobc"><div class="jt">Becker</div><div class="jm">Tune-up</div></div></div><div class="cell"></div><div class="cell"></div></div>
-          <div class="lane"><div class="who"><div class="nm">Dave K.</div><div class="st">● traveling</div></div>
-            <div class="cell"><div class="jobc"><div class="jt">Nguyen</div><div class="jm">Install</div></div></div><div class="cell"></div><div class="cell"></div><div class="cell"><div class="jobc"><div class="jt">Patel</div><div class="jm">Inspection</div></div></div><div class="cell"></div></div>
-          <div class="lane"><div class="who"><div class="nm">Sam R.</div><div class="st">○ available</div></div>
-            <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"><div class="jobc warn" onclick="alert('Skill warning: job needs EPA cert — override?')"><div class="jt">Ortiz ⚠</div><div class="jm">No heat</div></div></div></div>
-          <div class="lane"><div class="who"><div class="nm">Lee W.</div><div class="st">○ available</div></div>
-            <div class="cell"></div><div class="cell"><div class="jobc"><div class="jt">Sunset Plaza</div><div class="jm">Quarterly · 4u</div></div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div></div>
-        </div>
-        <div class="side">
-          <div class="sh">Live reports</div>
-          <div class="feed">
-            <div class="fitem warn"><div class="tm">9:38 · Maria</div>⚠ Older unit than expected — taking a look</div>
-            <div class="fitem"><div class="tm">9:21 · Maria</div>On site at Reyes</div>
-            <div class="fitem"><div class="tm">9:05 · Dave</div>On my way to Nguyen install</div>
-            <div class="fitem"><div class="tm">8:50 · Lee</div>Done — Becker paid by card ✅</div>
+  <!-- BOARD -->
+  <div class="board-wrap">
+    <section class="scr" id="board">
+      <div class="board">
+        <div class="bar"><span class="k">Dispatch</span><span class="muted" style="font-size:13px">Fri Jun 13 · 6 techs</span><span class="cmd">⌘K Jump to anything</span><a class="muted" href="#today" style="font-size:12px;border:1px solid var(--n200);border-radius:8px;padding:5px 10px">← phone view</a></div>
+        <div class="grid">
+          <div class="lanes">
+            <div class="timehdr"><div>Tech</div><div>8a</div><div>10a</div><div>12p</div><div>2p</div><div>4p</div></div>
+            <div class="lane"><div class="who"><div class="nm">Maria T.</div><div class="st">● on site</div></div><div class="cell"></div><div class="cell"><div class="jobc go"><div class="jt">Reyes</div><div class="jm">AC repair</div></div></div><div class="cell"><div class="jobc"><div class="jt">Becker</div><div class="jm">Tune-up</div></div></div><div class="cell"></div><div class="cell"></div></div>
+            <div class="lane"><div class="who"><div class="nm">Dave K.</div><div class="st">● traveling</div></div><div class="cell"><div class="jobc"><div class="jt">Nguyen</div><div class="jm">Install</div></div></div><div class="cell"></div><div class="cell"></div><div class="cell"><div class="jobc"><div class="jt">Patel</div><div class="jm">Inspection</div></div></div><div class="cell"></div></div>
+            <div class="lane"><div class="who"><div class="nm">Sam R.</div><div class="st">○ available</div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"><div class="jobc warn"><div class="jt">Ortiz ⚠</div><div class="jm">needs EPA cert</div></div></div></div>
+            <div class="lane"><div class="who"><div class="nm">Lee W.</div><div class="st">○ available</div></div><div class="cell"></div><div class="cell"><div class="jobc"><div class="jt">Sunset Plaza</div><div class="jm">Quarterly · 4u</div></div></div><div class="cell"></div><div class="cell"></div><div class="cell"></div></div>
           </div>
-          <div class="queue"><div class="muted" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em">Unassigned</div>
-            <div class="qcard">⚠ Ortiz — No heat (emergency) · needs EPA cert</div>
+          <div class="side">
+            <div class="sh">Live reports</div>
+            <div class="feed">
+              <div class="fitem warn"><div class="tm">9:38 · Maria</div>⚠ Older unit than expected — taking a look</div>
+              <div class="fitem"><div class="tm">9:21 · Maria</div>On site at Reyes</div>
+              <div class="fitem"><div class="tm">9:05 · Dave</div>On my way to Nguyen install</div>
+              <div class="fitem"><div class="tm">8:50 · Lee</div>Done — Becker paid by card ✅</div>
+            </div>
+            <div class="queue"><div class="muted" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em">Unassigned</div><div class="qcard">⚠ Ortiz — No heat (emergency) · needs EPA cert</div></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </div>
-
-<script>
-  const screens=['today','job','capture','estimate','payment','board'];
-  const labels={today:'1 · Today',job:'2 · Job',capture:'3 · Capture (AI)',estimate:'4 · Estimate',payment:'5 · Payment',board:'🖥️ Dispatch board'};
-  const nav=document.getElementById('nav');
-  screens.forEach(s=>{const b=document.createElement('button');b.textContent=labels[s];b.id='nav-'+s;b.onclick=()=>go(s);nav.appendChild(b);});
-  function go(id){
-    const phone=document.querySelector('.phone'), board=document.getElementById('board');
-    if(id==='board'){phone.style.display='none';board.style.display='block';}
-    else{phone.style.display='block';board.style.display='none';
-      document.querySelectorAll('.phone .scr').forEach(s=>s.classList.remove('show'));
-      document.getElementById(id).classList.add('show');
-      if(id==='payment')resetPay();
-    }
-    screens.forEach(s=>document.getElementById('nav-'+s).classList.toggle('active',s===id));
-    window.scrollTo({top:0,behavior:'smooth'});
-  }
-  function selOpt(el){document.querySelectorAll('#estimate .opt').forEach(o=>o.classList.remove('sel'));el.classList.add('sel');}
-  function pay(){
-    const b=document.getElementById('paybody');
-    b.innerHTML='<div class="paid"><div style="width:54px;height:54px;border:4px solid var(--n200);border-top-color:var(--brand);border-radius:50%;margin:60px auto 18px;animation:spin .8s linear infinite"></div><p class="muted">Processing… confirming the charge</p></div><style>@keyframes spin{to{transform:rotate(360deg)}}</style>';
-    setTimeout(()=>{b.innerHTML='<div class="paid"><div class="check">✓</div><div style="font-size:22px;font-weight:700">Paid · $385.00</div><p class="muted">Receipt texted to Maria. Job ready to close.</p></div><button class="btn pri" onclick="go(\'today\')" style="margin-top:6px">Close job &amp; back to Today ›</button>';},1400);
-  }
-  function resetPay(){const b=document.getElementById('paybody');if(b&&!b.querySelector('.big-amt')){b.innerHTML=document.getElementById('payTpl').innerHTML;}}
-  // store original payment markup
-  const payTpl=document.createElement('template');payTpl.id='payTpl';payTpl.innerHTML=document.getElementById('paybody').innerHTML;document.body.appendChild(payTpl);
-</script>
 </body>
 </html>
