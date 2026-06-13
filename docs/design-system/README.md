@@ -17,6 +17,12 @@ Fieldwork should feel like a precise tool that gets out of the way — closer to
 Apple Wallet than to a dashboard. Restrained color, confident type, real depth through layering and
 motion rather than ornament. The trade is the hero; the UI is the well-made handle.
 
+**House density: compact.** The product favors a **compact, information-dense** layout — tight,
+efficient rows and cards over airy, oversized spacing — while staying calm and uncluttered (it's
+"dense, not crowded"). This is a deliberate, owner-validated preference; the clickable
+[prototype](../prototype/fieldwork-prototype.html) is the reference. Spacing still uses the 4-pt grid,
+just biased toward the smaller steps; touch targets never drop below 44pt regardless of density.
+
 ---
 
 ## Foundations
