@@ -45,6 +45,8 @@ Read in order. Each document assumes the previous ones.
 | 16 | [Notes, Communication & Reflection](docs/16-notes-and-reflection.md) | One safe home for all writing: operational notes, team messages, and a private personal layer for daily notes, reflection, and growth |
 | 17 | [Screen-State Catalog](docs/17-screen-states.md) | The seven states (default/empty/loading/error/offline/no-permission/success) for every critical screen |
 
+**See it:** [Clickable prototype](docs/prototype/fieldwork-prototype.html) — the technician flow + dispatch board (open in a browser).
+
 ## The one-paragraph pitch
 
 **Fieldwork** is the operating system for a service business. A dispatcher runs the day from
@@ -53,8 +55,30 @@ quoting, collecting payment, and closing out, even with no signal in a basement.
 the money. The customer gets a tracking link that feels like ordering a rideshare. Every screen
 holds to a single standard: it should feel inevitable, fast, and quietly beautiful.
 
-## Status
+## Where things stand & the smooth path forward
 
-- **Now:** Product & design foundation (this repo).
-- **Next:** Monorepo scaffold + design-token package + clickable prototype of the technician
-  job flow and the dispatch board. See [Roadmap](docs/08-roadmap.md).
+> The control center. Everything connects; here's the state and the next steps so it all moves
+> smoothly without anything falling through.
+
+**✅ Done — the foundation (this repo is coherent and cross-linked):**
+- **Why & who:** [research](docs/research/market-and-competitors.md) · [pain points](docs/research/user-pain-points.md) · [strategy](docs/01-product-strategy.md) · [personas](docs/02-personas-and-roles.md)
+- **What & how it works:** [IA](docs/03-information-architecture.md) · [flows](docs/04-core-workflows.md) · [edge cases](docs/10-edge-cases.md) · [data model](docs/14-data-model.md)
+- **The experience & principles:** [design principles](docs/05-design-principles.md) · [design system](docs/design-system/README.md) · [transparency & control](docs/15-transparency-and-control.md) · [notes & reflection](docs/16-notes-and-reflection.md)
+- **The AI & the system shape:** [AI operating model](docs/13-ai-operating-model.md) · [system layers](docs/12-system-layers.md) · [architecture](docs/07-technical-architecture.md)
+- **The plan & the craft backlog:** [PRD](docs/09-prd.md) · [roadmap](docs/08-roadmap.md) · [UX/UI review (G1–G29)](docs/ux-ui-review.md) · [state catalog](docs/17-screen-states.md)
+- **First artifact:** the [clickable prototype](docs/prototype/fieldwork-prototype.html).
+
+**▶ Now — make it real & validate (the smooth next steps, in order):**
+1. **Iterate the prototype** from real reactions (density, the AI capture screen).
+2. **Add the last two core screens:** owner home / job costing, and the customer portal.
+3. **Find one pilot shop** (HVAC/plumbing/electrical) to react to the prototype — the highest-leverage validation.
+4. **Then build the Phase-1 slice** (the [quick-start](docs/12-system-layers.md): monorepo + tokens + the offline technician Job screen).
+
+**⏳ Open decisions (so nothing stalls):**
+- Confirm the name (**Fieldwork**?) and any brand direction beyond the iOS-blue system.
+- Confirm first vertical (HVAC/plumbing/electrical — chosen).
+- A pilot shop contact (or use the [find-a-partner guidance](docs/research/market-and-competitors.md) we discussed).
+
+**The one rule that keeps it smooth:** every new idea gets written into the doc it belongs to and
+cross-linked, so the foundation stays one coherent whole — and every build decision traces back to a
+goal in the [PRD](docs/09-prd.md). Nothing floats unattached.
