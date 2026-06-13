@@ -142,7 +142,7 @@
   <div class="nav">
     <a href="#today">1 Today</a><a href="#job">2 Job</a><a href="#capture">3 Capture</a>
     <a href="#estimate">4 Estimate</a><a href="#payment">5 Pay</a>
-    <a href="#owner">6 Owner</a><a href="#customer">7 Customer</a><a href="#board">🖥 Board</a>
+    <a href="#owner">6 Owner</a><a href="#customer">7 Customer</a><a href="#me">8 Me</a><a href="#board">🖥 Board</a>
   </div>
 </div>
 
@@ -173,7 +173,7 @@
             <div class="row"><div class="t">3:00</div><div class="m"><div class="name">Lena Ortiz</div><div class="meta">No heat · diagnostic</div></div><span class="pill warn">Emergency</span></div>
           </div>
         </div>
-        <div class="tabbar"><a class="on"><span class="ic"></span>Today</a><a><span class="ic"></span>Schedule</a><a><span class="ic"></span>Customers</a><a><span class="ic"></span>More</a></div>
+        <div class="tabbar"><a class="on"><span class="ic"></span>Today</a><a><span class="ic"></span>Schedule</a><a><span class="ic"></span>Customers</a><a href="#me"><span class="ic"></span>Me</a></div>
       </section>
 
       <!-- 2 JOB -->
@@ -211,7 +211,7 @@
             <div class="field"><div><div class="l">Material</div><div class="v">Run cap 45/5 µF — $24</div></div><span class="prov q">⚠ confirm</span></div>
             <div class="field" style="border:none"><div><div class="l">Follow-up</div><div class="v">Tune-up next visit</div></div><span class="prov ok">✓ note</span></div>
           </div>
-          <p class="muted" style="font-size:12.5px;text-align:center">A full job from one sentence. Review the ⚠, then confirm.</p>
+          <p class="muted" style="font-size:12.5px;text-align:center"><span class="offline">Saved on device · will sync</span><br>A full job from one sentence. Review the ⚠, then confirm.</p>
         </div>
         <div class="actionbar"><a class="btn pri" href="#estimate">Confirm &amp; continue ›</a></div>
       </section>
@@ -278,7 +278,7 @@
             </table>
             <p class="muted" style="font-size:11.5px;margin:8px 0 0">Materials over budget — flagged early. Tap any number to see the line items behind it.</p>
           </div>
-          <div class="muted" style="font-size:12px;text-align:center;margin-top:10px">Every number reconciles to the invoices behind it — to the penny.</div>
+          <div class="muted" style="font-size:12px;text-align:center;margin-top:10px">Every number reconciles to the invoices behind it — to the penny. · Synced to QuickBooks ✓</div>
         </div>
       </section>
 
@@ -302,6 +302,27 @@
           </div>
           <p class="muted" style="font-size:11.5px;text-align:center">Branded to the business — your customers never see “Fieldwork.”</p>
         </div>
+      </section>
+
+      <!-- 8 ME — private personal layer (anti-surveillance) -->
+      <section class="scr" id="me">
+        <div class="hdr"><p class="big" style="font-size:23px">My space</p><div class="sub">Private to you · your manager can’t see this 🔒</div></div>
+        <div class="body">
+          <div class="card" style="background:#FBFBFD">
+            <div class="label" style="margin-top:0">Today’s note <span class="pill" style="background:var(--n100);color:var(--n600)">🔒 Private</span></div>
+            <div class="quote" style="font-style:normal">“Reyes job ran long — older unit. Handled the upsell better than last month.”</div>
+          </div>
+          <div class="label">Who sees it when you write</div>
+          <div class="card" style="padding:2px 13px">
+            <div class="row"><div class="m"><div class="name">🔒 Private — only me</div><div class="meta">reflections, reminders, growth</div></div><span class="pill now">On</span></div>
+            <div class="row"><div class="m"><div class="name">👥 Team</div><div class="meta">message teammates</div></div></div>
+            <div class="row"><div class="m"><div class="name">🏢 Operational</div><div class="meta">goes on the job record</div></div></div>
+          </div>
+          <div class="label">Your growth</div>
+          <div class="card"><div class="kv">This month you noted wanting to learn <b>commercial refrigeration</b> three times.</div><div class="muted" style="font-size:12px">A private insight — yours to act on. Never shared upward.</div></div>
+          <p class="muted" style="font-size:11.5px;text-align:center">A safe place to think — not another place to be watched.</p>
+        </div>
+        <div class="tabbar"><a href="#today"><span class="ic"></span>Today</a><a><span class="ic"></span>Schedule</a><a><span class="ic"></span>Customers</a><a class="on"><span class="ic"></span>Me</a></div>
       </section>
     </div>
   </div>
@@ -327,7 +348,7 @@
               <div class="fitem"><div class="tm">9:05 · Dave</div>On my way to Nguyen install</div>
               <div class="fitem"><div class="tm">8:50 · Lee</div>Done — Becker paid by card ✅</div>
             </div>
-            <div class="queue"><div class="muted" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em">Unassigned</div><div class="qcard">⚠ Ortiz — No heat (emergency) · needs EPA cert</div></div>
+            <div class="queue"><div class="muted" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em">Unassigned</div><div class="qcard">⚠ Ortiz — No heat (emergency) · needs EPA cert</div><div class="muted" style="font-size:11px;margin-top:6px">Drag to a tech — double-booking &amp; skill conflicts are blocked before they happen.</div></div>
           </div>
         </div>
       </div>
