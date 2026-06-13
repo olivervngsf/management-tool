@@ -99,3 +99,66 @@ In order, to convert this strong foundation into something you can *see and feel
 > Bottom line: you didn't miss anything *strategically* — the thinking is complete and coherent.
 > What's left is the **craft layer**: turning these well-reasoned words into screens, states, and
 > words-on-buttons. That's the next phase, and this list is its backlog.
+
+---
+
+# Round 2 — review of docs 12–16 & data model (2026-06-13)
+
+The original review (§1–§5) covered docs 00–11. Since then, six docs were added — 12 (System
+Layers), 13 (AI Operating Model), 14 (Data Model, incl. job-costing & customer-portal), 15
+(Transparency & Control), 16 (Notes & Reflection) — each introducing **new product concepts that
+imply new user-facing surfaces.** This round reviews them.
+
+## R2.1 Coherence re-check ✅
+
+| Check | Result |
+|---|---|
+| Internal links & anchors (incl. `[§15](#…)` style) | ✅ all resolve |
+| README index vs. files/titles | ✅ matches (00–16) |
+| Entity-name consistency (Customer/Property/Job/Visit/Agreement/Project) across docs 03, 04, 14 | ✅ consistent |
+| Contradictions with strategy / IA / principles / PRD | ✅ none found |
+| New concepts reinforce (not drift from) existing themes (trust, transparency, offline) | ✅ healthy |
+
+**One terminology nit (fixed in this pass):** doc 14 named the work-site entity "**Property /
+Location**," which collides with the org-level branch "**Location**" (dispatch hub) in the
+[IA object model](03-information-architecture.md). The IA itself is correct; doc 14 now uses
+**Property** for the work site, with a note distinguishing it from the branch Location.
+
+## R2.2 New gap analysis — surfaces introduced by docs 12–16
+
+The new concepts add ~15 surfaces/components/states **not** in the G1–G14 backlog. Same format and
+priority scale (P1 before/with prototype · P2 before build · P3 before GA).
+
+| # | Missing artifact | Pri | Why it matters | What it should contain |
+|---|---|:---:|---|---|
+| G15 | **One-Line Report surface** ([d15](15-transparency-and-control.md)) | P1 | Your signature transparency pulse — promised, undesigned | Tech composition (auto from status taps + optional voice→text line), office **stream/inbox** view, states (sent / pending-offline / failed / read), the ⚠ concern-flag UI |
+| G16 | **Personal Reflection journal** ([d16](16-notes-and-reflection.md)) | P1 | The "safe place" / anti-surveillance promise lives or dies in this UI | Private journal surface, the **3-level visibility selector** (operational / team / private), a clear privacy affordance, the "promote/share across boundary" action, the look-back digest |
+| G17 | **Write-it-fills review screen** ([d13](13-ai-operating-model.md) P1) | P1 | The core AI input ships in R1; the review step is where trust is built | Filled-field layout, **provenance labels** (✓ from your note / ⚠ confirm), confidence styling, edit-in-place, sticky Confirm/Edit affordances |
+| G18 | **Human-gate (approval) screen** ([d13](13-ai-operating-model.md)) | P1 | The accountability gate — the heart of "stay in control" | Plain-language "what will happen" summary, one-tap approve/edit, approval + audit logging, states (ready / processing / success / error) |
+| G19 | **AI self-reporting UI** ([d13](13-ai-operating-model.md)) | P1 | "Honest about limits" needs a real surface | Blockers ("part not in pricebook — add?"), confidence summary ("5 ✓ / 1 ⚠"), detail-on-tap, **Confirm locked until flags resolved** |
+| G20 | **AI Capability Charter page** ([d13](13-ai-operating-model.md)) | P1 | "They know clearly what AI can/can't do" — the visible boundary | Plain-language can / always-ask / never list, role variants, always-current + change notification |
+| G21 | **Operational-awareness alerts** ([d13](13-ai-operating-model.md)) | P1 | "Raise the concern before it's too late" needs UI | Off-plan / late / blocked notifications, board **urgency indicators**, the shared event view (extends G8) |
+| G22 | **Job-costing / profitability view** ([d14 §15](14-data-model.md)) | P2 | Owner transparency; validated by ServiceTitan's own ad | Budget vs actual table, over-budget flag, variance formatting, **drill-down to backing data** ("to the penny"), where it lives on the Owner home (makes G11 concrete) |
+| G23 | **Customer self-service portal** ([d14](14-data-model.md)) | P2 | "100% transparent contracts" — drives renewals; most-seen surface | No-login link entry, contract status, visits list, balance/pay, responsive + WCAG 2.2 AA |
+| G24 | **Service-Agreement admin UI** ([d14 §8](14-data-model.md)) | P2 | Contracts are the recurring-revenue engine | Template wizard, sell-to-customer flow, recurring-visit scheduling, agreement list/renewals, visit planner |
+| G25 | **Project management surfaces** ([d14 §7](14-data-model.md)) | P2–P3 | Multi-visit installs need phases & progress billing | Project/phase setup, change orders, progress billing, project board (tech vs dispatch views), PO integration |
+| G26 | **Configuration-layer admin UI** ([d12 L3](12-system-layers.md)) | P2 | **Without this the flexibility thesis is only theoretical** | JobType builder, no-code **Form builder**, role/permission matrix, AI-guardrail setup wizard, pricebook management |
+| G27 | **Concern-raising surface** ([d15 §3](15-transparency-and-control.md)) | P2 | The human side of early-warning | One-tap concern entry, category/severity, where it surfaces, retract |
+| G28 | **Audit-log / accountability view** ([d13](13-ai-operating-model.md)/[d15](15-transparency-and-control.md)) | P2 | "Everything logged & traceable" needs somewhere to look | Payment / approval / change log (who/what/when/why), exportable |
+| G29 | **Confidence / Provenance component** ([d13](13-ai-operating-model.md)) | P1 | "Show your work" must look identical everywhere | One reusable "where-from + how-sure" component used across notes, estimate lines, and gates |
+
+## R2.3 Updated recommendations
+
+- **Design the "trust-surface family" together.** G15, G16, G20, G21, G28, G29 all express the same
+  values (transparency, control, honesty). Design them as one coherent family — shared metaphors for
+  "private vs shared," "how sure," and "who approved" — so trust *feels* consistent, not bolted on.
+- **G26 (configuration UI) is the highest-leverage P2.** It's what turns the LEGO/flexibility thesis
+  from a doc into a real capability; a clumsy config surface would quietly cap how many trades you can
+  serve. Prioritize it within the build phase.
+- **Build order, updated:** the original G1→G2→G3/G4→G14 sequence still holds. Fold the **P1 new
+  gaps** in where they belong: G17/G18/G19/G29 ride alongside the technician-Job wireframes (G2);
+  G15/G16 alongside the same flow; G20/G21 with the board. The P2 surfaces (G22–G28) follow with the
+  office/admin screens.
+- **No strategic gaps.** Round 2, like Round 1, finds the thinking complete and coherent — every new
+  concept is sound; what's missing is, again, the **craft layer** (screens/states/words) for the new
+  surfaces. The backlog now runs **G1–G29**.

@@ -50,7 +50,7 @@ Organization
  └─ Customer (account / who pays) ───────────────┐
      ├─ Contact(s)                               │
      ├─ Service Agreement / Membership  ◀── CONTRACT (recurring revenue; generates Jobs)
-     └─ Property / Location (where work happens)  │
+     └─ Property (where work happens)  │
          ├─ Equipment / Asset                     │
          └─ Project  ◀── multi-visit container (install/remodel)
              └─ Job (work order) ◀───────────────┘
@@ -103,8 +103,10 @@ to specific properties.
 | Linked properties | 🏢 | |
 | Per-contact comms preferences | 🏢🙋 | |
 
-### 3. Property / Location ("where work happens")
+### 3. Property ("where work happens")
 Belongs to one Customer; a customer can have many. **Equipment lives here, not on the customer.**
+(Not to be confused with the org-level **Location** in the [IA](03-information-architecture.md) — that's
+a *branch / dispatch hub*; this is the service address where a job happens.)
 
 | Field | Who | Notes |
 |---|---|---|

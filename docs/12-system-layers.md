@@ -187,7 +187,7 @@ The minimum that proves the whole system:
 | Layer | Build *only* this for the first slice |
 |---|---|
 | 1 · Foundation | Customer · Property · Job · Visit · one User with a Technician role |
-| 2 · Bricks | Just two: **capture** (photo/voice/notes) and **payment**. Nothing else yet |
+| 2 · Bricks | For the R1 slice, just two: **capture** (photo/voice/notes) and **payment**. (Layer 2's full set — scheduling, dispatch, estimating, invoicing, inventory… — is built in later phases, not now.) |
 | 3 · Configuration | One JobType ("Service Call") with one simple form. Hard-code the rest for now |
 | 4 · Experience | One surface: the **mobile Job screen**, offline-first |
 | 5 · Intelligence | Skip for v0 — leave the hook, add voice→notes next |
