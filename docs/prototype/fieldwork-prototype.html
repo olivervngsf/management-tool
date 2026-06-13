@@ -72,6 +72,8 @@
   .opt{display:block;border:2px solid var(--n200);border-radius:var(--r-md);padding:13px;margin:9px 0;position:relative}
   .opt input{position:absolute;opacity:0;pointer-events:none}
   .opt:has(input:checked){border-color:var(--brand);background:#F5FAFF}
+  .optrow{display:flex;gap:10px;align-items:flex-start}
+  .thumb{width:44px;height:44px;border-radius:8px;background:var(--n100);display:flex;align-items:center;justify-content:center;font-size:20px;flex:0 0 auto}
   .opt .ti{display:flex;justify-content:space-between;align-items:center}
   .opt .nm{font-weight:700;font-size:15.5px}.opt .pr{font-weight:700;font-size:15.5px;color:var(--brand)}
   .opt .ds{font-size:13px;color:var(--n500);margin-top:3px}
@@ -216,17 +218,21 @@
         <div class="actionbar"><a class="btn pri" href="#estimate">Confirm &amp; continue ›</a></div>
       </section>
 
-      <!-- 4 ESTIMATE -->
+      <!-- 4 ESTIMATE / PROPOSAL -->
       <section class="scr" id="estimate">
-        <div class="hdr"><a class="back" href="#capture">‹ Capture</a><p class="big" style="font-size:23px">Estimate</p><div class="sub">Present options to Maria</div></div>
+        <div class="hdr"><a class="back" href="#capture">‹ Capture</a><p class="big" style="font-size:23px">Proposal</p><div class="sub">Photo-rich options · sign on the spot</div></div>
         <div class="body">
-          <label class="opt"><input type="radio" name="opt"><div class="ti"><span class="nm">Good — Repair</span><span class="pr">$240</span></div><div class="ds">Replace capacitor, verify cooling</div></label>
-          <label class="opt"><input type="radio" name="opt" checked><div class="ti"><span class="nm">Better — Repair + Tune-up</span><span class="pr">$385</span></div><div class="ds">Repair + full system tune-up &amp; cleaning</div></label>
-          <label class="opt"><input type="radio" name="opt"><div class="ti"><span class="nm">Best — Replace unit</span><span class="pr">$6,400</span></div><div class="ds">New high-efficiency system · financing avail.</div></label>
+          <label class="opt"><input type="radio" name="opt">
+            <div class="optrow"><div class="thumb">🔧</div><div style="flex:1;min-width:0"><div class="ti"><span class="nm">Good — Repair</span><span class="pr">$240</span></div><div class="ds">Replace capacitor, verify cooling</div></div></div></label>
+          <label class="opt"><input type="radio" name="opt" checked>
+            <div class="optrow"><div class="thumb">🛠️</div><div style="flex:1;min-width:0"><div class="ti"><span class="nm">Better — Repair + Tune-up</span><span class="pr">$385</span></div><div class="ds">Repair + full system tune-up &amp; cleaning</div></div></div></label>
+          <label class="opt"><input type="radio" name="opt">
+            <div class="optrow"><div class="thumb" style="font-size:23px">❄️</div><div style="flex:1;min-width:0"><div class="ti"><span class="nm">Best — Replace unit</span><span class="pr">$6,400</span></div><div class="ds">New high-efficiency system · financing avail.</div></div></div></label>
           <div class="label">Signature</div>
-          <div class="card" style="height:84px;display:flex;align-items:center;justify-content:center;color:var(--n400);font-style:italic">✍︎ tap to sign</div>
+          <div class="card" style="height:80px;display:flex;align-items:center;justify-content:center;color:var(--n400);font-style:italic">✍︎ tap to sign</div>
+          <p class="muted" style="font-size:11.5px;text-align:center">Professional proposal — the customer compares options &amp; signs right here, in hours not days.</p>
         </div>
-        <div class="actionbar"><a class="btn pri" href="#payment">Approve &amp; collect ›</a></div>
+        <div class="actionbar"><a class="btn pri" href="#payment">Sign &amp; Accept ›</a></div>
       </section>
 
       <!-- 5 PAYMENT -->

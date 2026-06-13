@@ -225,18 +225,33 @@ signed agreement). It **generates Visits/Jobs** on a schedule.
 > drives renewals. Our customer-facing surface ([no-download link](04-core-workflows.md)) should show
 > the same: their agreement, what's covered, what's coming, what's owed.
 
-### 9. Estimate / Quote
+### 9. Estimate / Quote / Proposal
+A quick in-field **estimate** and a polished customer-facing **proposal** are the same object in two
+presentations. The proposal is the presentation-grade view — *"send proposals in hours, not days"*
+([reference screenshot](research/assets/servicetitan-proposals.jpeg)).
+
 | Field | Who | Notes |
 |---|---|---|
-| Quote # | 🔧🏢 | |
+| Quote / Proposal # | 🔧🏢 | linked to the Job (e.g. "HVAC RTU Replacement") |
 | Line items: description, qty, unit price, **cost**, tax, type (service/material/labor) | 🔧🏢 | cost enables margin |
-| **Options / tiers** (good/better/best) | 🔧🙋 | each with its own subtotal |
+| **Options / tiers** (good/better/best, or named system options) | 🔧🙋 | each is its own card with a **name** ("System Replacement – 20 Ton"), description, and **total price** |
+| Per-option **photo / image** | 🙋 | product/equipment image — "professional presentation" |
+| Per-option **status** | 🔧🙋 | ready to sign · signed · declined |
+| Per-option **Sign & Accept** | 🙋 | customer signs the chosen option on the spot ("frictionless digital signatures") |
 | Optional line items | 🙋 | customer can select/deselect |
-| Status | 🔧🏢 | sent / approved (sold) / declined / signed |
+| Status (overall) | 🔧🏢 | sent / approved (sold) / declined / signed |
 | Deposit required | 🏢🙋 | % or fixed |
 | **E-signature** | 🔧🙋 | editing an approved quote voids the signature |
 | Validity / expiration, terms, disclaimer | 🏢🙋 | |
 | Financing offer | 🙋 | on the total (minus deposit) |
+
+> **Estimate vs. Proposal — same object, two modes.** In the field the tech builds fast (the
+> [under-30-second](09-prd.md) line-item estimate). For big-ticket work (a system replacement) it
+> renders as a **proposal**: branded, photo-rich, multi-option cards the customer can compare and
+> **Sign & Accept** right there or from the [customer portal](#8-service-agreement--membership-the-contract)
+> (whose nav also carries **Proposals · Jobs · Invoices · Equipment · Service Agreements**). The ad's
+> selling point — *proposals in hours not days* — is our speed + AI-assisted estimating thesis on the
+> sales surface.
 
 ### 10. Invoice
 | Field | Who | Notes |
