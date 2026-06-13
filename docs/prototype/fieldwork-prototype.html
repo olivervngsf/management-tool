@@ -24,7 +24,7 @@
   .top .tag{font-size:11px;color:var(--n500)}
   .nav{display:flex;gap:6px;flex-wrap:wrap;margin-left:auto}
   .nav a{font-size:12.5px;border:1px solid var(--n200);background:#fff;color:var(--n700);padding:6px 11px;border-radius:var(--r-full)}
-  .stage{display:flex;justify-content:center;padding:24px 14px 60px}
+  .stage{display:flex;flex-direction:column;align-items:center;padding:24px 14px 60px}
   .hint{width:100%;text-align:center;color:var(--n500);font-size:12.5px;margin:0 auto 16px;max-width:520px}
   /* ---- phone frame ---- */
   .phone{width:380px;max-width:94vw;height:760px;background:#000;border-radius:46px;padding:10px;box-shadow:var(--shadow-lg)}
@@ -111,7 +111,20 @@
   .fitem.warn{background:#FFF8EE;border-left:3px solid var(--warning);border-radius:4px;padding-left:9px}
   .queue{padding:8px 10px;border-top:1px solid var(--n200)}
   .qcard{background:#fff;border:1px dashed var(--n300);border-radius:8px;padding:8px;font-size:12px;margin:6px 0}
-  @media(max-width:420px){.phone{height:86vh}}
+  .pill{white-space:nowrap;flex:0 0 auto}
+  /* ---- MOBILE: drop the bezel, fill the screen like a real app ---- */
+  @media(max-width:560px){
+    .top{position:static}
+    .stage{padding:0 0 40px}
+    .hint{padding:14px 16px}
+    .phone{width:100%;max-width:100%;height:auto;border-radius:0;padding:0;background:transparent;box-shadow:none}
+    .screen{border-radius:0;height:auto}
+    .statusbar{display:none}
+    .scr{min-height:78vh}
+    .body{overflow:visible}
+    .hdr .big{font-size:24px}
+    .board{width:100%;height:auto}
+  }
 </style>
 </head>
 <body>
