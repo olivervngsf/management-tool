@@ -72,8 +72,15 @@ Metrics are grouped so you can see success at a glance — each is **leading** (
 |---|---|---|
 | Perceived primary-action latency | < 100 ms | leading |
 | Cold launch → usable | < 2 s | leading |
-| Taps to complete a job step (capture) | "under-30-second job" | leading |
+| **Time to complete a core job-to-be-done** | **< 30 seconds** | leading |
 | App rating — **iOS *and* Android** | ≥ 4.5★ both (no Android gap) | lagging |
+
+> **Note — the 30-second rule:** a *job-to-be-done* is one discrete task the user came to do —
+> capture a note/photo, add a line item, send a One-Line Report, take a payment step. **Each must be
+> completable in under 30 seconds.** Measure real time from intent → done (not taps), on a phone,
+> with gloves, on a mediocre connection. If a task can't be done in 30s, it's a design defect —
+> simplify it (fewer fields, voice/photo over typing, smart defaults, AI write-it-fills). This is the
+> "under-30-second job" as a hard target; it governs R1.5 and the whole technician loop.
 
 **③ Reliability & trust (does it just work?)**
 | Metric | Target | L/L |
