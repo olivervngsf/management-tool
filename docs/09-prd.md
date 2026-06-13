@@ -1,7 +1,7 @@
 # 09 · Product Requirements Document (PRD)
 
 **Product:** Fieldwork — field service management for the trades
-**Status:** Foundation / pre-build · **Last updated:** 2026-06-12
+**Status:** Foundation / pre-build · **Last updated:** 2026-06-13
 **Owner:** Product · **Source of truth for:** scope, requirements, acceptance criteria, metrics
 
 > This PRD operationalizes the [Strategy](01-product-strategy.md), grounded in
@@ -10,6 +10,13 @@
 > It scopes **Phase 1–3** (the wedge through the money path) in requirement-level detail; later
 > phases are summarized. Requirements use **MoSCoW** (Must / Should / Could / Won't-yet) and each
 > Must has acceptance criteria.
+>
+> **2026-06-13 update:** absorbs the [AI Operating Model](13-ai-operating-model.md),
+> [Transparency & Control](15-transparency-and-control.md), [Notes & Reflection](16-notes-and-reflection.md),
+> and the [Data Model](14-data-model.md) — adding requirements for the One-Line Report, the personal
+> reflection layer, the AI gate/transparency, job costing, contracts & the customer portal, and the
+> configuration layer. New requirements name their [UX backlog](ux-ui-review.md) gap (G15–G29) for
+> design traceability.
 
 ---
 
@@ -43,22 +50,70 @@ priced honestly and configurable across trades.
 - Enterprise multi-franchise consolidation.
 - Native Swift/Kotlin rewrites (Expo carries us past PMF).
 
-## 3. Success metrics
+## 3. Success metrics — "what success looks like"
 
-| Metric | Target | Tied to |
+**North-star: Technician daily active use > 90%** of assigned techs. If the field user won't use it,
+nothing downstream matters ([strategy](01-product-strategy.md)). Everything below ladders to it.
+
+Metrics are grouped so you can see success at a glance — each is **leading** (predicts) or **lagging**
+(confirms). Targets are starting bars to refine with real shops.
+
+**① Adoption & retention — the wedge (the most important group)**
+| Metric | Target | L/L |
 |---|---|---|
-| Technician daily active use (of assigned techs) | > 90% | Wedge / G1–G2 |
-| Offline job completion (no signal) | 100% of [Flow 1](04-core-workflows.md) | G1 |
-| Perceived primary-action latency | < 100 ms | Speed principle |
-| Cold launch → usable | < 2 s | Speed |
-| New-tech first job without training | ≥ 95% succeed | G2 |
-| Time-to-first-dispatch for a new shop | < 1 day | G5 |
-| Today's-revenue reconciliation error | $0.00 | G4 |
-| Board update propagation (field → dispatcher) | < 1 s | G3 |
-| Second-vertical onboarding without code | achievable | G6 |
+| Technician daily active use (of assigned techs) | **> 90%** | lagging |
+| New tech completes first job **without training** | ≥ 95% | leading |
+| Technician satisfaction / NPS | > 50 (strong) | lagging |
+| Shop (logo) gross retention | > 90%/yr | lagging |
+| Time-to-first-dispatch for a new shop | < 1 day | leading |
 
-The **north-star is technician adoption** — if the field user won't use it, nothing downstream
-matters ([strategy](01-product-strategy.md)).
+**② Experience & speed (do they *feel* it?)**
+| Metric | Target | L/L |
+|---|---|---|
+| Perceived primary-action latency | < 100 ms | leading |
+| Cold launch → usable | < 2 s | leading |
+| Taps to complete a job step (capture) | "under-30-second job" | leading |
+| App rating — **iOS *and* Android** | ≥ 4.5★ both (no Android gap) | lagging |
+
+**③ Reliability & trust (does it just work?)**
+| Metric | Target | L/L |
+|---|---|---|
+| Offline job completion (no signal) | 100% of [Flow 1](04-core-workflows.md) | leading |
+| **Data-loss incidents** | **0** | lagging |
+| Sync success rate | > 99.5% | leading |
+| Board update propagation (field → dispatcher) | < 1 s | leading |
+
+**④ Money correctness & impact**
+| Metric | Target | L/L |
+|---|---|---|
+| Today's-revenue reconciliation error | **$0.00** | lagging |
+| Invoices paid **on-site** (no AR chase) | rising % | lagging |
+| Days-sales-outstanding (AR) for the shop | falling | lagging |
+
+**⑤ Transparency & communication (your stated goal)**
+| Metric | Target | L/L |
+|---|---|---|
+| Jobs with a One-Line Report pulse | > 95% | leading |
+| Out-of-scope work caught **before** invoice | rising % | leading |
+| Customer on-my-way / portal link open rate | high | lagging |
+
+**⑥ AI — trust-first**
+| Metric | Target | L/L |
+|---|---|---|
+| AI-filled fields accepted (after human review) | high, with edits welcome | leading |
+| Admin time saved per job (less data entry) | rising | lagging |
+| Money/customer actions that were human-approved | **100%** (gate adherence) | lagging |
+
+**⑦ Flexibility & growth (the flywheel)**
+| Metric | Target | L/L |
+|---|---|---|
+| 2nd vertical onboarded **by config, no code** | achievable | leading |
+| New shops arriving via **word-of-mouth/referral** | rising % | lagging |
+| Expansion (seats / agreements per shop over time) | rising | lagging |
+
+> **How to read it:** watch the **leading** metrics weekly (they tell you early if you're winning);
+> the **lagging** metrics (retention, NPS, referral, reconciliation) are the proof. The single number
+> that matters most early is **technician daily use** — get that, and the rest follows.
 
 ## 4. Users & roles
 
@@ -132,6 +187,29 @@ Format: **[ID] (MoSCoW)** requirement → *Acceptance criteria.* Edge-case IDs r
   *AC: full Flow 1 completed in airplane mode; conflicts resolve field-wins for captures (A4);
   nothing lost on app kill / dead battery / storage pressure (A2, A8).*
 
+**AI assist — write-it-fills + the gate** ([AI Operating Model](13-ai-operating-model.md))
+- **R1.12 (Must)** Tech speaks/types a sentence; AI fills structured fields (problem, diagnosis,
+  work, materials, follow-up), each showing **provenance**, before the tech confirms. *(UX: G17, G29)*
+  *AC: every AI-filled value shows its source (✓ from your note / ⚠ confirm); low-confidence items
+  are flagged, never auto-committed; works toward the "under-30-second job" (R1.5).*
+- **R1.13 (Must)** A **human gate** precedes any committed, sent, or charged action; AI never acts
+  autonomously on money/customer/irreversible steps. *(UX: G18)*
+  *AC: gate states plain-language summary ("this will charge $240, email a receipt"); one-tap
+  approve/edit; approval logged with who/when (H4); nothing on the [autonomy ladder](13-ai-operating-model.md)
+  above the configured level executes without it.*
+
+**The One-Line Report (status pulse — tech side)** ([Transparency](15-transparency-and-control.md))
+- **R1.14 (Must)** Status taps the tech already makes (on-my-way/arrived/paid) **auto-generate** a
+  one-line update to the office; the tech can add one spoken/typed sentence. *(UX: G15)*
+  *AC: no extra step for the auto lines; optional add ≤ 1 sentence via voice→text; queues offline,
+  sends on reconnect (A3).*
+
+**Personal notes & reflection (the private layer)** ([Notes & Reflection](16-notes-and-reflection.md))
+- **R1.15 (Should)** Each user has a **private-by-default** personal notes space, plus a clear
+  3-level visibility choice (operational / team / private) when writing. *(UX: G16)*
+  *AC: private notes are never visible to managers/admins and cannot be exposed by an admin setting;
+  the active visibility is always labeled; sharing a note is one deliberate action (NFR12).*
+
 ### R2 — The Dispatcher's Board
 
 - **R2.1 (Must)** Live board: techs × time, jobs as cards, unassigned queue.
@@ -151,6 +229,19 @@ Format: **[ID] (MoSCoW)** requirement → *Acceptance criteria.* Edge-case IDs r
   auto-complete from history.
   *AC: wide-window and fixed-time appointments both modeled (B8); multi-tech crews supported (B9).*
 
+**Awareness & early warning** ([Transparency §2–3](15-transparency-and-control.md))
+- **R2.8 (Must)** Office sees a live **stream of One-Line Reports** and can scan the day at a glance.
+  *(UX: G15)*
+  *AC: chronological, per-tech; concern-flagged (⚠) lines surface to the top; read/unread states.*
+- **R2.9 (Must)** **Raise a concern** in one tap (tech) **and** AI **operational-awareness** alerts
+  (running late, blocked/late part, trending out-of-scope) surface to the right person *early*.
+  *(UX: G21, G27)*
+  *AC: concern goes up immediately with context; out-of-scope is flagged *before* invoice time (links
+  to D-series money cases); late-window flagged before the customer calls (B-series).*
+- **R2.10 (Should)** AI **receptionist/booking** proposes a booking from an inbound call/text; a
+  human approves at the gate (L2). *(UX: G18; [AI model](13-ai-operating-model.md))*
+  *AC: proposed booking lands in the same Job object; office confirms before it hits the board.*
+
 ### R3 — The Money Path + Owner's Home
 
 - **R3.1 (Must)** Approved estimate **becomes** the invoice — no re-keying.
@@ -164,13 +255,32 @@ Format: **[ID] (MoSCoW)** requirement → *Acceptance criteria.* Edge-case IDs r
   *AC: no double-posts; failures visible and retryable (D8).*
 - **R3.5 (Should)** Online self-service booking into the same Job object.
 
+**Transparency, contracts & job costing** ([Data Model](14-data-model.md), [Transparency §4](15-transparency-and-control.md))
+- **R3.6 (Must)** **Financial transparency:** clear up-front estimate options; open payment choice
+  (card/ACH/cash/check/financing); plain-language contracts (what's covered, cadence, renewal); no
+  hidden fees — out-of-scope work is re-approved, not slipped in.
+  *AC: customer always sees what they owe and how to pay; changes re-approved (links R2.9, D-series).*
+- **R3.7 (Should)** **Job costing / profitability** on a Job/Project/Agreement: budget vs actual vs
+  variance vs % used, with over-budget flagged; actuals **derived** from real payments/labor/materials.
+  *(UX: G22; [data §15](14-data-model.md))*
+  *AC: reconciles to the penny with backing data (D7); drill-down to the line items behind a number.*
+- **R3.8 (Should)** **Customer self-service portal** (no download): the customer sees their agreement
+  status, upcoming/past visits, balance, and can pay. *(UX: G23)*
+  *AC: token-link access, no forced account (G1); contract/visit/balance match the office to the penny;
+  WCAG 2.2 AA.*
+
 ### R4 / R5 — summarized
 
-- **R4 (Configurability):** admin-configurable JobTypes, Forms, Pricebook; composable role builder
-  (E4); recurring/maintenance-plan engine (B7); onboard a 2nd vertical by config (F1–F3); multi-
-  location scoping (F4).
-- **R5 (Scale & polish):** reporting depth, inventory/truck stock, WCAG 2.2 AA audit, performance
-  hardening to the NFR bar, reliability/observability, payments security/compliance baseline.
+- **R4 (Configurability & the config layer):** the admin **configuration surface** *(UX: G26)* —
+  JobType builder, no-code **Form builder** (trade-specific readings/checklists, incl. compliance
+  like EPA logs), composable role/permission matrix (E4), and the **AI guardrail setup + Capability
+  Charter** *(UX: G20; [AI model](13-ai-operating-model.md))*. Plus: **Service Agreements / memberships**
+  engine that generates recurring visits (B7), **Projects** (multi-visit, phases, progress billing,
+  POs) *(UX: G24, G25; [data §7–8](14-data-model.md))*, onboard a 2nd vertical by config (F1–F3),
+  multi-location scoping (F4).
+- **R5 (Scale & polish):** reporting depth, inventory/truck stock, **audit-log/accountability view**
+  *(UX: G28)*, WCAG 2.2 AA audit, performance hardening to the NFR bar, reliability/observability,
+  payments security/compliance baseline.
 
 ---
 
@@ -187,6 +297,12 @@ Format: **[ID] (MoSCoW)** requirement → *Acceptance criteria.* Edge-case IDs r
 | NFR7 | Financial correctness | payments confirmed server-side; reconciles to the penny |
 | NFR8 | Data portability | effortless import **and** export (H1, H2) — a trust + anti-lock-in requirement |
 | NFR9 | Android quality parity | match iOS quality/perf (attacks the 3.2★ Android gap from research) |
+| NFR10 | AI accountability & control | human gate on money/customer/irreversible; **nothing autonomous** there; every AI action reversible + audit-logged ([AI model](13-ai-operating-model.md)) |
+| NFR11 | AI transparency | every AI-filled value shows **provenance + confidence**; no silent AI actions |
+| NFR12 | Personal-layer privacy | personal reflection is **private by default**; admins **cannot** override; sharing is user-initiated ([d16](16-notes-and-reflection.md)) |
+| NFR13 | AI stability & guardrails | AI acts only inside admin-set guardrails, **never changes its own rules**, makes **no random changes**; behavior predictable |
+| NFR14 | Screen-state completeness | every screen defines all 7 states (default/empty/loading/error/offline-syncing/no-permission/success) — see the [State Catalog](17-screen-states.md) |
+| NFR15 | Mobile-friendly & responsive | **mobile-first**, fluid across phone → tablet → desktop breakpoints; tech surfaces thumb-reachable, targets ≥ 44pt; customer portal fully responsive; defined breakpoints & grid ([UX G9](ux-ui-review.md)) |
 
 ## 8. Dependencies & integrations
 
@@ -216,6 +332,10 @@ proximity). Each sits behind an interface in `packages/core` for swappability.
   [strategy's pricing principles](01-product-strategy.md) with live cost data.
 - **Inventory depth in R1** vs. deferring full truck-stock to R4.
 - **First design partner shop** to run R1 live (the Phase-1 exit gate).
+- **Gate density vs. friction:** how many AI confirmation gates before they stop feeling like time
+  saved? Tune the [autonomy ladder](13-ai-operating-model.md) with design partners (NFR10 vs speed).
+- **Metric baselines:** the §3 targets are starting bars; calibrate against real shop data once a
+  design partner is live.
 
 ## 11. Out of scope (explicit "Won't-yet")
 

@@ -43,6 +43,7 @@ Read in order. Each document assumes the previous ones.
 | 14 | [Data Model & Field Dictionary](docs/14-data-model.md) | Every entity and its concrete fields, marked by who needs each (field tech vs office/admin vs owner); contracts, projects, the date/status model |
 | 15 | [Transparency, Status & Staying in Control](docs/15-transparency-and-control.md) | Shared status, the One-Line Report, early concern-raising before things go out of scope, financial transparency, and keeping the human in control |
 | 16 | [Notes, Communication & Reflection](docs/16-notes-and-reflection.md) | One safe home for all writing: operational notes, team messages, and a private personal layer for daily notes, reflection, and growth |
+| 17 | [Screen-State Catalog](docs/17-screen-states.md) | The seven states (default/empty/loading/error/offline/no-permission/success) for every critical screen |
 
 ## The one-paragraph pitch
 
