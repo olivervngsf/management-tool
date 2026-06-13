@@ -111,6 +111,15 @@
   .fitem.warn{background:#FFF8EE;border-left:3px solid var(--warning);border-radius:4px;padding-left:9px}
   .queue{padding:8px 10px;border-top:1px solid var(--n200)}
   .qcard{background:#fff;border:1px dashed var(--n300);border-radius:8px;padding:8px;font-size:12px;margin:6px 0}
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  .tile .k{font-size:12px;color:var(--n500)}
+  .tile .n{font-size:24px;font-weight:700;letter-spacing:-.02em;margin:2px 0 1px}
+  .ct{width:100%;border-collapse:collapse;font-size:12.5px}
+  .ct th{font-size:11px;color:var(--n500);font-weight:600;text-align:right;padding:5px 4px;border-bottom:1px solid var(--n200)}
+  .ct th:first-child,.ct td:first-child{text-align:left}
+  .ct td{padding:6px 4px;text-align:right;border-bottom:1px solid var(--n100)}
+  .ct tr:last-child td{border-bottom:none}
+  .ct .over{color:var(--danger);font-weight:700}
   .pill{white-space:nowrap;flex:0 0 auto}
   /* ---- MOBILE: drop the bezel, fill the screen like a real app ---- */
   @media(max-width:560px){
@@ -132,7 +141,8 @@
   <h1>Fieldwork</h1><span class="tag">clickable wireframes</span>
   <div class="nav">
     <a href="#today">1 Today</a><a href="#job">2 Job</a><a href="#capture">3 Capture</a>
-    <a href="#estimate">4 Estimate</a><a href="#payment">5 Pay</a><a href="#board">🖥 Board</a>
+    <a href="#estimate">4 Estimate</a><a href="#payment">5 Pay</a>
+    <a href="#owner">6 Owner</a><a href="#customer">7 Customer</a><a href="#board">🖥 Board</a>
   </div>
 </div>
 
@@ -244,6 +254,53 @@
               <p class="muted">Receipt texted to Maria. Job ready to close.</p>
               <a class="btn pri" href="#today" style="margin-top:8px;max-width:240px">Close job &amp; back to Today ›</a></div>
           </div>
+        </div>
+      </section>
+
+      <!-- 6 OWNER home + job costing -->
+      <section class="scr" id="owner">
+        <div class="hdr"><p class="big">Today</p><div class="sub">Anytown HVAC · owner view · Sat, Jun 13</div></div>
+        <div class="body">
+          <div class="tiles">
+            <div class="card tile" style="margin:0"><div class="k">Revenue today</div><div class="n">$4,820</div><div class="muted" style="font-size:12px">12 paid · reconciled</div></div>
+            <div class="card tile" style="margin:0"><div class="k">Jobs</div><div class="n">9 / 14</div><div class="muted" style="font-size:12px">done / scheduled</div></div>
+            <div class="card tile" style="margin:0"><div class="k">Team</div><div class="n">6</div><div class="muted" style="font-size:12px">5 on site · 1 free</div></div>
+            <div class="card tile" style="margin:0"><div class="k">Needs you</div><div class="n" style="color:var(--warning)">2</div><div class="muted" style="font-size:12px">over budget · late part</div></div>
+          </div>
+          <div class="label">Job costing — Sunset Plaza · Quarterly HVAC</div>
+          <div class="card" style="padding:10px 12px">
+            <table class="ct">
+              <tr><th>Category</th><th>Budget</th><th>Actual</th><th>%</th></tr>
+              <tr><td>Contract</td><td>$16,000</td><td>$4,000</td><td>25%</td></tr>
+              <tr><td>Maintenance</td><td>$8,650</td><td>$6,500</td><td>75%</td></tr>
+              <tr><td>Labor (hrs)</td><td>65</td><td>50</td><td>77%</td></tr>
+              <tr><td>Materials</td><td>$5,000</td><td>$6,347</td><td class="over">126% ⚠</td></tr>
+            </table>
+            <p class="muted" style="font-size:11.5px;margin:8px 0 0">Materials over budget — flagged early. Tap any number to see the line items behind it.</p>
+          </div>
+          <div class="muted" style="font-size:12px;text-align:center;margin-top:10px">Every number reconciles to the invoices behind it — to the penny.</div>
+        </div>
+      </section>
+
+      <!-- 7 CUSTOMER portal (no download) -->
+      <section class="scr" id="customer">
+        <div class="hdr"><p class="big" style="font-size:22px">Anytown HVAC</p><div class="sub">Your service · no app needed</div></div>
+        <div class="body">
+          <div class="card" style="background:#F5FAFF;border-color:#BBD9FF">
+            <div style="display:flex;justify-content:space-between;align-items:center"><b>Quarterly HVAC Maintenance</b><span class="pill" style="background:#E7F8EC;color:#1B873F">Active</span></div>
+            <div class="kv" style="margin-top:6px"><b>Coverage:</b> May 24 2024 – Sep 23 2025</div>
+            <div class="kv"><b>Next visit:</b> Jul 1 – Sep 30 · upcoming</div>
+            <div class="kv"><b>Balance:</b> $477.23 <span class="muted">($3,400 billed)</span></div>
+            <a class="btn pri" href="#paid" style="margin-top:8px">Pay balance</a>
+          </div>
+          <a class="card tap" href="#customer" style="display:flex;align-items:center;gap:10px"><span style="font-size:22px">📍</span><div><div style="font-weight:600">Maria is on the way</div><div class="muted" style="font-size:13px">ETA 12 min · arriving ~9:15</div></div></a>
+          <div class="label">Your visits</div>
+          <div class="card" style="padding:2px 13px">
+            <div class="row"><div class="m"><div class="name">Q3 Maintenance</div><div class="meta">Jul 1 – Sep 30 · Inspection</div></div><span class="pill warn">Upcoming</span></div>
+            <div class="row"><div class="m"><div class="name">Q4 Maintenance</div><div class="meta">Oct 2024 · completed</div></div><span class="pill" style="background:#E7F8EC;color:#1B873F">Done</span></div>
+            <div class="row"><div class="m"><div class="name">Q1 Maintenance</div><div class="meta">Jan 2025 · completed</div></div><span class="pill" style="background:#E7F8EC;color:#1B873F">Done</span></div>
+          </div>
+          <p class="muted" style="font-size:11.5px;text-align:center">Branded to the business — your customers never see “Fieldwork.”</p>
         </div>
       </section>
     </div>
