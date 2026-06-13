@@ -46,6 +46,7 @@ Read in order. Each document assumes the previous ones.
 | 17 | [Screen-State Catalog](docs/17-screen-states.md) | The seven states (default/empty/loading/error/offline/no-permission/success) for every critical screen |
 
 **See it:** [Clickable prototype](docs/prototype/fieldwork-prototype.html) — the technician flow + dispatch board (open in a browser).
+**Build menu:** [Build Backlog — flows to prioritize](docs/build-backlog.md).
 
 ## The one-paragraph pitch
 
