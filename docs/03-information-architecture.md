@@ -116,6 +116,24 @@ drills into the same objects David and Maria touch — one source of truth, thre
 One object model. No data silos. This is why the owner's numbers tie out — they are literally the
 technician's actions, aggregated.
 
+## Multiple views, one model (different *representations*, same data)
+
+Beyond altitude, the same objects are shown as different **views** — the pattern generic tools like
+Infinity/Notion/ClickUp made popular ([research](research/market-and-competitors.md)). A set of Jobs
+is the *same data* rendered as:
+
+| View | Best for | In the product |
+|---|---|---|
+| **List** | "what's next" (the tech) | Today |
+| **Board** (techs × time) | running the day (dispatch) | Dispatch board |
+| **Calendar** (week) | capacity & planning (office) | Schedule |
+| **Map** | proximity & routing (dispatch) | board map toggle |
+
+**Our difference vs. the generic tools:** they hand you blank views and make you *build* your own
+structure; we ship the **right views with trade-tuned defaults**, so a shop runs *its* workflow on day
+one instead of designing one. Flexibility *with* a head start — the [configuration layer](12-system-layers.md)
+lets a power user add or tune views later, but nobody starts from a blank canvas.
+
 ---
 
 ## Search and the command surface

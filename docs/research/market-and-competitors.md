@@ -198,6 +198,25 @@ Sources: [timetrackreviews](https://www.timetrackreviews.com/reviews/hubstaff.ht
 [trackingtime: is Hubstaff invasive](https://trackingtime.co/is-hubstaff-invasive),
 [Hubstaff monitoring stats](https://hubstaff.com/blog/employee-monitoring-statistics/).
 
+### Generic work-management tools (Infinity, ClickUp, Notion, Monday) — the "build-it-yourself" alternative
+
+- **What they are:** horizontal, **customizable work platforms** — not FSM. Infinity, for example, is a
+  "customizable work management platform" with **six views of the same data** (Table, Kanban, List,
+  Calendar, Gantt, Form) plus templates, automations, forms, and AI recommendations, from **~$6 for 5
+  users/mo** ([startinfinity](https://startinfinity.com/features), [GetApp](https://www.getapp.com/project-management-planning-software/a/startinfinity/)).
+- **Why it matters:** some shops run their business on these (or Notion/spreadsheets) *instead of*
+  FSM — part of the [~45% on manual/general tools](#2-the-digitization-gap-why-now). They're cheap and
+  flexible, which is genuinely appealing.
+- **Two takeaways for us:**
+  1. **Inspiration — multiple views, one dataset.** Showing the *same jobs* as a list, a board, a
+     calendar, and a map is a powerful, expected pattern. We adopt it (see
+     [IA: multiple views](../03-information-architecture.md)).
+  2. **Caution — generic = you build it yourself.** These tools have **no domain fit**: no dispatch
+     board, no payments, no equipment/service history, no offline field app, no proposals or
+     agreements. You assemble your own structure from blank blocks. **Our edge:** configurable like
+     them, but **purpose-built for the trades with sensible defaults** — a shop is running *its*
+     workflow on day one, not designing one from scratch.
+
 ---
 
 ## 4. The AI-native wave (the fast-moving new front)
