@@ -51,6 +51,7 @@ Read in order. Each document assumes the previous ones.
 **See it:** [Clickable prototype](docs/prototype/fieldwork-prototype.html) — the technician flow + dispatch board (open in a browser).
 **Build menu:** [Build Backlog — flows to prioritize](docs/build-backlog.md).
 **Must-haves:** [Table Stakes — the foundation (needs vs wants, with evidence)](docs/research/table-stakes.md).
+**Competitor breakdown:** [Capability Matrix — suites, capabilities, features & benefits](docs/research/competitor-capability-matrix.md).
 
 ## The one-paragraph pitch
 
