@@ -254,17 +254,28 @@ presentations. The proposal is the presentation-grade view — *"send proposals 
 > sales surface.
 
 ### 10. Invoice
+Invoices are also **customer-facing** — an "Invoices Hub" where the customer tracks and **pays
+online** ([reference screenshot](research/assets/servicetitan-invoices-hub.jpeg)).
+
 | Field | Who | Notes |
 |---|---|---|
-| Invoice #, type | 🏢 | |
-| Invoice date, **due date**, completion date | 🏢👑 | |
-| Links: Job/Project, source Estimate # | 🏢 | no re-keying |
+| Invoice #, type | 🏢🙋 | e.g. "#109811" |
+| Invoice date, **due date**, **service date**, completion date | 🏢👑🙋 | service date = when work happened |
+| Links: Job/Project, source Estimate #, Work Order #, **Service Agreement** | 🏢🙋 | invoice shows which agreement it's under (e.g. "Quarterly Maintenance") |
+| **Service address** | 🏢🙋 | where the work was done |
+| Bill-to (customer) + Remit-to (the shop) | 🏢🙋 | the document's payable parties |
 | Line items, Customer PO | 🏢 | from approved work |
 | Subtotal, tax, discount/member savings, **total** | 🏢👑🙋 | |
-| Payments made, **remaining balance due** | 🏢👑 | |
-| Payment terms, Status (open/paid) | 🏢 | |
+| Payments made, **total balance due** | 🏢👑🙋 | the headline number + a **Pay Balance** action |
+| Payment terms, Status (open/paid) | 🏢🙋 | |
+| **Document / PDF** (multi-page, downloadable) | 🙋 | branded invoice the customer can view/download (e.g. "1 of 3") |
 | Progress-invoice variant | 🏢 | for Projects |
 | Reminders schedule | 🏢 | |
+
+> **The customer "Invoices Hub":** balance due, due date, service agreement, and a one-tap **Pay
+> Balance** — *"make paying simple for your customers."* This is the [pay-from-link](04-core-workflows.md)
+> money flow on the customer's side, and it sits in the same [portal](#8-service-agreement--membership-the-contract)
+> as their agreements and proposals. Faster payment = less AR chase (kills [PP-O2/AR pain](research/user-pain-points.md)).
 
 ### 11. Payment
 | Field | Who | Notes |
