@@ -159,6 +159,45 @@ Sources: [projul HCP pricing](https://projul.com/blog/housecall-pro-pricing-anal
 [checkthat HCP](https://checkthat.ai/brands/housecall-pro/reviews),
 [contractortoolstack](https://contractortoolstack.com/software/housecall-pro/).
 
+### Joby (joby.io) — lead-management & communications-first (home services)
+
+> Profiled from the **live product screens** (app.joby.io) the user supplied — "real screens from the
+> actual app, not mockups." **Identity caveat:** do **not** confuse **Joby (joby.io)** with **Jobi
+> (jobi.pro)**, a separate HVAC "run-your-business-from-your-phone" product that dominates search.
+
+- **What it is:** a home-services management platform that leads with the **front of the funnel** —
+  *lead capture + communications* — rather than field execution. Office/desktop web app.
+- **Positioning (their words):** **"Never miss a lead."** · **"Every call, text, and lead in one
+  inbox."** · *"calls, texts, voicemail, and team chat all in one place — when you can't pick up,
+  Joby [answers]."*
+- **Target:** home-services / home-improvement contractors, notably ones running on **paid lead-gen
+  and subcontractors** — the leads carry **ad-source attribution** (Yelp, HomeAdvisor, Thumbtack,
+  Facebook, Referral) and jobs route to **subcontractors** with **commission reports** (kitchen/bath
+  remodel, HVAC, electrical, plumbing).
+- **Modules (from the nav):** *Communication* — Dashboard · Conversations · Emails · Calls · SMS
+  History; *Management* — Leads · Leads Map · Callback Tickets · Clients · Tasks · Estimates ·
+  Appointments · Agent Schedule; *Reports* — Call · Statistic · Commission · Lead · Payments.
+- **Standout capabilities:**
+  - **Leads pipeline** with a full status flow (Created → Sent → In Progress → Appointment → Estimate
+    → Deposit → Follow Up), ad-source, location, subcontractor — plus a **Leads Map**.
+  - **Unified comms inbox + built-in phone dialer** (calls/texts/voicemail/team chat in one screen).
+  - **AI:** *AI Generate* estimates; AI call-answering ("when you can't pick up").
+  - **Dashboard:** revenue trend, leads-by-status donut, call activity, **Top Subcontractors by sales**.
+  - Estimates with line items (labor/materials, qty/price/disc/tax), appointments with a **copy
+    booking link**.
+- **Its angle / strength:** *never miss a lead* — consolidating every call/text/voicemail, tracking
+  lead-source ROI, and managing subcontractors. Strong on **demand capture & communications**.
+- **The seam (where we differ):** it's **office/desktop- and CRM/inbox-first** — these screens show
+  little **field-technician mobile execution or offline**, and not the equipment/service-history/
+  service-agreement depth of ServiceTitan. Its **subcontractor + paid-lead** flavor suits lead-gen
+  remodelers more than in-house service-trade crews. So our **technician-mobile, offline wedge**
+  stands — but Joby exposes a real gap on *our* side: a strong **leads + unified-comms front end**
+  (see [§6 white space](#6-white-space--where-an-experience-led-entrant-wins)).
+
+Screens: [leads](assets/joby-leads.jpeg) · [schedule](assets/joby-schedule.jpeg) ·
+[dashboard](assets/joby-dashboard.jpeg) · [estimates](assets/joby-estimates.jpeg) ·
+[conversation](assets/joby-conversation.jpeg).
+
 ### Swivl — the AI-forward small-shop challenger
 
 - **Identity (high confidence):** swivl.tech ("Swivl Tech"), founder Rob Heller (built/sold a

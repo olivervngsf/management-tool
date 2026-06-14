@@ -70,6 +70,18 @@ A structured breakdown of how the competitors organize their products. Built fro
 | Invoicing & Payments | billing · payments | QuickBooks · GPS | get paid |
 | Website Builder | marketing | AI-tailored trade site | get found, keep 100% of leads |
 
+## Joby (joby.io) — "never miss a lead" (lead + communications first)
+
+| Suite / Module | Capabilities | Notable features | Benefit marketed |
+|---|---|---|---|
+| Leads | lead pipeline | status flow · ad-source attribution · Leads Map · subcontractor routing | "never miss a lead" |
+| Conversations | unified comms inbox | calls · texts · voicemail · **built-in phone dialer** · team chat | "every call, text & lead in one inbox" |
+| Appointments | scheduling | stat tiles · quick filters · **copy booking link** | book more |
+| Estimates | quoting | line items · **AI Generate** · link to lead | quote fast |
+| Dashboard | analytics | revenue trend · leads-by-status · **Top Subcontractors by sales** | see the business |
+| Reports | reporting | call · commission · lead · payments | track ROI & commissions |
+| AI | AI assist | AI estimate generation · AI call-answering | don't lose the call |
+
 ---
 
 ## Adjacent — the "platform with modules" structure (horizontal, not FSM)
