@@ -40,17 +40,21 @@ paper. *Technician NPS is the metric that matters — not feature count.*
 
 ---
 
-## Phase 2 — The Dispatcher's Board (run the day)
+## Phase 2 — The Dispatcher's Board + Leads & Communications (run the day, capture the leads)
 
-**Goal:** an office can run a full day for a multi-tech shop.
+**Goal:** an office can run a full day for a multi-tech shop — and never miss a lead.
 
 - The dispatch board: techs × time, drag-to-assign, live field status, unassigned queue.
 - Conflict / skill / drive-time warnings; the 7:45am-emergency re-slot flow.
 - Real-time sync field → board (< 1s).
 - Customer notifications: confirmation + **on-my-way live tracking link** (the delight feature).
 - Command palette (`⌘K`) on desktop.
+- **Leads & Communications** (the new product): lead pipeline with ad-source attribution + a
+  **unified calls/texts/voicemail inbox** with a built-in dialer + missed-call auto-text — *build the
+  experience, partner the telephony rails*. Leads tie straight into the same customer/job data.
 
-**Exit criteria:** a 10-tech shop runs an entire week off the board with no spreadsheets.
+**Exit criteria:** a 10-tech shop runs an entire week off the board with no spreadsheets, and every
+inbound call/text/lead lands in one inbox (none lost).
 
 ---
 

@@ -62,6 +62,30 @@
   .step.todo .num{background:var(--n200);color:var(--n600)}
   .menu a{display:block;padding:9px 11px;border-radius:8px;font-size:13.5px;color:var(--n700)}
   .menu a.on{background:#E5F1FF;color:#0060DF;font-weight:600}
+  /* leads + inbox */
+  .pill.lead{background:#FFEDEB;color:#C0392B}.pill.appt{background:#E5F1FF;color:#0060DF}
+  .pill.est{background:#FFF3E0;color:#A85B00}.pill.won{background:#E7F8EC;color:#1B873F}
+  .filterbar{display:flex;gap:6px;flex-wrap:wrap;padding:0 0 12px}
+  .fchip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--n700)}
+  .fchip.on{background:#16181C;color:#fff;border-color:#16181C}
+  .inboxgrid{display:grid;grid-template-columns:230px 1fr 190px;height:470px}
+  .convlist{border-right:1px solid var(--n200);overflow:auto}
+  .convitem{padding:10px 12px;border-bottom:1px solid var(--n100);font-size:13px}
+  .convitem.on{background:#E5F1FF}
+  .convitem .cn{font-weight:600}.convitem .cm{color:var(--n500);font-size:12px;margin-top:1px}
+  .thread{display:flex;flex-direction:column;border-right:1px solid var(--n200);min-width:0}
+  .thhead{padding:10px 14px;border-bottom:1px solid var(--n200);font-weight:600;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+  .msgs{flex:1;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:8px;background:var(--n50)}
+  .bub{max-width:78%;padding:8px 11px;border-radius:13px;font-size:13px;line-height:1.35}
+  .bub.in{background:#fff;border:1px solid var(--line);align-self:flex-start;border-bottom-left-radius:4px}
+  .bub.out{background:#FFEDEB;color:#7a2d1c;align-self:flex-end;border-bottom-right-radius:4px}
+  .composer{border-top:1px solid var(--n200);padding:10px 12px;display:flex;gap:8px;align-items:center;color:var(--n400);font-size:13px}
+  .composer .box{flex:1;border:1px solid var(--line);border-radius:999px;padding:8px 12px}
+  .dialer{padding:14px}
+  .num{border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center;font-size:14px;color:var(--n700);margin-bottom:10px}
+  .keys{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .key{background:var(--n100);border-radius:8px;text-align:center;padding:9px 0;font-weight:600;font-size:15px}
+  .callbtn{background:var(--success);color:#fff;border-radius:8px;text-align:center;padding:9px 0;font-weight:600;margin-top:8px}
   /* insights dashboard */
   .dash{width:980px;max-width:96vw;background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden}
   .dash .bar{height:50px;border-bottom:1px solid var(--n200);display:flex;align-items:center;padding:0 18px;gap:14px}
@@ -184,6 +208,7 @@
     <a href="#estimate">4 Estimate</a><a href="#payment">5 Pay</a>
     <a href="#owner">6 Owner</a><a href="#customer">7 Customer</a><a href="#me">8 Me</a><a href="#board">🖥 Board</a><a href="#insights">📊 Insights</a>
     <a href="#schedule">🗓 Schedule</a><a href="#crm">🗂 CRM</a><a href="#agreement">📄 Agreement</a><a href="#admin">⚙️ Admin</a><a href="#setup">🚀 Setup</a>
+    <a href="#leads">📥 Leads</a><a href="#inbox">💬 Inbox</a>
   </div>
 </div>
 
@@ -600,6 +625,60 @@
         </div>
       </div>
     </div></div>
+  </div></section></div>
+
+  <!-- LEADS — pipeline (front of funnel) -->
+  <div class="deskwrap"><section class="scr desk" id="leads"><div class="panel">
+    <div class="bar"><span class="k">Leads</span><span class="crumb">Never miss a lead</span><div class="right"><a class="chip" href="#inbox">Inbox</a><a class="chip" style="background:#16181C;color:#fff;border-color:#16181C" href="#leads">+ New lead</a></div></div>
+    <div class="pbody">
+      <div class="filterbar"><span class="fchip on">All 91</span><span class="fchip">New 12</span><span class="fchip">Contacted 20</span><span class="fchip">Appointment 17</span><span class="fchip">Estimate 14</span><span class="fchip">Deposit 9</span><span class="fchip">Follow-up 11</span><span class="fchip">Won 8</span></div>
+      <table class="tbl">
+        <thead><tr><th>Lead</th><th>Status</th><th>Customer</th><th>Job type</th><th>Ad source</th><th>City</th><th>Created</th></tr></thead>
+        <tbody>
+          <tr><td>#10342</td><td><span class="pill appt">Appointment</span></td><td>John Alvarez</td><td>Kitchen remodel</td><td>Google</td><td>Hollywood, FL</td><td>Feb 28</td></tr>
+          <tr><td>#10341</td><td><span class="pill lead">Follow-up</span></td><td>David Cohen</td><td>Lock change</td><td>HomeAdvisor</td><td>N. Miami, FL</td><td>Feb 27</td></tr>
+          <tr><td>#10339</td><td><span class="pill est">Estimate</span></td><td>Maria Lopez</td><td>Garage door</td><td>Yelp</td><td>Sunny Isles, FL</td><td>Feb 27</td></tr>
+          <tr><td>#10337</td><td><span class="pill" style="background:#FFF3E0;color:#A85B00">Deposit</span></td><td>Rachel Turner</td><td>Garage door</td><td>Referral</td><td>Brooklyn, NY</td><td>Feb 26</td></tr>
+          <tr><td>#10335</td><td><span class="pill appt">Appointment</span></td><td>Victor Ingalls</td><td>HVAC tune-up</td><td>Thumbtack</td><td>Bethlehem, PA</td><td>Feb 25</td></tr>
+          <tr><td>#10334</td><td><span class="pill won">Won</span></td><td>Kyle Barrett</td><td>Electrical</td><td>Facebook</td><td>Reading, PA</td><td>Feb 25</td></tr>
+          <tr><td>#10331</td><td><span class="pill lead">New</span></td><td>Lance Craig</td><td>Bathroom remodel</td><td>Yelp</td><td>Mt Vernon, NY</td><td>Feb 24</td></tr>
+        </tbody>
+      </table>
+      <div class="muted" style="font-size:12px;margin-top:10px">Every lead carries its <b>ad source</b> — so the owner sees which channels actually convert (lead-source ROI). Leads flow straight into the same customer &amp; job data.</div>
+    </div>
+  </div></section></div>
+
+  <!-- INBOX — unified calls/texts/voicemail -->
+  <div class="deskwrap"><section class="scr desk" id="inbox"><div class="panel">
+    <div class="bar"><span class="k">Inbox</span><span class="crumb">Calls · texts · voicemail · one place</span><div class="right"><a class="chip" href="#leads">Leads</a><span class="chip" style="background:#E7F8EC;border-color:#B6E5C4;color:#1B873F">● Available</span></div></div>
+    <div class="pbody" style="padding:0">
+      <div class="inboxgrid">
+        <div class="convlist">
+          <div class="convitem on"><div class="cn">Rachel Turner</div><div class="cm">📱 “742 Maple Drive…” · 2m</div></div>
+          <div class="convitem"><div class="cn">Paul Adams</div><div class="cm">📞 Missed call · 18m</div></div>
+          <div class="convitem"><div class="cn">Olivia Ziegler</div><div class="cm">📱 “Confirming my appt…” · 1h</div></div>
+          <div class="convitem"><div class="cn">Serena Haynes</div><div class="cm">🎙 Voicemail · 0:14 · 2h</div></div>
+          <div class="convitem"><div class="cn">Mark Williams</div><div class="cm">📱 “Thanks!” · 3h</div></div>
+        </div>
+        <div class="thread">
+          <div class="thhead"><span>Rachel Turner · +1 (555) 200-0003</span><a class="chip" href="#estimate">+ Estimate</a></div>
+          <div class="msgs">
+            <div class="bub out">Got it — torsion-spring replacement runs $350–$450. I can come tomorrow AM to assess and give an exact quote. Would 10am work?</div>
+            <div class="bub in">10am works perfectly. My address is 742 Maple Drive, Brooklyn NY 11201.</div>
+            <div class="bub out">Perfect — visited &amp; checked. Your estimate (pair) = $420 incl. parts &amp; labor, plus a safety inspection of the door system. Want me to send a formal estimate?</div>
+            <div class="bub in">Great. I'll review the estimate and get back to you today. Thanks!</div>
+          </div>
+          <div class="composer"><span class="box">Type a message or attach media…</span><span>📎</span><span style="color:var(--brand);font-weight:600">Send</span></div>
+        </div>
+        <div class="dialer">
+          <div class="muted" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:6px">Phone</div>
+          <div class="num">+1 (605) 249-…</div>
+          <div class="keys"><div class="key">1</div><div class="key">2</div><div class="key">3</div><div class="key">4</div><div class="key">5</div><div class="key">6</div><div class="key">7</div><div class="key">8</div><div class="key">9</div><div class="key">✱</div><div class="key">0</div><div class="key">#</div></div>
+          <div class="callbtn">📞 Call</div>
+          <div class="muted" style="font-size:11px;margin-top:10px">Missed it? Joby-style <b>auto-text</b> fires instantly — and AI can answer. <i>(telephony via partner rails)</i></div>
+        </div>
+      </div>
+    </div>
   </div></section></div>
 </div>
 </body>

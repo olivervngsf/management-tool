@@ -114,7 +114,10 @@ The menu of buildable flows across the whole product, so you can rank them. Grou
 A1–A8 as *working code* on **I1 (offline) + I2 (auth) + I3 (tokens)**. This is the technician's
 whole day, offline, and it's the thing that wins the first user. ([Phase 1](08-roadmap.md))
 
-**Wave 2 — run the office:** B1 board, B2 conflict, B3 re-slot, B4 booking, D1 tracking, B5 alerts.
+**Wave 2 — run the office (+ capture the leads):** B1 board, B2 conflict, B3 re-slot, B4 booking,
+D1 tracking, B5 alerts — **and J1 lead pipeline + J2 unified inbox + J3 dialer + J4 missed-call
+auto-text** (Leads & Communications; partner the telephony rails). The office captures leads *and*
+runs the day.
 
 **Wave 3 — the money & the owner:** E1 estimate→invoice→payment, E2 money cases, C1 owner home,
 C2 job costing, E3 QuickBooks.
