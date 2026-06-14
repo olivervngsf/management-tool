@@ -53,6 +53,8 @@ The difference from a surveillance tool like [Hubstaff](research/market-and-comp
 tool for getting the right person there fast and keeping the customer informed — it is never a
 management cudgel. (And the [private personal layer](16-notes-and-reflection.md) is always off-limits
 to tracking entirely.) That's how a NEED (GPS on a map) and our trust-first promise both hold true.
+The full mechanics — location follows the *job* not the person, on at "On my way," off at "Arrived" —
+are designed in [Location & Privacy Design](18-location-privacy-design.md).
 
 ---
 
