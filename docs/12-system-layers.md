@@ -119,7 +119,10 @@ Follow these four rules and the system stays **clear** (you can reason about any
 
 ## The improvement flywheel
 
-"It improves itself" isn't magic — it's a loop you design on purpose. The field user is the engine:
+"It improves itself" isn't magic — it's a loop you design on purpose. The field user is the engine.
+(How the layers behave as **one ecosystem** — change-awareness rippling across the small products, and
+the self-learning "Top 5 to Improve" report — is detailed in
+[The Ecosystem & Self-Improvement](20-ecosystem-and-self-improvement.md).)
 
 ```
         ┌───────────────────────────────────────────────────────┐
