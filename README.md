@@ -46,7 +46,7 @@ Read in order. Each document assumes the previous ones.
 | 17 | [Screen-State Catalog](docs/17-screen-states.md) | The seven states (default/empty/loading/error/offline/no-permission/success) for every critical screen |
 | 18 | [Location & Privacy Design](docs/18-location-privacy-design.md) | Designing the balance: customer ETA transparency without surveilling the tech — location follows the job, not the person |
 | 19 | [Data Visualization & Owner Dashboard](docs/19-data-visualization.md) | Telling the story by time: stat cards with deltas + a hero chart; how competitors do it and how we do better |
-| 20 | [The Ecosystem & Self-Improvement](docs/20-ecosystem-and-self-improvement.md) | Many small products as one living system: shared data, change-awareness that ripples, the "Top 5 to Improve" report, and the operating model |
+| 20 | [The Platform — products that speak together](docs/20-ecosystem-and-self-improvement.md) | Platform (shared core) + products on top; change-awareness that ripples, the "Top 5 to Improve" report, and the operating model |
 
 **See it:** [Clickable prototype](docs/prototype/fieldwork-prototype.html) — the technician flow + dispatch board (open in a browser).
 **Build menu:** [Build Backlog — flows to prioritize](docs/build-backlog.md).
@@ -59,6 +59,11 @@ a live board on the desktop. A technician runs the job from their phone — arri
 quoting, collecting payment, and closing out, even with no signal in a basement. The owner sees
 the money. The customer gets a tracking link that feels like ordering a rideshare. Every screen
 holds to a single standard: it should feel inevitable, fast, and quietly beautiful.
+
+Under the hood it's a **platform, not a single app**: a shared core (one data model, identity, offline
+sync, payments, notifications, AI, design system) with **role-shaped products on top** — Field,
+Dispatch, Owner/Insights, Customer Hub, Admin/Config — that all speak the same data, so a change in
+one is felt by the others. See [The Platform](docs/20-ecosystem-and-self-improvement.md).
 
 ## Where things stand & the smooth path forward
 

@@ -1,4 +1,4 @@
-# 20 · The Ecosystem — many small products, one living system
+# 20 · The Platform — many products that speak together
 
 > The vision in your words: the tool makes **field work faster & easier** and **admin quick & easy**;
 > the layers across them are **smooth, trustworthy, transparent, reliable**; not everything is equal;
@@ -10,12 +10,39 @@
 
 ---
 
+## A platform, with products on it
+
+The clearest way to hold the whole thing: **Fieldwork is a *platform* — many products that speak
+together — not a single app.** Two layers of meaning:
+
+- **The platform (the shared core)** — what every product stands on and none reinvents:
+  one [data model / spine](14-data-model.md), identity & roles, [offline sync](07-technical-architecture.md),
+  payments, notifications, the [AI / intelligence layer](13-ai-operating-model.md), and the
+  [design system](design-system/README.md).
+- **The products (on top)** — role- and job-shaped apps:
+  **Field** (the technician's day) · **Dispatch** (the board) · **Owner / Insights** (the money & the
+  story) · **Customer Hub** (booking, tracking, proposals, invoices, agreements) · **Admin / Config**
+  (the flexibility layer) · plus **Agreements**, **Projects**, and more over time.
+
+```
+   ┌── Field ──┬── Dispatch ──┬── Owner/Insights ──┬── Customer Hub ──┬── Admin/Config ──┐   PRODUCTS
+   ├───────────┴──────────────┴────────────────────┴──────────────────┴──────────────────┤
+   │  PLATFORM (shared core):  data model · identity & roles · offline sync · payments ·   │
+   │  notifications · AI / intelligence · design system                                    │
+   └───────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+They **speak together through the platform** — shared data + [events](#change-propagates--when-one-thing-changes-the-others-know),
+never point-to-point silos. A change in one is felt by the others because they all stand on the *same
+ground*. Mapped to the [layers](12-system-layers.md): the **platform** is Layer 1 + the cross-cutting
+concerns; the **products** are assembled from Layers 2–5. Same architecture — said as a platform.
+
 ## Many small products, one ecosystem
 
-Each capability is a **small product that does one thing well** — scheduling, capture, proposals,
-payments, agreements, dispatch, the owner dashboard, the config hub. They are the
-[bricks of Layer 2](12-system-layers.md). But they are **not silos**: they share one spine and talk
-to each other through clean contracts. A user never feels the seams — to them it's *one product*.
+Each product **does one thing well** — scheduling, capture, proposals, payments, agreements, dispatch,
+the owner dashboard, the config hub. They are the [bricks of Layer 2](12-system-layers.md). But they
+are **not silos**: they share one spine and talk to each other through clean contracts. A user never
+feels the seams — to them it's *one product*.
 
 **Two things make the many into one:**
 1. **One data model (the spine).** Every product reads and writes the *same*
