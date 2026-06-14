@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fieldwork — Product Map</title>
+<style>
+  :root{
+    --brand:#0A84FF; --ink:#16181C; --muted:#5A606B; --line:#E2E5EA; --bg:#F7F8FA; --card:#fff;
+    --font:-apple-system,"SF Pro","Segoe UI",Roboto,system-ui,sans-serif;
+    --shadow:0 1px 3px rgba(11,12,14,.09);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:var(--font);background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;padding:32px 20px 50px}
+  .sheet{max-width:1080px;margin:0 auto}
+  .head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:6px}
+  .kicker{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);font-weight:600;margin:0 0 4px}
+  h1{font-size:30px;letter-spacing:-.02em;margin:0}
+  .sub{color:var(--muted);font-size:15px;margin:6px 0 0}
+  .ver{font-size:12px;color:var(--muted);text-align:right;white-space:nowrap}
+  .ver b{color:var(--ink)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0 14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:15px 16px;display:flex;flex-direction:column}
+  .ctop{display:flex;align-items:center;gap:10px}
+  .ic{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;flex:0 0 auto}
+  .nm{font-weight:700;font-size:16px;line-height:1.1}
+  .tag{font-size:12px;color:var(--muted);margin-top:1px}
+  .caps{margin:11px 0 0;display:flex;flex-wrap:wrap;gap:5px}
+  .cap{font-size:11.5px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:3px 9px}
+  .platform{background:#0B1220;color:#fff;border-radius:14px;padding:16px 18px;margin-top:4px}
+  .platform .pk{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#7FB4FF;font-weight:600}
+  .platform .pt{font-weight:700;font-size:16px;margin:3px 0 9px}
+  .platform .caps .cap{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#E6EAF0}
+  .foot{margin-top:18px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+  .note{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;flex:1;min-width:260px}
+  .note b{color:var(--ink)}
+  .changelog{font-size:11.5px;color:var(--muted);min-width:240px}
+  .changelog .cl{padding:2px 0}
+  @media(max-width:820px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:560px){.grid{grid-template-columns:1fr}}
+  @media print{body{background:#fff;padding:0}.card,.note{box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="head">
+    <div>
+      <p class="kicker">Fieldwork</p>
+      <h1>Product Map</h1>
+      <p class="sub">One platform. Seven products. Built for the trades — they all speak the same data.</p>
+    </div>
+    <div class="ver">Version <b>1.0</b><br>Updated <b>2026-06-14</b></div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="ctop"><div class="ic" style="background:#E5F1FF;color:#0060DF">🔧</div><div><div class="nm">Field</div><div class="tag">The technician's day</div></div></div>
+      <div class="caps"><span class="cap">Today / schedule</span><span class="cap">Job execution</span><span class="cap">Capture (AI)</span><span class="cap">Proposals & sign</span><span class="cap">Payments</span><span class="cap">Close & multi-visit</span><span class="cap">One-Line Report</span><span class="cap">Private notes</span></div>
+    </div>
+    <div class="card">
+      <div class="ctop"><div class="ic" style="background:#E7F8EC;color:#1B873F">🗺️</div><div><div class="nm">Dispatch</div><div class="tag">Run the day from one board</div></div></div>
+      <div class="caps"><span class="cap">Live board</span><span class="cap">Booking intake</span><span class="cap">Conflict prevention</span><span class="cap">Emergency re-slot</span><span class="cap">Map / routing</span><span class="cap">Live report stream</span></div>
+    </div>
+    <div class="card">
+      <div class="ctop"><div class="ic" style="background:#EEE9FF;color:#5E5CE6">📊</div><div><div class="nm">Owner / Insights</div><div class="tag">The money & the story</div></div></div>
+      <div class="caps"><span class="cap">Owner home</span><span class="cap">Job costing</span><span class="cap">KPI dashboard</span><span class="cap">Reports</span></div>
+    </div>
+    <div class="card">
+      <div class="ctop"><div class="ic" style="background:#FFF3E0;color:#A85B00">🙋</div><div><div class="nm">Customer Hub</div><div class="tag">No-download customer experience</div></div></div>
+      <div class="caps"><span class="cap">Online booking</span><span class="cap">On-my-way tracking</span><span class="cap">Proposals (sign)</span><span class="cap">Invoices (pay)</span><span class="cap">Agreements portal</span></div>
+    </div>
+    <div class="card">
+      <div class="ctop"><div class="ic" style="background:#E7F8EC;color:#1B873F">💳</div><div><div class="nm">Money</div><div class="tag">Get paid, cleanly</div></div></div>
+      <div class="caps"><span class="cap">Estimate → Invoice → Payment</span><span class="cap">Deposits / refunds / tips</span><span class="cap">QuickBooks / Xero sync</span><span class="cap">Financing</span></div>
+    </div>
+    <div class="card">
+      <div class="ctop"><div class="ic" style="background:#E5E7FF;color:#3F3DCC">📄</div><div><div class="nm">Agreements & Projects</div><div class="tag">Recurring revenue & big jobs</div></div></div>
+      <div class="caps"><span class="cap">Memberships / agreements</span><span class="cap">Recurring-visit engine</span><span class="cap">Projects (phases)</span><span class="cap">Progress billing & POs</span></div>
+    </div>
+    <div class="card" style="grid-column:span 3">
+      <div class="ctop"><div class="ic" style="background:#EEF0F3;color:#3E434C">⚙️</div><div><div class="nm">Admin / Config — the flexibility layer</div><div class="tag">Configure Fieldwork for any trade — no code</div></div></div>
+      <div class="caps"><span class="cap">Job types</span><span class="cap">Form builder</span><span class="cap">Price book</span><span class="cap">Roles & permissions</span><span class="cap">AI guardrails</span><span class="cap">Integrations</span><span class="cap">Team & skills</span></div>
+    </div>
+  </div>
+
+  <div class="platform">
+    <div class="pk">The Platform · shared core</div>
+    <div class="pt">Every product stands on this — none reinvents it</div>
+    <div class="caps"><span class="cap">Data model (the spine)</span><span class="cap">Identity & roles</span><span class="cap">Offline sync</span><span class="cap">Payments</span><span class="cap">Notifications</span><span class="cap">AI / intelligence</span><span class="cap">Design system</span></div>
+  </div>
+
+  <div class="foot">
+    <div class="note"><b>Capabilities vs. benefits:</b> the chips above are <b>capabilities</b> — <i>what each product does</i>. We <b>build</b> from these. The <b>benefits</b> — <i>the outcomes we sell on</i> — are: faster & easier in the field, paid on-site, live the same day, numbers you can trust, real transparency, and techs who actually like it.</div>
+    <div class="changelog"><b>Changelog</b>
+      <div class="cl">v1.0 · 2026-06-14 — initial product map (7 products + platform core).</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

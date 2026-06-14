@@ -62,7 +62,9 @@ benefits (the outcomes) and not the sales pitch.
 > [strategy](01-product-strategy.md)). A feature list is not a value proposition.
 
 This map *is* the platform-with-products vision made concrete; each capability traces to a flow in the
-[build backlog](build-backlog.md).
+[build backlog](build-backlog.md). A printable one-page visual lives at
+[`product-map.html`](product-map.html) — **v1.0 · 2026-06-14** (it carries a version + date + changelog;
+bump them on each update).
 
 ## Many small products, one ecosystem
 
