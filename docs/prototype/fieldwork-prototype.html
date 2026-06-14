@@ -34,12 +34,34 @@
   .scr{display:none;flex:1;min-height:0;flex-direction:column}
   .scr:target{display:flex}
   .app:not(:has(.scr:target)) #today{display:flex} /* default screen */
-  .app:has(#board:target) .phone, .app:has(#insights:target) .phone{display:none} /* desktop replaces phone */
-  .board-wrap,.deskwrap{display:none}
-  #board:target{display:flex}
-  .board-wrap:has(#board:target){display:flex}
-  .deskwrap{justify-content:center;width:100%}
-  .deskwrap:has(#insights:target){display:flex}
+  .app:has(.desk:target) .phone{display:none} /* any desktop screen replaces phone */
+  .board-wrap,.deskwrap{display:none;justify-content:center;width:100%}
+  .board-wrap:has(.desk:target),.deskwrap:has(.desk:target){display:flex}
+  /* generic desktop panel */
+  .panel{width:980px;max-width:96vw;background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden;display:flex;flex-direction:column;max-height:88vh}
+  .panel .bar{height:50px;border-bottom:1px solid var(--n200);display:flex;align-items:center;padding:0 18px;gap:12px;flex:0 0 auto}
+  .panel .bar .k{font-weight:700;font-size:15px}
+  .panel .bar .crumb{color:var(--n500);font-size:13px}
+  .panel .bar .right{margin-left:auto;display:flex;gap:8px}
+  .panel .pbody{overflow:auto;padding:18px}
+  .twocol{display:grid;grid-template-columns:1fr 320px;gap:18px}
+  .sect{font-size:11px;font-weight:600;color:var(--n500);text-transform:uppercase;letter-spacing:.04em;margin:0 0 8px}
+  .srow{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid var(--n100);font-size:14px}
+  .srow:last-child{border-bottom:none}
+  .srow .toggle{width:38px;height:22px;border-radius:999px;background:var(--success);position:relative;flex:0 0 auto}
+  .srow .toggle.off{background:var(--n300)}
+  .srow .toggle::after{content:"";position:absolute;width:18px;height:18px;border-radius:50%;background:#fff;top:2px;right:2px}
+  .srow .toggle.off::after{right:auto;left:2px}
+  .chip{display:inline-block;font-size:12px;border:1px solid var(--n200);border-radius:999px;padding:4px 10px;margin:3px 4px 0 0;background:#fff}
+  .tbl{width:100%;border-collapse:collapse;font-size:13px}
+  .tbl th{text-align:left;font-size:11px;color:var(--n500);font-weight:600;padding:7px 8px;border-bottom:1px solid var(--n200)}
+  .tbl td{padding:9px 8px;border-bottom:1px solid var(--n100)}
+  .step{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--n100)}
+  .step .num{width:26px;height:26px;border-radius:50%;background:var(--brand);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .step.done .num{background:var(--success)}
+  .step.todo .num{background:var(--n200);color:var(--n600)}
+  .menu a{display:block;padding:9px 11px;border-radius:8px;font-size:13.5px;color:var(--n700)}
+  .menu a.on{background:#E5F1FF;color:#0060DF;font-weight:600}
   /* insights dashboard */
   .dash{width:980px;max-width:96vw;background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden}
   .dash .bar{height:50px;border-bottom:1px solid var(--n200);display:flex;align-items:center;padding:0 18px;gap:14px}
@@ -161,6 +183,7 @@
     <a href="#today">1 Today</a><a href="#job">2 Job</a><a href="#capture">3 Capture</a>
     <a href="#estimate">4 Estimate</a><a href="#payment">5 Pay</a>
     <a href="#owner">6 Owner</a><a href="#customer">7 Customer</a><a href="#me">8 Me</a><a href="#board">🖥 Board</a><a href="#insights">📊 Insights</a>
+    <a href="#schedule">🗓 Schedule</a><a href="#crm">🗂 CRM</a><a href="#agreement">📄 Agreement</a><a href="#admin">⚙️ Admin</a><a href="#setup">🚀 Setup</a>
   </div>
 </div>
 
@@ -362,7 +385,7 @@
 
   <!-- BOARD -->
   <div class="board-wrap">
-    <section class="scr" id="board">
+    <section class="scr desk" id="board">
       <div class="board">
         <div class="bar"><span class="k">Dispatch</span><span class="muted" style="font-size:13px">Fri Jun 13 · 6 techs</span><span class="cmd">⌘K Jump to anything</span><a class="muted" href="#today" style="font-size:12px;border:1px solid var(--n200);border-radius:8px;padding:5px 10px">← phone view</a></div>
         <div class="grid">
@@ -390,7 +413,7 @@
 
   <!-- INSIGHTS — desktop owner dashboard (visual, story-by-time) -->
   <div class="deskwrap">
-    <section class="scr" id="insights">
+    <section class="scr desk" id="insights">
       <div class="dash">
         <div class="bar"><span class="k">Insights</span><span class="muted" style="font-size:13px">Anytown HVAC</span><span class="period">1 year ▾</span><a class="muted" href="#owner" style="font-size:12px;border:1px solid var(--n200);border-radius:8px;padding:5px 10px">← phone view</a></div>
         <div class="kpis">
@@ -419,6 +442,165 @@
       </div>
     </section>
   </div>
+
+  <!-- SCHEDULE — office week calendar -->
+  <div class="deskwrap"><section class="scr desk" id="schedule"><div class="panel">
+    <div class="bar"><span class="k">Schedule</span><span class="crumb">Week of Jun 9 · 6 techs</span><div class="right"><span class="period">Week ▾</span><a class="chip" href="#board">Board view</a></div></div>
+    <div class="pbody" style="padding:0">
+      <table class="tbl" style="font-size:12px">
+        <thead><tr><th style="width:90px">Tech</th><th>Mon 9</th><th>Tue 10</th><th>Wed 11</th><th>Thu 12</th><th>Fri 13</th></tr></thead>
+        <tbody>
+          <tr><td><b>Maria T.</b><div class="muted" style="font-size:11px">38/40 hrs</div></td><td><span class="pill now">Reyes · AC</span></td><td><span class="pill gray">Becker</span></td><td><span class="pill gray">Plaza ×2</span></td><td><span class="pill gray">Install</span></td><td><span class="pill now">Reyes · AC</span></td></tr>
+          <tr><td><b>Dave K.</b><div class="muted" style="font-size:11px">40/40 · full</div></td><td><span class="pill gray">Nguyen install (3d)</span></td><td><span class="pill gray">↳</span></td><td><span class="pill gray">↳</span></td><td><span class="pill gray">Patel</span></td><td><span class="pill gray">Patel</span></td></tr>
+          <tr><td><b>Sam R.</b><div class="muted" style="font-size:11px">22/40 · open</div></td><td></td><td><span class="pill gray">Diag ×2</span></td><td></td><td><span class="pill warn">Ortiz ⚠ EPA</span></td><td></td></tr>
+          <tr><td><b>Lee W.</b><div class="muted" style="font-size:11px">31/40</div></td><td><span class="pill gray">Maint route</span></td><td><span class="pill gray">Maint route</span></td><td><span class="pill gray">PTO</span></td><td><span class="pill gray">Maint route</span></td><td><span class="pill gray">Maint route</span></td></tr>
+        </tbody>
+      </table>
+      <div class="muted" style="font-size:12px;padding:12px 16px">Capacity at a glance — green = booked, ⚠ = skill/cert conflict, PTO blocks availability. Drag a job to a tech; conflicts &amp; over-capacity are blocked before they happen.</div>
+    </div>
+  </div></section></div>
+
+  <!-- CRM — customer / property record -->
+  <div class="deskwrap"><section class="scr desk" id="crm"><div class="panel">
+    <div class="bar"><span class="k">Sunset Plaza</span><span class="crumb">Customers › Commercial · since 2021</span><div class="right"><a class="chip" href="#agreement">Agreement</a><a class="chip" href="#board">Book job</a></div></div>
+    <div class="pbody"><div class="twocol">
+      <div>
+        <div style="margin-bottom:6px"><span class="chip" style="background:#E5F1FF;border-color:#BBD9FF;color:#0060DF">Jobs</span><span class="chip">Invoices</span><span class="chip">Proposals</span><span class="chip">Equipment</span><span class="chip">Agreements</span></div>
+        <p class="sect" style="margin-top:14px">Recent jobs</p>
+        <table class="tbl">
+          <thead><tr><th>Date</th><th>Job</th><th>Tech</th><th>Status</th><th>Total</th></tr></thead>
+          <tbody>
+            <tr><td>Jun 13</td><td>AC not cooling — Bldg A</td><td>Maria T.</td><td><span class="pill now">On site</span></td><td>$385</td></tr>
+            <tr><td>Apr 02</td><td>Q2 maintenance ×4 units</td><td>Lee W.</td><td><span class="pill" style="background:#E7F8EC;color:#1B873F">Paid</span></td><td>$1,420</td></tr>
+            <tr><td>Jan 08</td><td>RTU replacement (project)</td><td>Crew</td><td><span class="pill" style="background:#E7F8EC;color:#1B873F">Closed</span></td><td>$36,000</td></tr>
+          </tbody>
+        </table>
+        <p class="sect" style="margin-top:18px">Equipment on file</p>
+        <table class="tbl">
+          <thead><tr><th>Unit</th><th>Model / Serial</th><th>Installed</th><th>Warranty</th></tr></thead>
+          <tbody>
+            <tr><td>RTU-1 (roof)</td><td>Carrier 48TC · SN 3208F19</td><td>2019</td><td>Exp 2024</td></tr>
+            <tr><td>RTU-2 (roof)</td><td>Carrier 48TC · SN 3209A04</td><td>2019</td><td>Exp 2024</td></tr>
+            <tr><td>Split — Suite 120</td><td>Mitsubishi MSZ · SN 7741</td><td>2022</td><td>Active</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="card" style="margin-top:0">
+          <p class="sect">Account</p>
+          <div class="kv"><b>Lifetime revenue</b> · $74,260</div>
+          <div class="kv"><b>Balance due</b> · <span style="color:var(--warning)">$1,055</span></div>
+          <div class="kv"><b>Membership</b> · <span class="pill" style="background:#E7F8EC;color:#1B873F">Active</span> Quarterly HVAC</div>
+          <div class="kv"><b>Avg ticket</b> · $612</div>
+        </div>
+        <div class="card">
+          <p class="sect">Contacts</p>
+          <div class="kv">Amy Smith · Property mgr <span class="muted">(billing)</span></div>
+          <div class="kv">Front desk · (213) 555-0148</div>
+        </div>
+        <div class="card">
+          <p class="sect">Properties (4)</p>
+          <div class="kv">18130 Oxnard St — Bldg A</div>
+          <div class="kv muted" style="font-size:13px">+ Bldg B, C, parking annex</div>
+        </div>
+      </div>
+    </div></div>
+  </div></section></div>
+
+  <!-- AGREEMENT — service agreement management -->
+  <div class="deskwrap"><section class="scr desk" id="agreement"><div class="panel">
+    <div class="bar"><span class="k">Quarterly HVAC Maintenance</span><span class="crumb">Service Agreements › Sunset Plaza</span><div class="right"><span class="pill" style="background:#E7F8EC;color:#1B873F">Active</span><a class="chip" href="#crm">Customer</a></div></div>
+    <div class="pbody"><div class="twocol">
+      <div>
+        <p class="sect">Plan</p>
+        <table class="tbl">
+          <tbody>
+            <tr><td class="muted">Term</td><td>36 months · May 24 2024 → Sep 23 2025</td></tr>
+            <tr><td class="muted">Billing</td><td>Quarterly · $850 · auto-renew, card on file</td></tr>
+            <tr><td class="muted">Covered</td><td>4 locations · 3 RTUs + 1 split</td></tr>
+            <tr><td class="muted">Benefits</td><td>15% off repairs · priority dispatch · 2 tune-ups/yr</td></tr>
+          </tbody>
+        </table>
+        <p class="sect" style="margin-top:18px">Generated visits</p>
+        <table class="tbl">
+          <thead><tr><th>Visit</th><th>Window</th><th>Tech</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Q3 Maintenance</td><td>Jul 1 – Sep 30</td><td>—</td><td><span class="pill warn">Upcoming</span></td></tr>
+            <tr><td>Q2 Maintenance</td><td>Apr 1 – Jun 30</td><td>Lee W.</td><td><span class="pill" style="background:#E7F8EC;color:#1B873F">Done</span></td></tr>
+            <tr><td>Q1 Maintenance</td><td>Jan 1 – Mar 31</td><td>Lee W.</td><td><span class="pill" style="background:#E7F8EC;color:#1B873F">Done</span></td></tr>
+          </tbody>
+        </table>
+        <p class="muted" style="font-size:12px;margin-top:8px">The plan auto-generates visits each quarter — the recurring-revenue engine, no manual scheduling.</p>
+      </div>
+      <div>
+        <div class="card" style="margin-top:0"><p class="sect">Profitability</p>
+          <table class="tbl" style="font-size:12px"><tbody>
+            <tr><td>Billed</td><td style="text-align:right">$3,400</td></tr>
+            <tr><td>Labor + materials</td><td style="text-align:right">$2,322</td></tr>
+            <tr><td><b>Margin</b></td><td style="text-align:right;color:#1B873F"><b>32%</b></td></tr>
+          </tbody></table>
+        </div>
+        <div class="card"><p class="sect">Renewal</p><div class="kv">Renews <b>Sep 23</b> · 101 days</div><a class="btn pri" href="#agreement" style="margin-top:8px;min-height:42px">Send renewal</a></div>
+      </div>
+    </div></div>
+  </div></section></div>
+
+  <!-- ADMIN — configuration hub (the flexibility layer) -->
+  <div class="deskwrap"><section class="scr desk" id="admin"><div class="panel">
+    <div class="bar"><span class="k">Settings</span><span class="crumb">Configure Fieldwork for your shop — no code</span></div>
+    <div class="pbody" style="padding:0"><div class="twocol" style="grid-template-columns:200px 1fr;gap:0">
+      <div class="menu" style="border-right:1px solid var(--n200);padding:12px 10px">
+        <a class="on">Job Types</a><a>Forms</a><a>Price Book</a><a>Roles &amp; permissions</a><a>AI guardrails</a><a>Integrations</a><a>Team</a>
+      </div>
+      <div style="padding:18px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><p class="sect" style="margin:0">Job Types · 7</p><a class="chip" href="#admin">+ New job type</a></div>
+        <table class="tbl" style="margin-top:8px">
+          <thead><tr><th>Name</th><th>Duration</th><th>Skills</th><th>Default form</th></tr></thead>
+          <tbody>
+            <tr><td><b>Diagnostic</b></td><td>60 min</td><td>HVAC</td><td>Diagnostic checklist</td></tr>
+            <tr><td><b>Maintenance</b></td><td>90 min</td><td>HVAC</td><td>Coil + EPA log</td></tr>
+            <tr><td><b>Install</b></td><td>1–3 days</td><td>HVAC, EPA cert</td><td>Install checklist</td></tr>
+            <tr><td><b>Drain clear</b></td><td>60 min</td><td>Plumbing</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <p class="muted" style="font-size:12px;margin-top:8px">Same engine, any trade — add a “Spring Cleanup” type for a landscaper without touching code. <b>This is the flexibility layer.</b></p>
+        <p class="sect" style="margin-top:20px">AI guardrails <span class="muted" style="text-transform:none;font-weight:400">— what AI may do here</span></p>
+        <div class="card" style="margin:6px 0;padding:4px 14px">
+          <div class="srow"><div>Draft job notes from voice <span class="muted">· review before save</span></div><div class="toggle"></div></div>
+          <div class="srow"><div>Take payment on its own</div><div class="toggle off"></div></div>
+          <div class="srow"><div>Message customers on its own</div><div class="toggle off"></div></div>
+          <div class="srow"><div>File photos to equipment <span class="muted">· auto, undoable</span></div><div class="toggle"></div></div>
+        </div>
+        <p class="muted" style="font-size:12px">Money &amp; customer actions stay off by default — a human approves at the gate. Generates the plain-language <b>Capability Charter</b> everyone can see.</p>
+      </div>
+    </div></div>
+  </div></section></div>
+
+  <!-- SETUP — onboarding / first-run (live same day) -->
+  <div class="deskwrap"><section class="scr desk" id="setup"><div class="panel">
+    <div class="bar"><span class="k">Get set up</span><span class="crumb">No implementation fee · live &amp; dispatching today</span><div class="right"><span class="pill now">3 of 5</span></div></div>
+    <div class="pbody"><div class="twocol">
+      <div>
+        <div class="step done"><div class="num">✓</div><div><b>Create your company</b><div class="muted" style="font-size:13px">Anytown HVAC · Los Angeles</div></div></div>
+        <div class="step done"><div class="num">✓</div><div><b>Import your data</b><div class="muted" style="font-size:13px">412 customers, 38 price-book items &amp; equipment imported from QuickBooks — mapped automatically. <a style="color:var(--brand)" href="#setup">Review</a></div></div></div>
+        <div class="step"><div class="num">3</div><div><b>Add your team</b><div class="muted" style="font-size:13px">Invite techs by phone number; set skills &amp; certs.</div>
+          <div style="margin-top:6px"><span class="chip">Maria T. · HVAC, EPA</span><span class="chip">Dave K. · HVAC</span><span class="chip" style="border-style:dashed">+ invite</span></div></div></div>
+        <div class="step todo"><div class="num">4</div><div><b>Set service area &amp; hours</b><div class="muted" style="font-size:13px">Zones, working hours, arrival-window defaults.</div></div></div>
+        <div class="step todo"><div class="num">5</div><div><b>Take your first job</b><div class="muted" style="font-size:13px">Book one and dispatch it — you’re live.</div></div></div>
+        <a class="btn pri" href="#schedule" style="margin-top:16px;max-width:260px">Continue → Add team</a>
+      </div>
+      <div>
+        <div class="card" style="margin-top:0;background:#F5FAFF;border-color:#BBD9FF">
+          <p class="sect">Why this is fast</p>
+          <div class="kv">✅ No 12-week implementation</div>
+          <div class="kv">✅ No setup fee</div>
+          <div class="kv">✅ Import in minutes, not weeks</div>
+          <div class="kv">✅ Export anytime — no lock-in</div>
+          <div class="muted" style="font-size:12px;margin-top:6px">The inverse of a $5K–$50K, 12–16-week onboarding.</div>
+        </div>
+      </div>
+    </div></div>
+  </div></section></div>
 </div>
 </body>
 </html>
