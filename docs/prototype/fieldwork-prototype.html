@@ -34,10 +34,26 @@
   .scr{display:none;flex:1;min-height:0;flex-direction:column}
   .scr:target{display:flex}
   .app:not(:has(.scr:target)) #today{display:flex} /* default screen */
-  .app:has(#board:target) .phone{display:none}      /* board replaces phone */
-  .board-wrap{display:none}
+  .app:has(#board:target) .phone, .app:has(#insights:target) .phone{display:none} /* desktop replaces phone */
+  .board-wrap,.deskwrap{display:none}
   #board:target{display:flex}
   .board-wrap:has(#board:target){display:flex}
+  .deskwrap{justify-content:center;width:100%}
+  .deskwrap:has(#insights:target){display:flex}
+  /* insights dashboard */
+  .dash{width:980px;max-width:96vw;background:#fff;border-radius:16px;box-shadow:var(--shadow-lg);overflow:hidden}
+  .dash .bar{height:50px;border-bottom:1px solid var(--n200);display:flex;align-items:center;padding:0 18px;gap:14px}
+  .dash .bar .k{font-weight:700;font-size:15px}
+  .period{margin-left:auto;font-size:12.5px;color:var(--n700);border:1px solid var(--n200);border-radius:8px;padding:5px 11px}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--n200)}
+  .kpi{background:#fff;padding:15px 18px}
+  .kpi .k{font-size:12px;color:var(--n500)}
+  .kpi .v{font-size:27px;font-weight:700;letter-spacing:-.02em;margin:3px 0}
+  .kpi .d{font-size:11.5px;font-weight:700;color:#1B873F;background:#E7F8EC;padding:2px 8px;border-radius:999px}
+  .kpi .sub{font-size:12px;color:var(--n500);margin-left:6px}
+  .chartwrap{padding:16px 18px 22px}
+  .chart{width:100%;height:250px;display:block}
+  .xaxis{display:flex;justify-content:space-between;font-size:11px;color:var(--n400);margin-top:6px}
   .body{flex:1;overflow-y:auto;padding:4px 16px 16px}
   .hdr{padding:6px 16px 6px}
   .hdr .big{font-size:26px;font-weight:700;letter-spacing:-.02em;margin:0}
@@ -144,7 +160,7 @@
   <div class="nav">
     <a href="#today">1 Today</a><a href="#job">2 Job</a><a href="#capture">3 Capture</a>
     <a href="#estimate">4 Estimate</a><a href="#payment">5 Pay</a>
-    <a href="#owner">6 Owner</a><a href="#customer">7 Customer</a><a href="#me">8 Me</a><a href="#board">🖥 Board</a>
+    <a href="#owner">6 Owner</a><a href="#customer">7 Customer</a><a href="#me">8 Me</a><a href="#board">🖥 Board</a><a href="#insights">📊 Insights</a>
   </div>
 </div>
 
@@ -284,7 +300,8 @@
             </table>
             <p class="muted" style="font-size:11.5px;margin:8px 0 0">Materials over budget — flagged early. Tap any number to see the line items behind it.</p>
           </div>
-          <div class="muted" style="font-size:12px;text-align:center;margin-top:10px">Every number reconciles to the invoices behind it — to the penny. · Synced to QuickBooks ✓</div>
+          <a class="card tap" href="#insights" style="text-align:center;color:var(--brand);font-weight:600">📊 See full insights (desktop) ›</a>
+          <div class="muted" style="font-size:12px;text-align:center;margin-top:6px">Every number reconciles to the invoices behind it — to the penny. · Synced to QuickBooks ✓</div>
         </div>
       </section>
 
@@ -366,6 +383,38 @@
             </div>
             <div class="queue"><div class="muted" style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.04em">Unassigned</div><div class="qcard">⚠ Ortiz — No heat (emergency) · needs EPA cert</div><div class="muted" style="font-size:11px;margin-top:6px">Drag to a tech — double-booking &amp; skill conflicts are blocked before they happen.</div></div>
           </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- INSIGHTS — desktop owner dashboard (visual, story-by-time) -->
+  <div class="deskwrap">
+    <section class="scr" id="insights">
+      <div class="dash">
+        <div class="bar"><span class="k">Insights</span><span class="muted" style="font-size:13px">Anytown HVAC</span><span class="period">1 year ▾</span><a class="muted" href="#owner" style="font-size:12px;border:1px solid var(--n200);border-radius:8px;padding:5px 10px">← phone view</a></div>
+        <div class="kpis">
+          <div class="kpi"><div class="k">Revenue · 12 mo</div><div class="v">$1.84M</div><span class="d">↑ 28%</span><span class="sub">vs last year</span></div>
+          <div class="kpi"><div class="k">Jobs completed</div><div class="v">3,420</div><span class="d">↑ 19%</span><span class="sub">avg ticket $538</span></div>
+          <div class="kpi"><div class="k">Members</div><div class="v">612</div><span class="d">↑ 44%</span><span class="sub">recurring revenue</span></div>
+        </div>
+        <div class="chartwrap">
+          <svg class="chart" viewBox="0 0 900 250" preserveAspectRatio="none">
+            <defs><linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0A84FF" stop-opacity="0.28"/>
+              <stop offset="100%" stop-color="#0A84FF" stop-opacity="0.02"/></linearGradient></defs>
+            <line x1="0" y1="64" x2="900" y2="64" stroke="#EEF0F3"/>
+            <line x1="0" y1="124" x2="900" y2="124" stroke="#EEF0F3"/>
+            <line x1="0" y1="184" x2="900" y2="184" stroke="#EEF0F3"/>
+            <path d="M0,205 L82,200 L164,196 L246,187 L328,181 L410,166 L492,158 L573,140 L655,120 L737,95 L819,62 L900,40 L900,250 L0,250 Z" fill="url(#grad)"/>
+            <path d="M0,205 L82,200 L164,196 L246,187 L328,181 L410,166 L492,158 L573,140 L655,120 L737,95 L819,62 L900,40" fill="none" stroke="#0A84FF" stroke-width="2.5"/>
+            <circle cx="900" cy="40" r="4" fill="#0A84FF"/>
+            <text x="6" y="60" font-size="11" fill="#A4AAB6">$1.5M</text>
+            <text x="6" y="120" font-size="11" fill="#A4AAB6">$1.0M</text>
+            <text x="6" y="180" font-size="11" fill="#A4AAB6">$0.5M</text>
+          </svg>
+          <div class="xaxis"><span>Jun</span><span>Aug</span><span>Oct</span><span>Dec</span><span>Feb</span><span>Apr</span><span>Jun</span></div>
+          <div class="muted" style="font-size:12px;margin-top:10px;text-align:center">Revenue, month by month — the story of the year at a glance. Every point reconciles to real invoices.</div>
         </div>
       </div>
     </section>
