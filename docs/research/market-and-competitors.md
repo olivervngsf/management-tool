@@ -217,6 +217,15 @@ Sources: [timetrackreviews](https://www.timetrackreviews.com/reviews/hubstaff.ht
      them, but **purpose-built for the trades with sensible defaults** — a shop is running *its*
      workflow on day one, not designing one from scratch.
 
+**All-in-one business suites (PMSuite, Zoho One, Odoo, Bitrix24) — "replace your whole stack."** A
+sibling category: suites that bundle **HR · CRM · Finance · Projects · Workspace** as modules, each
+module a "product" with its own tools (e.g. PMSuite's "HR & People → Hiring · Payroll · Benefits ·
+Leave · Admin"), sometimes sold as a **lifetime deal** ($49 once). Useful in two ways: (1) they model
+the exact **platform → products → capabilities** shape we use ([product map](../20-ecosystem-and-self-improvement.md)),
+and (2) they're the *horizontal* version of the bet — broad but shallow, and **not built to run a
+field-service business** (no dispatch, no field app, no equipment history, no on-site payments). Our
+bet is the *vertical* one: the same all-in-one consolidation, but deep where the trades actually work.
+
 ---
 
 ## 4. The AI-native wave (the fast-moving new front)

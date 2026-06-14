@@ -37,6 +37,33 @@ never point-to-point silos. A change in one is felt by the others because they a
 ground*. Mapped to the [layers](12-system-layers.md): the **platform** is Layer 1 + the cross-cutting
 concerns; the **products** are assembled from Layers 2–5. Same architecture — said as a platform.
 
+### The product map — each product and its capabilities
+
+The way a business suite lists its modules and the tools inside each (e.g. PMSuite's "HR & People →
+Hiring · Payroll · Benefits · Leave · Admin"), here is Fieldwork's **Platform → Products →
+Capabilities** map. The items in each row are **capabilities** — *what the product does* — not
+benefits (the outcomes) and not the sales pitch.
+
+| Product | Capabilities (what's inside) |
+|---|---|
+| **Field** (technician) | Today/schedule · job execution · capture (photo/voice/AI) · proposals & sign · payments · multi-visit & close · One-Line Report · private notes |
+| **Dispatch** (office) | Live board · booking intake · conflict prevention · emergency re-slot · map/routing · live report stream |
+| **Owner / Insights** | Owner home · job costing · KPI dashboard & reports |
+| **Customer Hub** | Online booking · on-my-way tracking · proposals (review & sign) · invoices (pay online) · agreements portal |
+| **Money** | Estimate → Invoice → Payment · deposits/refunds/tips · QuickBooks/Xero sync · financing |
+| **Agreements & Projects** | Memberships / service agreements · recurring-visit engine · projects (phases, progress billing, POs) |
+| **Admin / Config** | Job types · form builder · price book · roles & permissions · AI guardrails · integrations · team & skills |
+| **Platform core** | data model · identity & roles · offline sync · payments · notifications · AI / intelligence · design system |
+
+> **Capability vs. benefit (the distinction worth keeping straight):** a *capability* is **what the
+> product does** (capture, payments, job costing); a *benefit* is **the outcome it creates** ("paid
+> on-site, no AR chase"; "live the same day"; "techs actually like it"). We **design from
+> capabilities** (the [build backlog](build-backlog.md)) and **sell on benefits** (the
+> [strategy](01-product-strategy.md)). A feature list is not a value proposition.
+
+This map *is* the platform-with-products vision made concrete; each capability traces to a flow in the
+[build backlog](build-backlog.md).
+
 ## Many small products, one ecosystem
 
 Each product **does one thing well** — scheduling, capture, proposals, payments, agreements, dispatch,
