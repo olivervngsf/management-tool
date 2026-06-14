@@ -175,6 +175,29 @@ Sources: [projul HCP pricing](https://projul.com/blog/housecall-pro-pricing-anal
 Sources: [swivl.tech](https://swivl.tech/), [swivl.tech/about](https://swivl.tech/about),
 [swivl.tech/pricing](https://swivl.tech/pricing/).
 
+### Hubstaff — adjacent: the surveillance archetype (what *not* to be)
+
+- **What it is:** workforce **time-tracking + productivity/GPS monitoring**, not a full FSM. 112,000+
+  teams. Features: timesheets, payroll, GPS + geofencing (auto-start timers at job sites), breadcrumb
+  route trails, app/URL monitoring, **periodic screenshots**, scheduling, invoicing, 30+ integrations.
+  It overlaps FSM only on **time/GPS/scheduling** — there's no dispatch board, proposals, customer
+  portal, or service agreements.
+- **Pricing:** **$7–$25/user/mo** (GPS on the ~$9 "Grow" tier); 2 months free annual — cheap, because
+  it's a point tool, not a platform.
+- **Positioning:** employee monitoring / "see where your team is in real time," "military-grade GPS."
+- **Why it matters to us — it's the anti-pattern.** Hubstaff is the **surveillance-first** approach our
+  [trust-first stance](../15-transparency-and-control.md) is built against, and the reviews are the
+  evidence: surveillance "creates trust issues, decreased morale, and a culture of micromanagement";
+  **1 in 3 employees say monitoring has hurt their mental health**; screenshots/webcam capture feel
+  invasive; and the **Android app is ~3.1★** (a real problem for field teams on Android). A shop that
+  bolts Hubstaff onto its techs is exactly the resentment we avoid — we make tracking *serve* the tech
+  and customer, never spy on them.
+
+Sources: [timetrackreviews](https://www.timetrackreviews.com/reviews/hubstaff.html),
+[connecteam review](https://connecteam.com/reviews/hubstaff/),
+[trackingtime: is Hubstaff invasive](https://trackingtime.co/is-hubstaff-invasive),
+[Hubstaff monitoring stats](https://hubstaff.com/blog/employee-monitoring-statistics/).
+
 ---
 
 ## 4. The AI-native wave (the fast-moving new front)
