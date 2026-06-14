@@ -31,6 +31,29 @@ version that can drift.
 - **Time is explicit.** Arrival window, on-site time, expected duration, and "running long" are all
   visible — so nobody guesses. ([Date/status model](14-data-model.md))
 
+### Location & tracking — the bright line (yes, we track; no, we don't surveil)
+
+We **do** track tech location and show people on a map — every FSM tool does, and it's
+[table stakes](research/table-stakes.md): the dispatcher needs to send the *closest qualified* tech,
+the customer needs a real "12 minutes away," and routes need optimizing. The board shows tech status;
+the customer link shows the on-my-way ETA. **Trust-first does not mean no GPS.**
+
+The difference from a surveillance tool like [Hubstaff](research/market-and-competitors.md) is
+**purpose, transparency, and respect** — the same data, used differently:
+
+| Operational tracking — **what we do** ✅ | Surveillance — **what we refuse** 🚫 |
+|---|---|
+| Location → dispatch the closest tech, give the customer an ETA, optimize routes | Location → discipline, "gotcha" reports, watching breaks |
+| Tracked **on the clock / en route**, tied to the job | Tracked all day, on breaks, off-shift |
+| **Transparent:** the tech sees exactly what's shared and with whom ([disclosure rules](13-ai-operating-model.md)) | Hidden monitoring the worker can't see |
+| **The tech sees their own data**; it helps them | Data weaponized against the worker |
+| Job status, GPS for routing/ETA | **No** screenshots, keystroke/app/URL monitoring, or webcam |
+
+**The rule:** *tracking must serve the tech and the customer, never spy on the tech.* Location is a
+tool for getting the right person there fast and keeping the customer informed — it is never a
+management cudgel. (And the [private personal layer](16-notes-and-reflection.md) is always off-limits
+to tracking entirely.) That's how a NEED (GPS on a map) and our trust-first promise both hold true.
+
 ---
 
 ## 2. The One-Line Report (the signature habit)

@@ -34,8 +34,13 @@ Sources are cited; competitor coverage is from the [competitor profiles](market-
 | 15 | **Offline-capable mobile** | ~20% of jobs hit dead zones; "offline-first design… the dividing line" ([trends](market-and-competitors.md)) — *everyone claims it; few do it well* | ~ | ~ | ~ | ~ | **[I1](../build-backlog.md) — our differentiator too** |
 | 16 | **Multi-user roles / permissions** | Office vs field vs owner access; standard | ✅ | ✅ | ✅ | ✅ | [personas](../02-personas-and-roles.md), PRD NFR6 |
 | 17 | **Customer self-service portal** | One hub for jobs/invoices/proposals/agreements; ST markets "100% transparent" | ✅ | ~ | ~ | ◻ | [D2](../build-backlog.md), proto ✅ |
+| 18 | **GPS location / map / routing** | Dispatch needs the *closest* tech, customers need real ETAs, routes need optimizing; all FSM tools show techs on a map | ✅ | ✅ | ✅ | ✅ | [Board B1](../build-backlog.md) + the [tracking bright line](../15-transparency-and-control.md) |
 
 `~` = present but weak/partial (the opening we exploit).
+
+> **Note on GPS (row 18):** tracking location *is* table stakes — trust-first does **not** mean no
+> GPS. We track to dispatch and inform the customer, **transparently and purpose-bound**, never to
+> surveil the tech (the [bright line](../15-transparency-and-control.md) vs. Hubstaff).
 
 ---
 
