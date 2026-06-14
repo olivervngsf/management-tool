@@ -94,6 +94,18 @@ The menu of buildable flows across the whole product, so you can rank them. Grou
 | I4 Notifications | push/SMS/email | PP-C3 | 🧱 | ⭐⭐ | M |
 | I5 Audit log | who/what/when/why | — | 🧱 | ⭐⭐ | M |
 
+## J · Leads & Communications (front of the funnel — *new product*)
+> Build the experience, partner the telephony rails (Twilio-style). Prompted by [Joby](research/market-and-competitors.md).
+
+| Flow | What it delivers | Kills | Status | Value | Effort |
+|---|---|---|---|---|---|
+| J1 Lead pipeline | leads with status flow + ad-source attribution + Leads Map | — | 🔲 | ⭐⭐⭐ | M |
+| J2 Unified inbox | calls · texts · voicemail · team chat in one place | — | 🔲 | ⭐⭐⭐ | L |
+| J3 Built-in dialer / click-to-call | call from the record (telephony partner) | — | 🔲 | ⭐⭐ | M |
+| J4 Missed-call → auto-text / AI answer | never miss a lead when you can't pick up | — | 🔲 | ⭐⭐ | M |
+| J5 Lead-source ROI reporting | which ad sources actually convert | — | 🔲 | ⭐⭐ | M |
+| J6 Callback tickets | follow-ups that don't fall through | — | 🔲 | ⭐ | S |
+
 ---
 
 ## Recommended order (you can override)

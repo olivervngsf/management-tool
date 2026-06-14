@@ -20,16 +20,17 @@ together — not a single app.** Two layers of meaning:
   payments, notifications, the [AI / intelligence layer](13-ai-operating-model.md), and the
   [design system](design-system/README.md).
 - **The products (on top)** — role- and job-shaped apps:
-  **Field** (the technician's day) · **Dispatch** (the board) · **Owner / Insights** (the money & the
-  story) · **Customer Hub** (booking, tracking, proposals, invoices, agreements) · **Admin / Config**
-  (the flexibility layer) · plus **Agreements**, **Projects**, and more over time.
+  **Leads & Communications** (capture leads + unified inbox) · **Field** (the technician's day) ·
+  **Dispatch** (the board) · **Owner / Insights** (the money & the story) · **Customer Hub** (booking,
+  tracking, proposals, invoices, agreements) · **Money** · **Agreements & Projects** · **Admin /
+  Config** (the flexibility layer) — and more over time.
 
 ```
-   ┌── Field ──┬── Dispatch ──┬── Owner/Insights ──┬── Customer Hub ──┬── Admin/Config ──┐   PRODUCTS
-   ├───────────┴──────────────┴────────────────────┴──────────────────┴──────────────────┤
-   │  PLATFORM (shared core):  data model · identity & roles · offline sync · payments ·   │
-   │  notifications · AI / intelligence · design system                                    │
-   └───────────────────────────────────────────────────────────────────────────────────────┘
+ ┌─ Leads & Comms ─┬─ Field ─┬─ Dispatch ─┬─ Owner/Insights ─┬─ Customer Hub ─┬─ Admin/Config ─┐ PRODUCTS
+ ├─────────────────┴─────────┴────────────┴──────────────────┴────────────────┴────────────────┤
+ │  PLATFORM (shared core):  data model · identity & roles · offline sync · payments ·          │
+ │  notifications · telephony (partner rails) · AI / intelligence · design system               │
+ └────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
 They **speak together through the platform** — shared data + [events](#change-propagates--when-one-thing-changes-the-others-know),
@@ -46,6 +47,7 @@ benefits (the outcomes) and not the sales pitch.
 
 | Product | Capabilities (what's inside) |
 |---|---|
+| **Leads & Communications** (front of funnel) | Lead pipeline (status flow) · ad-source attribution · **unified inbox** (calls · texts · voicemail · team chat) · built-in dialer · Leads Map · callbacks · missed-call auto-text / AI answer *(telephony via partner rails)* |
 | **Field** (technician) | Today/schedule · job execution · capture (photo/voice/AI) · proposals & sign · payments · multi-visit & close · One-Line Report · private notes |
 | **Dispatch** (office) | Live board · booking intake · conflict prevention · emergency re-slot · map/routing · live report stream |
 | **Owner / Insights** | Owner home · job costing · KPI dashboard & reports |
@@ -63,7 +65,7 @@ benefits (the outcomes) and not the sales pitch.
 
 This map *is* the platform-with-products vision made concrete; each capability traces to a flow in the
 [build backlog](build-backlog.md). A printable one-page visual lives at
-[`product-map.html`](product-map.html) — **v1.0 · 2026-06-14** (it carries a version + date + changelog;
+[`product-map.html`](product-map.html) — **v1.1 · 2026-06-14** (it carries a version + date + changelog;
 bump them on each update).
 
 ## Many small products, one ecosystem

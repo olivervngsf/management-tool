@@ -79,7 +79,11 @@ as the product surface that wins or loses the deal:
 
 **We deliberately do not win on (yet):**
 - Deep accounting (we integrate with QuickBooks/Xero, we are not a GL).
-- Marketing automation suites, call-center telephony, or fleet telematics — partner, don't build.
+- Marketing automation suites and fleet telematics — partner, don't build.
+- **Telephony rails** (the actual phone network) — partner (Twilio-style). *But* we **do build the
+  Leads & Communications experience** on top — a lead pipeline + a unified calls/texts/voicemail
+  inbox — because owning the front-of-funnel experience matters (this is where [Joby](research/market-and-competitors.md)
+  competes). Build the experience, partner the rails.
 - Enterprise franchise/multi-location consolidation — that is a later-stage motion.
 
 Saying no here is the strategy. The incumbents are wide; we go deep on the daily loop first.

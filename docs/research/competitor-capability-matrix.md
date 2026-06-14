@@ -100,6 +100,7 @@ These aren't FSM, but they model the **suite → capabilities** shape (and the a
 
 | Their suite (best-in-class) | Our equivalent product | How we go further |
 |---|---|---|
+| Leads + unified inbox (Joby) | **Leads & Communications** | own the lead+inbox experience; partner the telephony rails — tied into the same job/customer data |
 | Dispatch (ServiceTitan) | **Dispatch** | conflict-prevented, trust-first GPS ([bright line](../18-location-privacy-design.md)) |
 | Proposals (ServiceTitan) | **Field** (proposals) | + AI write-it-fills, offline, under-30-sec |
 | Invoices Hub / Payments | **Money** + **Customer Hub** | reconciles to the penny; honest, no add-on creep |

@@ -46,7 +46,9 @@ priced honestly and configurable across trades.
 
 **Non-goals (now)** — per strategy's deliberate "no":
 - Deep accounting/GL (we integrate with QuickBooks/Xero).
-- Full marketing-automation suite, call-center telephony, fleet telematics (partner, don't build).
+- Full marketing-automation suite, fleet telematics (partner, don't build).
+- Telephony **rails** (partner, Twilio-style) — but we *do* build the **Leads & Communications**
+  experience (lead pipeline + unified calls/texts/voicemail inbox) on top.
 - Enterprise multi-franchise consolidation.
 - Native Swift/Kotlin rewrites (Expo carries us past PMF).
 

@@ -50,7 +50,7 @@ Read in order. Each document assumes the previous ones.
 
 **See it:** [Clickable prototype](docs/prototype/fieldwork-prototype.html) — the technician flow + dispatch board (open in a browser).
 **Build menu:** [Build Backlog — flows to prioritize](docs/build-backlog.md).
-**Product map (visual):** [product-map.html](docs/product-map.html) — one-page, PMSuite-style (v1.0 · 2026-06-14).
+**Product map (visual):** [product-map.html](docs/product-map.html) — one-page, PMSuite-style (v1.1 · 2026-06-14).
 **Must-haves:** [Table Stakes — the foundation (needs vs wants, with evidence)](docs/research/table-stakes.md).
 **Competitor breakdown:** [Capability Matrix — suites, capabilities, features & benefits](docs/research/competitor-capability-matrix.md).
 
@@ -63,9 +63,10 @@ the money. The customer gets a tracking link that feels like ordering a rideshar
 holds to a single standard: it should feel inevitable, fast, and quietly beautiful.
 
 Under the hood it's a **platform, not a single app**: a shared core (one data model, identity, offline
-sync, payments, notifications, AI, design system) with **role-shaped products on top** — Field,
-Dispatch, Owner/Insights, Customer Hub, Admin/Config — that all speak the same data, so a change in
-one is felt by the others. See [The Platform](docs/20-ecosystem-and-self-improvement.md).
+sync, payments, notifications, telephony, AI, design system) with **role-shaped products on top** —
+Leads & Communications, Field, Dispatch, Owner/Insights, Customer Hub, Money, Agreements & Projects,
+Admin/Config — that all speak the same data, so a change in one is felt by the others. See
+[The Platform](docs/20-ecosystem-and-self-improvement.md).
 
 ## Where things stand & the smooth path forward
 
