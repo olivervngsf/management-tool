@@ -47,7 +47,7 @@ benefits (the outcomes) and not the sales pitch.
 
 | Product | Capabilities (what's inside) |
 |---|---|
-| **Leads & Communications** (front of funnel) | Lead pipeline (status flow) · ad-source attribution · **unified inbox** (calls · texts · voicemail · team chat) · built-in dialer · Leads Map · callbacks · missed-call auto-text / AI answer *(telephony via partner rails)* |
+| **Leads & Communications** (front of funnel) | Lead pipeline (status flow) · ad-source attribution · **unified inbox** (calls · texts · voicemail · team chat) · built-in dialer · **guided call-booking with caller-ID screen-pop** · Leads Map · callbacks · missed-call auto-text / AI answer *(telephony via partner rails)* |
 | **Field** (technician) | Today/schedule · job execution · capture (photo/voice/AI) · proposals & sign · payments · multi-visit & close · One-Line Report · private notes |
 | **Dispatch** (office) | Live board · booking intake · conflict prevention · emergency re-slot · map/routing · live report stream |
 | **Owner / Insights** | Owner home · job costing · KPI dashboard & reports |

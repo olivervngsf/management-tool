@@ -109,6 +109,12 @@ Sources: [JLL](https://www.jll.com/en-us/newsroom/critical-skilled-trades-shorta
   app, pricebook, multi-option proposals, invoicing, **ServiceTitan Payments** + consumer
   financing, memberships, CRM, Marketing Pro, reporting, inventory. "Pro" add-ons (Dispatch Pro,
   Marketing Pro, Pricebook Pro). AI: **Titan Intelligence** + **Atlas** conversational "sidekick."
+- **CRM / Call Booking ([feature page](https://www.servicetitan.com/features/field-service-crm)):**
+  the CRM centers on the **Call Booking** screen — a CSR's hub that **screen-pops the caller's profile,
+  job history, equipment, and preferences *before* they answer** ("ServiceTitan tells the CSR exactly
+  who is calling"), with **guided booking workflows** that prompt the right questions. **Contact
+  Center Pro** adds routing + AI insights. → this is the model behind our [Leads & Communications](../20-ecosystem-and-self-improvement.md)
+  call-booking flow (caller-ID screen-pop + guided booking).
 - **GTM:** sales-led, demo-gated; best fit 20+ techs with office staff and budget; explicitly *not*
   a fit for shops under ~5–10 techs.
 - **Strengths:** all-in-one consolidation, strong dispatch/scheduling, deep reporting. G2 4.5★,

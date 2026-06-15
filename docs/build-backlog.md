@@ -105,6 +105,7 @@ The menu of buildable flows across the whole product, so you can rank them. Grou
 | J4 Missed-call → auto-text / AI answer | never miss a lead when you can't pick up | — | 🔲 | ⭐⭐ | M |
 | J5 Lead-source ROI reporting | which ad sources actually convert | — | 🔲 | ⭐⭐ | M |
 | J6 Callback tickets | follow-ups that don't fall through | — | 🔲 | ⭐ | S |
+| J7 Call booking (screen-pop) | caller-ID pops profile+history before you answer + guided booking → board | — | 🔲(proto) | ⭐⭐⭐ | M |
 
 ---
 

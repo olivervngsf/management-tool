@@ -28,6 +28,7 @@ A structured breakdown of how the competitors organize their products. Built fro
 | Payments | card/ACH · financing | in-field capture · signatures | get paid on-site |
 | Memberships | recurring agreements | auto-generated visits · deferred revenue · renewals | recurring revenue |
 | CRM / Records | customer · property · equipment | service history · equipment · customer portal | full visibility |
+| Call Booking / Contact Center Pro | inbound call handling · booking | **caller-ID screen-pop** (profile + history before you answer) · guided booking workflow · routing · AI insights | book jobs in seconds; never fumble a call |
 | Marketing Pro | marketing · ads · reviews | call tracking · ad attribution · reputation | drive more demand |
 | Reporting / Dashboards | analytics · KPIs · job costing | revenue-per-tech · budget vs actual | "protect profits with real-time job costing" |
 | Inventory | stock · truck | QuickBooks sync | control materials |
